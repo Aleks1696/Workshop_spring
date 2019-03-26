@@ -1,0 +1,15 @@
+
+*.iml
+*.ipr
+*.iws
+*.jar
+
+manifest.mf
+
+
+.idea/
+.shelf/
+.stash/
+
+target/
+
