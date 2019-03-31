@@ -15,6 +15,9 @@
           <a href="${pageContext.request.requestURI}/language/ua">UA</a>
         </div>
 
+        <a href="${pageContext.request.contextPath}/login.jsp">Log in</a>
+        <a href="${pageContext.request.contextPath}/registration.jsp">Registration</a>
+
         <fmt:message key="input"/>
     </body>
 </html>
