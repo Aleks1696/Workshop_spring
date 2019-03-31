@@ -1,7 +1,7 @@
 package ua.training.controller.filter;
 
 import ua.training.controller.constants.Parameters;
-import ua.training.controller.constants.URL;
+import ua.training.controller.constants.URI;
 import ua.training.model.entity.User;
 
 import javax.servlet.*;
@@ -29,7 +29,7 @@ public class AuthenticationFilter implements Filter {
         if (user != null) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + URL.LOGIN_JSP);
+            response.sendRedirect(request.getContextPath() + URI.LOGIN_JSP);
         }
     }
 

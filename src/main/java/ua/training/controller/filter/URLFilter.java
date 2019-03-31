@@ -1,27 +1,22 @@
 package ua.training.controller.filter;
 
-import ua.training.controller.constants.URL;
+import ua.training.controller.constants.URI;
+import ua.training.controller.utils.CommandsInitializer;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 @WebFilter(filterName = "URLFilter")
 public class URLFilter implements Filter {
-    private List<String> allowedURLs = new ArrayList<>();
+    private Set<String> allowedURIs;
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        allowedURLs.add("/index.jsp");
-        allowedURLs.add("/login.jsp");
-        allowedURLs.add("/registration.jsp");
-        allowedURLs.add("/login");
-        allowedURLs.add("/language/ua");
-        allowedURLs.add("/customer");
+        allowedURIs = CommandsInitializer.getCommands().keySet();
     }
 
     @Override
@@ -38,10 +33,10 @@ public class URLFilter implements Filter {
 
         String path = request.getServletPath();
         //TODO can be broken if url is: .../login.jsp/hack...
-        if (allowedURLs.contains(path)) {
+        if (allowedURIs.contains(path)) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + URL.INDEX_JSP);
+            response.sendRedirect(request.getContextPath() + URI.INDEX_JSP);
         }
     }
 

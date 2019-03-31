@@ -33,7 +33,7 @@ public class LocaleFilter implements Filter {
         String language = path.replaceAll(".*/language/", "");
         session.setAttribute(Parameters.LANGUAGE, languages.get(language));
         response.sendRedirect(redirectPath);
-}
+    }
 
     @Override
     public void destroy() {
