@@ -1,8 +1,10 @@
 package ua.training.controller.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 
+@WebFilter(filterName = "EncodingFilter")
 public class EncodingFilter implements Filter {
 
     @Override
