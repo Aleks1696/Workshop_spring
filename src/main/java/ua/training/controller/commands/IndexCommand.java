@@ -1,7 +1,6 @@
 package ua.training.controller.commands;
 
 import ua.training.controller.constants.URI;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class IndexCommand implements Command {
