@@ -20,6 +20,9 @@
             Password: <input type="text" name="password"/>
             <input type="submit" value="Log in"/>
         </form>
+        <div>
+            <p>${requestScope.get("wrong_input")}</p>
+        </div>
         <fmt:message key="input"/>
     </body>
 </html>
