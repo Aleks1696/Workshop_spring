@@ -25,11 +25,11 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 
-        User user = (User) session.getAttribute(Parameters.USER);
+        User user = (User) session.getAttribute(Parameters.PARAMETER_USER);
         if (user != null) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + URI.LOGIN_JSP);
+            response.sendRedirect(request.getContextPath() + URI.JSP_LOGIN);
         }
     }
 

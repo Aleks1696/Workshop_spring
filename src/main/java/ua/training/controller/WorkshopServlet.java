@@ -1,6 +1,7 @@
 package ua.training.controller;
 
 import ua.training.controller.commands.Command;
+import ua.training.controller.constants.URI;
 import ua.training.controller.utils.CommandsInitializer;
 
 import javax.servlet.ServletException;
@@ -32,7 +33,7 @@ public class WorkshopServlet extends HttpServlet {
 
     private void processUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
-        Command command = commands.getOrDefault(path, c -> "/index.jsp");
+        Command command = commands.getOrDefault(path, c -> URI.JSP_INDEX);
         String page = command.execute(request);
         request.getRequestDispatcher(page).forward(request, response);
     }

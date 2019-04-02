@@ -31,7 +31,7 @@ public class LocaleFilter implements Filter {
         String path = request.getRequestURI();
         String redirectPath = path.replaceAll("/language/.*", "");
         String language = path.replaceAll(".*/language/", "");
-        session.setAttribute(Parameters.LANGUAGE, languages.get(language));
+        session.setAttribute(Parameters.PARAMETER_LANGUAGE, languages.get(language));
         response.sendRedirect(redirectPath);
     }
 

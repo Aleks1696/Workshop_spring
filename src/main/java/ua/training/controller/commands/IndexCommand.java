@@ -6,6 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 public class IndexCommand implements Command {
 
     public String execute(HttpServletRequest request) {
-        return URI.INDEX_JSP;
+        return URI.JSP_INDEX;
     }
 }
