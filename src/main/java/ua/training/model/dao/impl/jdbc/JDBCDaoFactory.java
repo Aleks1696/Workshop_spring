@@ -1,7 +1,7 @@
 package ua.training.model.dao.impl.jdbc;
 
 import ua.training.model.dao.*;
-import ua.training.model.dao.impl.ConnectionPoolHolder;
+
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -10,26 +10,26 @@ public class JDBCDaoFactory extends DAOFactory {
     private DataSource dataSource = ConnectionPoolHolder.getDataSource();
 
     @Override
-    protected UserDAO createUserDAO() {
-        return new JDBCUserDao();
+    public UserDAO createUserDAO() {
+        return new JDBCUserDao(getConnection());
     }
 
     @Override
-    protected RequestDAO createRequestDAO() {
-        return new JDBCRequestDao();
+    public RequestDAO createRequestDAO() {
+        return new JDBCRequestDao(getConnection());
     }
 
     @Override
-    protected FeedbackDAO createFeedbackDAO() {
-        return new JDBCFeedbackDao();
+    public FeedbackDAO createFeedbackDAO() {
+        return new JDBCFeedbackDao(getConnection());
     }
 
     @Override
-    protected RequestArchiveDAO createRequestArchiveDAO() {
-        return new JDBCRequestArchiveDao();
+    public RequestArchiveDAO createRequestArchiveDAO() {
+        return new JDBCRequestArchiveDao(getConnection());
     }
 
-    public Connection getConnection() {
+    private Connection getConnection() {
         try {
             return dataSource.getConnection();
         } catch (SQLException ex) {

@@ -3,9 +3,16 @@ package ua.training.model.dao.impl.jdbc;
 import ua.training.model.dao.FeedbackDAO;
 import ua.training.model.entity.Feedback;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class JDBCFeedbackDao implements FeedbackDAO {
+    private Connection connection;
+
+    public JDBCFeedbackDao(Connection connection) {
+        this.connection = connection;
+        System.out.println("Connection rom JDBCFeedbackDAO: " + connection);
+    }
 
     @Override
     public Feedback create() {

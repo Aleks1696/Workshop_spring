@@ -3,9 +3,17 @@ package ua.training.model.dao.impl.jdbc;
 import ua.training.model.dao.RequestArchiveDAO;
 import ua.training.model.entity.Request;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class JDBCRequestArchiveDao implements RequestArchiveDAO {
+    private Connection connection;
+
+    public JDBCRequestArchiveDao(Connection connection) {
+        this.connection = connection;
+        System.out.println("Connection rom JDBCRequestArchiveDAO: " + connection);
+    }
+
     @Override
     public Request create() {
         return null;

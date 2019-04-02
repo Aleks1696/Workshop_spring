@@ -7,10 +7,10 @@ public abstract class DAOFactory {
     protected static Logger log = Logger.getLogger(DAOFactory.class.getName());
     private static DAOFactory daoFactory;
 
-    protected abstract UserDAO createUserDAO();
-    protected abstract RequestDAO createRequestDAO();
-    protected abstract FeedbackDAO createFeedbackDAO();
-    protected abstract RequestArchiveDAO createRequestArchiveDAO();
+    public abstract UserDAO createUserDAO();
+    public abstract RequestDAO createRequestDAO();
+    public abstract FeedbackDAO createFeedbackDAO();
+    public abstract RequestArchiveDAO createRequestArchiveDAO();
 
     public static DAOFactory getInstance() {
         if (daoFactory == null) {
