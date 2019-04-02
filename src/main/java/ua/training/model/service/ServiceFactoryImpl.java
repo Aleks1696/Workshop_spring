@@ -6,21 +6,28 @@ import ua.training.model.service.manager.ManagerService;
 import ua.training.model.service.manager.ManagerServiceImpl;
 import ua.training.model.service.master.MasterService;
 import ua.training.model.service.master.MasterServiceImpl;
+import ua.training.model.service.user.UserService;
+import ua.training.model.service.user.UserServiceImpl;
 
 public class ServiceFactoryImpl extends ServiceFactory {
 
     @Override
-    CustomerService createCustomerService() {
+    public CustomerService createCustomerService() {
         return new CustomerServiceImpl();
     }
 
     @Override
-    ManagerService createManagerService() {
+    public ManagerService createManagerService() {
         return new ManagerServiceImpl();
     }
 
     @Override
-    MasterService createMasterService() {
+    public MasterService createMasterService() {
         return new MasterServiceImpl();
+    }
+
+    @Override
+    public UserService createUserService() {
+        return new UserServiceImpl();
     }
 }
