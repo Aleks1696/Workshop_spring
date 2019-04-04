@@ -1,6 +1,6 @@
 package ua.training.controller.validation;
 
-import ua.training.controller.constants.Regex;
+import ua.training.model.utils.RegexBinder;
 
 public class InputValidation {
 
@@ -10,11 +10,11 @@ public class InputValidation {
     }
 
     public boolean isLoginValid(String login) {
-        return login != null && login.matches(Regex.LOGIN);
+        return login != null && login.matches(RegexBinder.getProperty("regex.login"));
     }
 
     public boolean isPasswordValid(String password) {
-        return password != null && password.matches(Regex.PASSWORD);
+        return password != null && password.matches(RegexBinder.getProperty("regex.password"));
     }
 
 }

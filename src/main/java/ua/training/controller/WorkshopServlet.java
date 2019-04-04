@@ -1,8 +1,8 @@
 package ua.training.controller;
 
 import ua.training.controller.commands.Command;
-import ua.training.controller.constants.URI;
-import ua.training.controller.utils.CommandsInitializer;
+import ua.training.controller.commands.CommandsInitializer;
+import ua.training.model.utils.URIBinder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +18,7 @@ public class WorkshopServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        commands = CommandsInitializer.getCommands();
+        commands = CommandsInitializer.getInstance().getCommands();
     }
 
     @Override
@@ -33,8 +33,17 @@ public class WorkshopServlet extends HttpServlet {
 
     private void processUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String path = request.getServletPath();
-        Command command = commands.getOrDefault(path, c -> URI.JSP_INDEX);
-        String page = command.execute(request);
-        request.getRequestDispatcher(page).forward(request, response);
+        Command command = commands.getOrDefault(path, (req, resp) -> URIBinder.getProperty("jsp.index"));
+        String page = command.execute(request, response);
+        if (page.contains("/redirect:")) {
+            redirect(request, response, page);
+        } else {
+            request.getRequestDispatcher(page).forward(request, response);
+        }
+    }
+
+    private void redirect(HttpServletRequest request, HttpServletResponse response,String path) throws IOException {
+        String redirectTo = path.replaceAll(".*/redirect:", "");
+        response.sendRedirect(request.getContextPath() + redirectTo);
     }
 }

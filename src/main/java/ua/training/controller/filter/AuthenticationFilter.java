@@ -1,8 +1,8 @@
 package ua.training.controller.filter;
 
-import ua.training.controller.constants.Parameters;
-import ua.training.controller.constants.URI;
 import ua.training.model.entity.User;
+import ua.training.model.types.UserRole;
+import ua.training.model.utils.*;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -25,12 +25,22 @@ public class AuthenticationFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 
-        User user = (User) session.getAttribute(Parameters.PARAMETER_USER);
-        if (user != null) {
+        String path = request.getServletPath();
+        User user = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
+        if (user == null) {
+            request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
+                    MessagesBinder.getProperty("login.not.logged.user.message"));
+            response.sendRedirect(request.getContextPath() + URIBinder.getProperty("jsp.login"));
+        } else if (isRoleAppropriate(user, path)) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + URI.JSP_LOGIN);
+            response.sendRedirect(URIBinder.getProperty("jsp.404"));
         }
+    }
+
+    private boolean isRoleAppropriate(User user, String path) {
+        UserRole userRole = user.getRole();
+        return path.startsWith(userRole.getAllowedPath());
     }
 
     @Override

@@ -1,6 +1,6 @@
 package ua.training.controller.filter;
 
-import ua.training.controller.constants.Parameters;
+import ua.training.model.utils.AttributesBinder;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -31,7 +31,7 @@ public class LocaleFilter implements Filter {
         String path = request.getRequestURI();
         String redirectPath = path.replaceAll("/language/.*", "");
         String language = path.replaceAll(".*/language/", "");
-        session.setAttribute(Parameters.PARAMETER_LANGUAGE, languages.get(language));
+        session.setAttribute(AttributesBinder.getProperty("parameter.language"), languages.get(language));
         response.sendRedirect(redirectPath);
     }
 

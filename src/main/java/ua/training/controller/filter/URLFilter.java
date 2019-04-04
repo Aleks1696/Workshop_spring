@@ -1,14 +1,13 @@
 package ua.training.controller.filter;
 
-import ua.training.controller.constants.URI;
-import ua.training.controller.utils.CommandsInitializer;
+import ua.training.controller.commands.CommandsInitializer;
+import ua.training.model.utils.URIBinder;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.Set;
 
 @WebFilter(filterName = "URLFilter")
@@ -17,7 +16,7 @@ public class URLFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-        allowedURIs = CommandsInitializer.getCommands().keySet();
+        allowedURIs = CommandsInitializer.getInstance().getCommands().keySet();
     }
 
     @Override
@@ -25,19 +24,11 @@ public class URLFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
-        System.out.println("--------------------------------------");
-        System.out.println("Context path: " + request.getContextPath());
-        System.out.println("Servlet path: " + request.getServletPath());
-        System.out.println("Request url: " + request.getRequestURL());
-        System.out.println("Request uri: " + request.getRequestURI());
-        System.out.println("--------------------------------------");
-
         String path = request.getServletPath();
-        //TODO can be broken if url is: .../login.jsp/hack...
         if (allowedURIs.contains(path)) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(request.getContextPath() + URI.JSP_INDEX);
+            response.sendRedirect(request.getContextPath() + URIBinder.getProperty("jsp.index"));
         }
     }
 
