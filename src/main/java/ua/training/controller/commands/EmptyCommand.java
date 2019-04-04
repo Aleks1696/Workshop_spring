@@ -1,13 +1,12 @@
 package ua.training.controller.commands;
 
-import ua.training.model.utils.URIBinder;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexPageCommand implements Command {
+public class EmptyCommand implements Command {
 
+    @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        return URIBinder.getProperty("jsp.index");
+        return null;
     }
 }

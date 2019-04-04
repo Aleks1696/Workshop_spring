@@ -8,6 +8,7 @@ import ua.training.model.utils.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LoginCommand implements Command {
     private InputValidation validation;
@@ -20,8 +21,14 @@ public class LoginCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
         String login = request.getParameter(AttributesBinder.getProperty("parameter.login"));
         String password = request.getParameter(AttributesBinder.getProperty("parameter.password"));
+
+        User user = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
+        if (user != null) {
+            return redirectLoggedUser(request, user);
+        }
 
         if (!validation.isLoginAndPasswordValid(login, password)) {
             request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
@@ -30,11 +37,9 @@ public class LoginCommand implements Command {
             return URIBinder.getProperty("jsp.login");
         }
 
-        User user = getUserFromDB(request, login, password);
-
+        user = getUserFromDB(request, login, password);
         if (user != null) {
-            request.getSession().setAttribute(AttributesBinder.getProperty("parameter.user"), user);
-            return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
+            return redirectNewUser(request, user);
         }
         return URIBinder.getProperty("jsp.login");
     }
@@ -49,5 +54,20 @@ public class LoginCommand implements Command {
             log.info("User not found");
         }
         return user;
+    }
+
+    private String redirectLoggedUser(HttpServletRequest request, User user) {
+        String userAccountPath = getPagePathBasedOnRole(user);
+        return URIBinder.getProperty("redirect") + userAccountPath;
+    }
+
+    private String getPagePathBasedOnRole(User user) {
+        return user.getRole().getBasePath();
+    }
+
+    private String redirectNewUser(HttpServletRequest request, User user) {
+        String userAccountPath = getPagePathBasedOnRole(user);
+        request.getSession().setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+        return URIBinder.getProperty("redirect") + userAccountPath;
     }
 }
