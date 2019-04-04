@@ -1,10 +1,13 @@
 package ua.training.controller.commands;
 
-import ua.training.controller.constants.*;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.User;
+import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.service.user.UserService;
+import ua.training.model.utils.*;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 public class LoginCommand implements Command {
     private InputValidation validation;
@@ -13,23 +16,38 @@ public class LoginCommand implements Command {
     public LoginCommand() {
         this.validation = new InputValidation();
         userService = FACTORY.createUserService();
-        System.out.println("User service object: " + userService);
     }
 
     @Override
-    public String execute(HttpServletRequest request) {
-        String login = request.getParameter(Parameters.PARAMETER_LOGIN);
-        String password = request.getParameter(Parameters.PARAMETER_PASSWORD);
+    public String execute(HttpServletRequest request, HttpServletResponse response) {
+        String login = request.getParameter(AttributesBinder.getProperty("parameter.login"));
+        String password = request.getParameter(AttributesBinder.getProperty("parameter.password"));
 
         if (!validation.isLoginAndPasswordValid(login, password)) {
-            //TODO change attribute to res.bundle
-            request.setAttribute(Parameters.ATTRIBUTE_WRONG_INPUT, "Login or password is not valid");
-            return URI.JSP_LOGIN;
+            request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
+                                 "login.not.valid.data");
+            log.info("Entering system with invalid data");
+            return URIBinder.getProperty("jsp.login");
         }
 
-        User user = userService.logInUser(login, password);
-        request.getSession().setAttribute(Parameters.PARAMETER_USER, user);
+        User user = getUserFromDB(request, login, password);
 
-        return "WEB-INF/customer/customerAccount.jsp";
+        if (user != null) {
+            request.getSession().setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+            return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
+        }
+        return URIBinder.getProperty("jsp.login");
+    }
+
+    private User getUserFromDB(HttpServletRequest request, String login, String password) {
+        User user = null;
+        try {
+            user = userService.logInUser(login, password);
+        } catch (UserNotFoundException ex) {
+            request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
+                                "login.user.not.found");
+            log.info("User not found");
+        }
+        return user;
     }
 }
