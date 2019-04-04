@@ -14,6 +14,7 @@
             <a href="${pageContext.request.requestURI}/language/en">EN</a>
             <a href="${pageContext.request.requestURI}/language/ua">UA</a>
         </div>
+        <p>${sessionScope.get("user")}</p>
 
         <fmt:message key="input"/>
     </body>
