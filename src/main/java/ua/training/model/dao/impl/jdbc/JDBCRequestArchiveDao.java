@@ -15,7 +15,7 @@ public class JDBCRequestArchiveDao implements RequestArchiveDAO {
     }
 
     @Override
-    public Request create() {
+    public Request create(Request entity) {
         return null;
     }
 

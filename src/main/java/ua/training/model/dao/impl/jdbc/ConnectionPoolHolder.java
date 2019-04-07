@@ -1,12 +1,15 @@
 package ua.training.model.dao.impl.jdbc;
 
 import org.apache.commons.dbcp.BasicDataSource;
+import ua.training.model.utils.Binder;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.ResourceBundle;
 
 public class ConnectionPoolHolder {
     private static volatile DataSource dataSource;
+    private static ResourceBundle bundle = ResourceBundle.getBundle("database/connection");
 
     public static DataSource getDataSource() {
         if (dataSource == null) {
@@ -14,10 +17,10 @@ public class ConnectionPoolHolder {
                 if (dataSource == null) {
                     //TODO move all hardcode to properties
                     BasicDataSource bs = new BasicDataSource();
-                    bs.setDriverClassName("com.mysql.jdbc.Driver");
-                    bs.setUrl("jdbc:mysql://localhost:3306/workshop?useSSL=false");
-                    bs.setUsername("myRoot");
-                    bs.setPassword("root");
+                    bs.setDriverClassName(Binder.getProperty(bundle, "mysql.driver"));
+                    bs.setUrl(Binder.getProperty(bundle, "mysql.url"));
+                    bs.setUsername(Binder.getProperty(bundle, "mysql.user"));
+                    bs.setPassword(Binder.getProperty(bundle, "mysql.password"));
                     bs.setMinIdle(5);
                     bs.setMaxIdle(10);
                     bs.setMaxOpenPreparedStatements(100);
@@ -26,11 +29,5 @@ public class ConnectionPoolHolder {
             }
         }
         return dataSource;
-    }
-}
-
-class TestDataSourceConnection {
-    public static void main(String[] args) throws SQLException {
-        ConnectionPoolHolder.getDataSource().getConnection();
     }
 }
