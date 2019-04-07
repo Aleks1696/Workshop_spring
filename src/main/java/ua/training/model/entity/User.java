@@ -5,19 +5,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class User {
-    private long id;
+    private int id;
     private String login;
     private String password;
     private UserRole role;
     private String name;
+    private String name_ua;
     private String surname;
+    private String surname_ua;
     private String email;
+    private String phoneNumber;
     private List<Request> requests = new ArrayList<>();
 
-    public long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getLogin() {
@@ -44,17 +47,35 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+    public String getName_ua() {
+        return name_ua;
+    }
+    public void setName_ua(String name_ua) {
+        this.name_ua = name_ua;
+    }
     public String getSurname() {
         return surname;
     }
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    public String getSurname_ua() {
+        return surname_ua;
+    }
+    public void setSurname_ua(String surname_ua) {
+        this.surname_ua = surname_ua;
+    }
     public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
         this.email = email;
+    }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
     public List<Request> getRequests() {
         return requests;

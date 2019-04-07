@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Request {
-    private long id;
+    private int id;
     private ProductCategory productCategory;
     private String description;
     private LocalDate creationDate;
@@ -19,10 +19,10 @@ public class Request {
     private User master;
     private Feedback feedback;
 
-    public long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
     public ProductCategory getProductCategory() {
@@ -82,15 +82,12 @@ public class Request {
     public User getMaster() {
         return master;
     }
-
     public void setMaster(User master) {
         this.master = master;
     }
-
     public Feedback getFeedback() {
         return feedback;
     }
-
     public void setFeedback(Feedback feedback) {
         this.feedback = feedback;
     }
