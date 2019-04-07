@@ -3,12 +3,14 @@ package ua.training.controller.commands;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.User;
 import ua.training.model.exceptions.UserNotFoundException;
-import ua.training.model.service.user.UserService;
+import ua.training.model.service.user.*;
 import ua.training.model.utils.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginCommand implements Command {
     private InputValidation validation;
@@ -16,7 +18,7 @@ public class LoginCommand implements Command {
 
     public LoginCommand() {
         this.validation = new InputValidation();
-        userService = FACTORY.createUserService();
+        userService = new UserServiceImpl();
     }
 
     @Override
@@ -29,10 +31,10 @@ public class LoginCommand implements Command {
         if (user != null) {
             return redirectLoggedUser(request, user);
         }
-
-        if (!validation.isLoginAndPasswordValid(login, password)) {
-            request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
-                                 "login.not.valid.data");
+        List<String> wrongInputMessages = new ArrayList<>();
+        if (!validation.isLoginAndPasswordValid(login, password, wrongInputMessages)) {
+            request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
+                                 wrongInputMessages.toString());
             log.info("Entering system with invalid data");
             return URIBinder.getProperty("jsp.login");
         }
@@ -49,7 +51,7 @@ public class LoginCommand implements Command {
         try {
             user = userService.logInUser(login, password);
         } catch (UserNotFoundException ex) {
-            request.setAttribute(AttributesBinder.getProperty("attribute.login.error.message"),
+            request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                                 "login.user.not.found");
             log.info("User not found");
         }

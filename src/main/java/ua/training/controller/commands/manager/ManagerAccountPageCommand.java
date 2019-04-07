@@ -2,6 +2,7 @@ package ua.training.controller.commands.manager;
 
 import ua.training.controller.commands.Command;
 import ua.training.model.service.manager.ManagerService;
+import ua.training.model.service.manager.ManagerServiceImpl;
 import ua.training.model.utils.URIBinder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ public class ManagerAccountPageCommand implements Command {
     private ManagerService managerService;
 
     public ManagerAccountPageCommand() {
-        this.managerService = FACTORY.createManagerService();
+        this.managerService = new ManagerServiceImpl();
     }
 
     @Override

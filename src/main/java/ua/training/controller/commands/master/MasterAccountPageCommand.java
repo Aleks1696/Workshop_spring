@@ -2,6 +2,7 @@ package ua.training.controller.commands.master;
 
 import ua.training.controller.commands.Command;
 import ua.training.model.service.master.MasterService;
+import ua.training.model.service.master.MasterServiceImpl;
 import ua.training.model.utils.URIBinder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ public class MasterAccountPageCommand implements Command {
     private MasterService masterService;
 
     public MasterAccountPageCommand() {
-        this.masterService = FACTORY.createMasterService();
+        this.masterService = new MasterServiceImpl();
     }
 
     @Override

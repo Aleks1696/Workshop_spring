@@ -19,12 +19,12 @@ public class CommandsInitializer {
 
         commands.put(URIBinder.getProperty("path.login"), new LoginCommand());
         commands.put(URIBinder.getProperty("path.logout"), new LogoutCommand());
+        commands.put(URIBinder.getProperty("path.registration"), new RegistrationCommand());
         commands.put(URIBinder.getProperty("path.customer.account"), new CustomerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.manager.account"), new ManagerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
 
         commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
-
 
     }
 
