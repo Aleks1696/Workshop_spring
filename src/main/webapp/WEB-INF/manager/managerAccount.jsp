@@ -3,9 +3,9 @@
 <%@ include file="/common/import.jsp"%>
 
 <html lang="${language}">
-
-    <%@ include file="/common/head.jsp"%>
-
+    <head>
+        <%@ include file="/common/head.jsp"%>
+    </head>
     <body>
         <div id="header-wrapper">
             <div id="header" class="container">
@@ -15,7 +15,7 @@
                 <div id="menu">
                     <ul>
                         <li class="current_page_item"><a href="#" title="">Homepage</a></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout">Log out</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,9 +34,9 @@
                 </div>
 
                 <div>
-                    <c:set var="response" scope="request" value="${requestScope.login_error_message}"/>
-                    <c:if test="${response != null}">
-                        <fmt:message key="${response}"/>
+                    <c:set var="activeRequests" scope="request" value="${requestScope.login_error_message}"/>
+                    <c:if test="${activeRequests != null}">
+                        <fmt:message key="${activeRequests}"/>
                     </c:if>
                 </div>
 

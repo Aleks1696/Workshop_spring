@@ -3,9 +3,9 @@
 <%@ include file="/common/import.jsp"%>
 
 <html lang="${language}">
-
-    <%@ include file="/common/head.jsp"%>
-
+    <head>
+        <%@ include file="/common/head.jsp"%>
+    </head>
     <body>
     <div id="header-wrapper">
         <div id="header" class="container">

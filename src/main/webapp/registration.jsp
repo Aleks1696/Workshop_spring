@@ -3,9 +3,9 @@
 <%@ include file="/common/import.jsp"%>
 
 <html lang="${language}">
-
-    <%@ include file="/common/head.jsp"%>
-
+    <head>
+        <%@ include file="/common/head.jsp"%>
+    </head>
     <body>
         <div id="header-wrapper">
             <div id="header" class="container">
@@ -32,22 +32,27 @@
                         </select>
                     </form>
                 </div>
-                <div>
-                    <h2>Enter data:</h2>
-                    <form action="${pageContext.request.contextPath}/registration" method="post">
-                        Name: <input type="text" name="login" required="required"/>
-                        Surname: <input type="text" name="password" required="required"/>
-                        <input type="submit" value="Log in"/>
-                    </form>
+                <div class="login-page">
+                    <div class="form">
+                        <form class="register-form" method="post" action="${pageContext.request.contextPath}/registration">
+                            <input type="text" name="login" placeholder="login" required="required"/> </br>
+                            <input type="password" name="password" placeholder="password" required="required"/> </br>
+                            <input type="text" name="name" placeholder="name"/> </br>
+                            <input type="text" name="name_ua" placeholder="name(ukrainian)"/> </br>
+                            <input type="text" name="surname" placeholder="surname"/> </br>
+                            <input type="text" name="surname_ua" placeholder="surname(ukrainian)"/> </br>
+                            <input type="text" name="email" placeholder="email address"/> </br>
+                            <input type="text" name="phone_number" placeholder="phone number"/> </br>
+                            <button>Sign up</button>
+                        </form>
+                        <div>
+                            <c:set var="activeRequests" scope="request" value="${requestScope.error_message}"/>
+                            <c:if test="${activeRequests != null}">
+                                <fmt:message key="${activeRequests}"/>
+                            </c:if>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <c:set var="response" scope="request" value="${requestScope.login_error_message}"/>
-                    <c:if test="${response != null}">
-                        <fmt:message key="${response}"/>
-                    </c:if>
-                </div>
-
-
             </div>
 
         </div>
