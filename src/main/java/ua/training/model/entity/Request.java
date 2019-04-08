@@ -8,6 +8,7 @@ import java.time.LocalDate;
 public class Request {
     private int id;
     private ProductCategory productCategory;
+    private String device;
     private String description;
     private LocalDate creationDate;
     private LocalDate closingDate;
@@ -30,6 +31,12 @@ public class Request {
     }
     public void setProductCategory(ProductCategory productCategory) {
         this.productCategory = productCategory;
+    }
+    public String getDevice() {
+        return device;
+    }
+    public void setDevice(String device) {
+        this.device = device;
     }
     public String getDescription() {
         return description;
