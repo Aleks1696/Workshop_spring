@@ -1,5 +1,6 @@
 package ua.training.controller.validation;
 
+import ua.training.model.entity.Request;
 import ua.training.model.entity.User;
 import ua.training.model.utils.MessagesBinder;
 import static ua.training.model.utils.RegexBinder.*;
@@ -13,9 +14,9 @@ public class InputValidation {
     public boolean isLoginAndPasswordValid(String login, String password, List<String> wrongInputMessages) {
         this.wrongInputMessages = wrongInputMessages;
         boolean isLoginValid = isParameterValid(login, getProperty("regex.login"),
-                                                MessagesBinder.getProperty("input.wrong.login.format"));
+                                                "input.wrong.login.format");
         boolean isPasswordValid = isParameterValid(password, getProperty("regex.password"),
-                                                   MessagesBinder.getProperty("input.wrong.password.format"));
+                                                   "input.wrong.password.format");
         return isLoginValid && isPasswordValid;
     }
 
@@ -50,6 +51,27 @@ public class InputValidation {
         } else {
             return true;
         }
+    }
+
+    public boolean isRequestValid(Request request, List<String> wrongInputMessages) {
+        //TODO needs implementation
+        return true;
+    }
+
+    public boolean isPriceAndDescriptionValid(String price, String managerComment, List<String> wrongInputMessages) {
+        this.wrongInputMessages = wrongInputMessages;
+        boolean isPriceValid = isParameterValid(price, getProperty("regex.price"),
+                "input.wrong.request.price.format");
+        boolean isDescriptionValid = isParameterValid(managerComment, getProperty("regex.description"),
+                "input.wrong.request.description.format");
+        return isPriceValid && isDescriptionValid;
+    }
+
+    public boolean isDescriptionValid(String managerComment, List<String> wrongInputMessages) {
+        this.wrongInputMessages = wrongInputMessages;
+        boolean isDescriptionValid = isParameterValid(managerComment, getProperty("regex.description"),
+                "input.wrong.request.description.format");
+        return isDescriptionValid;
     }
 
 
