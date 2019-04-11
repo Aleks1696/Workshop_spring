@@ -11,14 +11,13 @@ public class Request {
     private String device;
     private String description;
     private LocalDate creationDate;
-    private LocalDate closingDate;
     private RequestStatus status;
     private BigDecimal price;
     private String managerComment;
-    private User customer;
-    private User manager;
-    private User master;
-    private Feedback feedback;
+    private Integer customer_id;
+    private Integer manager_id;
+    private Integer master_id;
+    private Integer feedback_id;
 
     public int getId() {
         return id;
@@ -50,12 +49,6 @@ public class Request {
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
-    public LocalDate getClosingDate() {
-        return closingDate;
-    }
-    public void setClosingDate(LocalDate closingDate) {
-        this.closingDate = closingDate;
-    }
     public RequestStatus getStatus() {
         return status;
     }
@@ -74,28 +67,29 @@ public class Request {
     public void setManagerComment(String managerComment) {
         this.managerComment = managerComment;
     }
-    public User getCustomer() {
-        return customer;
+
+    public Integer getCustomer_id() {
+        return customer_id;
     }
-    public void setCustomer(User customer) {
-        this.customer = customer;
+    public void setCustomer_id(Integer customer_id) {
+        this.customer_id = customer_id;
     }
-    public User getManager() {
-        return manager;
+    public Integer getManager_id() {
+        return manager_id;
     }
-    public void setManager(User manager) {
-        this.manager = manager;
+    public void setManager_id(Integer manager_id) {
+        this.manager_id = manager_id;
     }
-    public User getMaster() {
-        return master;
+    public Integer getMaster_id() {
+        return master_id;
     }
-    public void setMaster(User master) {
-        this.master = master;
+    public void setMaster_id(Integer master_id) {
+        this.master_id = master_id;
     }
-    public Feedback getFeedback() {
-        return feedback;
+    public Integer getFeedback_id() {
+        return feedback_id;
     }
-    public void setFeedback(Feedback feedback) {
-        this.feedback = feedback;
+    public void setFeedback_id(Integer feedback_id) {
+        this.feedback_id = feedback_id;
     }
 }
