@@ -4,14 +4,11 @@ import org.apache.log4j.Logger;
 import ua.training.model.dao.UserDAO;
 import ua.training.model.dao.mapper.*;
 import ua.training.model.entity.User;
-import ua.training.model.exceptions.UserAlreadyExistException;
+import ua.training.model.exceptions.AlreadyExistException;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.utils.QueriesBinder;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class JDBCUserDao implements UserDAO {
@@ -26,29 +23,28 @@ public class JDBCUserDao implements UserDAO {
     }
 
     @Override
-    public User create(User entity) throws UserAlreadyExistException {
+    public User create(User entity) throws AlreadyExistException {
         User registeredUser = null;
         try(PreparedStatement statement =
-                    connection.prepareStatement(QueriesBinder.getProperty("user.create"))) {
+                    connection.prepareStatement(QueriesBinder.getProperty("user.create"), Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, entity.getLogin());
             statement.setString(2, entity.getPassword());
             statement.setString(3, entity.getRole().toString());
             statement.setString(4, entity.getName());
             statement.setString(5, entity.getName_ua());
-
-            System.out.println(entity.getName_ua());
-
             statement.setString(6, entity.getSurname());
             statement.setString(7, entity.getSurname_ua());
-
-            System.out.println(entity.getSurname_ua());
-
             statement.setString(8, entity.getEmail());
             statement.setString(9, entity.getPhoneNumber());
-            statement.execute();
+            statement.executeUpdate();
+            ResultSet result = statement.getGeneratedKeys();
+            result.next();
+            int registeredUserId = result.getInt(1);
+            registeredUser = findById(registeredUserId);
         } catch (SQLException e) {
-            log.error(e.getMessage());
-            throw new UserAlreadyExistException(e.getMessage());
+            //TODO another exception can be thrown. Not only usernotfound
+            log.error("User already exist", e);
+            throw new AlreadyExistException(e.getMessage());
         }
         return registeredUser;
     }
@@ -61,6 +57,7 @@ public class JDBCUserDao implements UserDAO {
                     connection.prepareStatement(QueriesBinder.getProperty("user.find.by.id"));
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
+            result.next();
             user = mapper.extract(result);
         } catch (SQLException e) {
             log.error("User with such id is not found");
@@ -74,7 +71,7 @@ public class JDBCUserDao implements UserDAO {
     }
 
     @Override
-    public boolean update(int id) {
+    public boolean update(User entity) {
         return false;
     }
 

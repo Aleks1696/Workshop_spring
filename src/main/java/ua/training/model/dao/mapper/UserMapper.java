@@ -23,7 +23,6 @@ public class UserMapper implements Mapper<User> {
         user.setRole(UserRole.getRole(resultSet.getString(getProperty("parameter.role"))));
         user.setEmail(resultSet.getString(getProperty("parameter.email")));
         user.setPhoneNumber(resultSet.getString(getProperty("parameter.phoneNumber")));
-        //TODO take out list of requests
         return user;
     }
 

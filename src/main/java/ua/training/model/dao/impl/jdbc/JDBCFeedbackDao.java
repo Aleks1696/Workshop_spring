@@ -48,7 +48,7 @@ public class JDBCFeedbackDao implements FeedbackDAO {
     }
 
     @Override
-    public boolean update(int id) {
+    public boolean update(Feedback entity) {
         return false;
     }
 

@@ -4,14 +4,15 @@ import org.apache.log4j.Logger;
 import ua.training.model.dao.RequestDAO;
 import ua.training.model.dao.mapper.*;
 import ua.training.model.entity.*;
-import ua.training.model.exceptions.UserAlreadyExistException;
+import ua.training.model.exceptions.AlreadyExistException;
+import ua.training.model.types.RequestStatus;
 import ua.training.model.utils.QueriesBinder;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class JDBCRequestDao implements RequestDAO {
     private static Logger log = Logger.getLogger(JDBCRequestDao.class.getName());
@@ -24,6 +25,63 @@ public class JDBCRequestDao implements RequestDAO {
         System.out.println("Connection from JDBCRequestDAO: " + connection);
     }
 
+    @Override
+    public Request create(Request entity) {
+        Request createdRequest = null;
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("request.create"), Statement.RETURN_GENERATED_KEYS)) {
+            statement.setString(1, entity.getProductCategory().toString());
+            statement.setString(2, entity.getDevice());
+            statement.setString(3, entity.getDescription());
+            statement.setDate(4, Date.valueOf(entity.getCreationDate()));
+            statement.setString(5, entity.getStatus().toString());
+            statement.setInt(6, entity.getCustomer_id());
+            statement.executeUpdate();
+            ResultSet result = statement.getGeneratedKeys();
+            result.next();
+            int createdRequestId = result.getInt(1);
+            createdRequest = findById(createdRequestId);
+        } catch (SQLException e) {
+            throw new AlreadyExistException(e.getMessage(), e);
+        }
+        return createdRequest;
+    }
+
+
+    @Override
+    public Request findById(int id) {
+        Request request = null;
+        try(PreparedStatement statement =
+                    connection.prepareStatement(QueriesBinder.getProperty("request.find.by.id"))) {
+            statement.setInt(1, id);
+            ResultSet resultSet = statement.executeQuery();
+            resultSet.next();
+            request = mapper.extract(resultSet);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return request;
+    }
+
+    @Override
+    public List<Request> findActiveByUserId(int userId) {
+        List<Request> activeRequests = new ArrayList<>();
+        //TODO add new status to query
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("request.find.active.by.user"))) {
+            statement.setInt(1, userId);
+            statement.setString(2, RequestStatus.NEW.toString());
+            statement.setString(3, RequestStatus.IN_PROCESS.toString());
+            statement.setString(4, RequestStatus.ACCEPTED.toString());
+            ResultSet result = statement.executeQuery();
+            while (result.next()) {
+                activeRequests.add(mapper.extract(result));
+            }
+        } catch (SQLException e) {
+            log.error("Failed to find user active requests");
+        }
+        return activeRequests;
+    }
 
     @Override
     public List<Request> findAllByUserId(int userId) {
@@ -32,10 +90,9 @@ public class JDBCRequestDao implements RequestDAO {
                      connection.prepareStatement(QueriesBinder.getProperty("request.find.all.by.user"))) {
             statement.setInt(1, userId);
             ResultSet result = statement.executeQuery();
-            //TODO NPE from resultSet
-//            while (result.next()) {
-//                activeRequests.add(mapper.extract(result));
-//            }
+            while (result.next()) {
+                activeRequests.add(mapper.extract(result));
+            }
         } catch (SQLException e) {
             log.error("Failed to find user active requests");
         }
@@ -43,14 +100,39 @@ public class JDBCRequestDao implements RequestDAO {
     }
 
     @Override
-    public Request create(Request entity) throws UserAlreadyExistException {
-        return null;
+    public List<Request> findNewRequests() {
+        List<Request> activeRequests = new ArrayList<>();
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("request.find.new"))) {
+            statement.setString(1, RequestStatus.NEW.toString());
+            ResultSet result = statement.executeQuery();
+            while (result.next()) {
+                activeRequests.add(mapper.extract(result));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            log.error("Failed to find user active requests");
+        }
+        return activeRequests;
     }
 
     @Override
-    public Request findById(int id) {
-        return null;
+    public boolean updateAcceptedOrDeclined(Request entity) {
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("request.update.accepted.or.declined"))) {
+            statement.setString(1, entity.getStatus().toString());
+            statement.setBigDecimal(2, entity.getPrice());
+            statement.setString(3, entity.getManagerComment());
+            statement.setInt(4, entity.getManager_id());
+            statement.setInt(5, entity.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            log.error("Error while executing request update", e);
+            return false;
+        }
+        return true;
     }
+
 
     @Override
     public List<Request> findAll() {
@@ -58,8 +140,23 @@ public class JDBCRequestDao implements RequestDAO {
     }
 
     @Override
-    public boolean update(int id) {
-        return false;
+    public boolean update(Request entity) {
+        try (PreparedStatement statement =
+                connection.prepareStatement(QueriesBinder.getProperty("request.update"))) {
+            statement.setString(1, entity.getProductCategory().toString());
+            statement.setString(2, entity.getDevice());
+            statement.setString(3, entity.getDescription());
+            statement.setDate(4,Date.valueOf(entity.getCreationDate()));
+            statement.setString(5, entity.getStatus().toString());
+            statement.setBigDecimal(6, entity.getPrice());
+            statement.setString(7, entity.getManagerComment());
+            statement.setInt(8, entity.getCustomer_id());
+            statement.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            log.error("Error while executing request update", e);
+            return false;
+        }
     }
 
     @Override

@@ -1,9 +1,13 @@
 package ua.training.model.dao.mapper;
 
-import ua.training.model.dao.DAOFactory;
+import ua.training.model.dao.FeedbackDAO;
+import ua.training.model.dao.UserDAO;
 import ua.training.model.entity.*;
 import ua.training.model.types.*;
+import ua.training.model.utils.AttributesBinder;
+
 import javax.servlet.http.HttpServletRequest;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
@@ -14,39 +18,30 @@ public class RequestMapper implements Mapper<Request> {
 
     @Override
     public Request extract(ResultSet resultSet) throws SQLException {
-        //TODO handle NPE when db has null value and resultSet takes it
         Request request = new Request();
-        request.setId(Optional.of(resultSet.getInt(getProperty("parameter.id"))).orElse(0));
+        request.setId(resultSet.getInt(getProperty("parameter.id")));
         request.setProductCategory(ProductCategory.valueOf(
                 resultSet.getString(getProperty("parameter.product.category"))));
+        request.setDevice(resultSet.getString(getProperty("parameter.device")));
         request.setDescription(resultSet.getString(getProperty("parameter.description")));
         request.setCreationDate(resultSet.getDate(getProperty("parameter.creationDate")).toLocalDate());
-        request.setClosingDate(Optional.ofNullable(resultSet.getDate(getProperty("parameter.closingDate")).toLocalDate()).orElse(null));
         request.setStatus(RequestStatus.valueOf(resultSet.getString(getProperty("parameter.status"))));
         request.setPrice(resultSet.getBigDecimal(getProperty("parameter.price")));
         request.setManagerComment(resultSet.getString(getProperty("parameter.manager.commentary")));
-
-        int customerId = resultSet.getInt(getProperty("parameter.customer"));
-        request.setCustomer(getRelatedUser(customerId));
-        int managerId = resultSet.getInt(getProperty("parameter.manager"));
-        request.setCustomer(getRelatedUser(managerId));
-        int masterId = resultSet.getInt(getProperty("parameter.master"));
-        request.setCustomer(getRelatedUser(masterId));
-        int feedbackId = resultSet.getInt(getProperty("parameter.feedback"));
-        request.setFeedback(getRelatedFeedback(feedbackId));
+        request.setCustomer_id(resultSet.getInt(getProperty("parameter.customer")));
+        request.setManager_id(resultSet.getInt(getProperty("parameter.manager")));
+        request.setMaster_id(resultSet.getInt(getProperty("parameter.master")));
+        request.setFeedback_id(resultSet.getInt(getProperty("parameter.feedback")));
         return request;
     }
 
-    private User getRelatedUser(int id) {
-        return DAOFactory.getInstance().createUserDAO().findById(id);
-    }
-
-    private Feedback getRelatedFeedback(int id) {
-        return DAOFactory.getInstance().createFeedbackDAO().findById(id);
-    }
-
     @Override
-    public Request extract(HttpServletRequest request) {
-        return null;
+    public Request extract(HttpServletRequest req) {
+        Request request = new Request();
+        request.setProductCategory(ProductCategory.valueOf(
+                req.getParameter(AttributesBinder.getProperty("parameter.product.category"))));
+        request.setDevice(req.getParameter(AttributesBinder.getProperty("parameter.device")));
+        request.setDescription(req.getParameter(AttributesBinder.getProperty("parameter.description")));
+        return request;
     }
 }

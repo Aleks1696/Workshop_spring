@@ -30,7 +30,7 @@ public class JDBCRequestArchiveDao implements RequestArchiveDAO {
     }
 
     @Override
-    public boolean update(int id) {
+    public boolean update(Request entity) {
         return false;
     }
 

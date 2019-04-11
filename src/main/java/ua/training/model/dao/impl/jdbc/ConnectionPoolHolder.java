@@ -15,7 +15,6 @@ public class ConnectionPoolHolder {
         if (dataSource == null) {
             synchronized (ConnectionPoolHolder.class) {
                 if (dataSource == null) {
-                    //TODO move all hardcode to properties
                     BasicDataSource bs = new BasicDataSource();
                     bs.setDriverClassName(Binder.getProperty(bundle, "mysql.driver"));
                     bs.setUrl(Binder.getProperty(bundle, "mysql.url"));
