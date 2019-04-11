@@ -25,17 +25,20 @@
                 <div>
                     <form>
                         <span>Choose language: </span>
-                        <select id="language" name="language" onchange="submit()" class="byline">
-                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>
-                        </select>
+                        <a href="${pageContext.request.contextPath}/master/account/language/en">EN</a>
+                        <a href="${pageContext.request.contextPath}/master/account/language/ua">UA</a>
+
+<%--                        <select id="language" name="language" onchange="submit()" class="byline">--%>
+<%--                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
+<%--                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
+<%--                        </select>--%>
                     </form>
                 </div>
 
                 <div>
-                    <c:set var="activeRequests" scope="request" value="${requestScope.login_error_message}"/>
-                    <c:if test="${activeRequests != null}">
-                        <fmt:message key="${activeRequests}"/>
+                    <c:set var="active_requests" scope="request" value="${requestScope.login_error_message}"/>
+                    <c:if test="${active_requests != null}">
+                        <fmt:message key="${active_requests}"/>
                     </c:if>
                 </div>
 

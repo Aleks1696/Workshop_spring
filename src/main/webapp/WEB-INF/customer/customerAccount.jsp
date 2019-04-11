@@ -14,7 +14,7 @@
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item"><a href="#" title="">Homepage</a></li>
+                        <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
                         <li><a href="${pageContext.request.contextPath}/logout">Log out</a></li>
                     </ul>
                 </div>
@@ -25,7 +25,8 @@
                 <%--Menu list (navigation bar)--%>
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#">Create request</a></li>
+                        <li class="nav__item"><a href="${pageContext.request.contextPath}/customer/request">Create request</a></li>
+                        <li class="nav__item"><a href="${pageContext.request.contextPath}/customer/active/requests">Active requests</a></li>
                         <li class="nav__item"><a href="#">All requests</a></li>
                         <li class="nav__item"><a href="#">Update profile</a></li>
                     </ul>
@@ -33,21 +34,28 @@
                 <div>
                     <form>
                         <span>Choose language: </span>
-                        <select id="language" name="language" onchange="submit()" class="byline">
-                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>
-                        </select>
+                        <a href="${pageContext.request.contextPath}/customer/account/language/en">EN</a>
+                        <a href="${pageContext.request.contextPath}/customer/account/language/ua">UA</a>
+
+<%--                        <select id="language" name="language" onchange="submit()" class="byline">--%>
+<%--                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
+<%--                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
+<%--                        </select>--%>
                     </form>
                 </div>
 
                 <div>
-                    <c:set var="activeRequests" scope="request" value="${requestScope.active_requests}"/>
-                    <c:if test="${activeRequests != null}">
-                        <c:forEach items="${activeRequests}" var="request">
+                    <c:set var="active_requests" scope="request" value="${requestScope.active_requests}"/>
+                    <c:if test="${active_requests != null}">
+                        <c:forEach items="${active_requests}" var="request">
                             <fieldset>
-                                <c:out value="${request}"/>
-                                <br>
-                                <c:out value="${request.getPrice()}"/>
+                                Request: <c:out value="${request.getId()}"/> <br>
+                                Product category: <c:out value="${request.getProductCategory()}"/> <br>
+                                Device: <c:out value="${request.getDevice()}"/> <br>
+                                Creation date: <c:out value="${request.getCreationDate()}"/> <br>
+                                Status: <c:out value="${request.getStatus()}"/> <br>
+                                Price: <c:out value="${request.getPrice()}"/> <br>
+                                Manager commentary: <c:out value="${request.getManagerComment()}"/> <br>
                             </fieldset>
                         </c:forEach>
                     </c:if>

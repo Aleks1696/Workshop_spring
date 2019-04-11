@@ -10,12 +10,12 @@
         <div id="header-wrapper">
             <div id="header" class="container">
                 <div id="logo">
-                    <h1><span class="fa fa-bolt"></span><a href="#">Workshop</a></h1>
+                    <h1><span class="fa fa-bolt"></span><a href="${pageContext.request.contextPath}/">Workshop</a></h1>
                 </div>
                 <div id="menu">
                     <ul>
-                        <li class="current_page_item"><a href="${pageContext.request.contextPath}/index.jsp" title="">Homepage</a></li>
-                        <li><a href="${pageContext.request.contextPath}/registration.jsp">Registration</a></li>
+                        <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
+                        <li><a href="${pageContext.request.contextPath}/registration">Registration</a></li>
                     </ul>
                 </div>
             </div>
@@ -24,26 +24,29 @@
         <div id="wrapper">
             <div id="featured-wrapper">
                 <div>
-                    <form>
-                        <span>Choose language: </span>
-                        <select id="language" name="language" onchange="submit()" class="byline">
-                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>
-                        </select>
-                    </form>
+<%--                    <select id="language" name="language" onchange="submit()" class="byline">--%>
+<%--                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
+<%--                        <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
+<%--                    </select>--%>
+                    <span>Choose language: </span>
+                    <a href="${pageContext.request.contextPath}/login/language/en">EN</a>
+                    <a href="${pageContext.request.contextPath}/login/language/ua">UA</a>
+
                 </div>
                 <div>
                     <h2>Enter login and password:</h2>
-                    <form action="${pageContext.request.contextPath}/login" method="post">
+                    <form action="${pageContext.request.contextPath}/login/submit" method="post">
                         Login: <input type="text" name="login" required="required"/>
                         Password: <input type="text" name="password" required="required"/>
                         <input type="submit" value="Log in"/>
                     </form>
                 </div>
                 <div>
-                    <c:set var="activeRequests" scope="request" value="${requestScope.error_message}"/>
-                    <c:if test="${activeRequests != null}">
-                        <fmt:message key="${activeRequests}"/>
+                    <c:set var="error_message" scope="request" value="${requestScope.error_message}"/>
+                    <c:if test="${error_message != null}">
+                        <c:forEach items="${error_message}" var="message">
+                            <fmt:message key="${message}"/>
+                        </c:forEach>
                     </c:if>
                 </div>
 

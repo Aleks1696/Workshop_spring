@@ -10,14 +10,14 @@
     <div id="header-wrapper">
         <div id="header" class="container">
             <div id="logo">
-                <h1><span class="fa fa-bolt"></span><a href="#">Workshop</a></h1>
+                <h1><span class="fa fa-bolt"></span><a href="${pageContext.request.contextPath}/">Workshop</a></h1>
             </div>
             <div id="menu">
                 <ul>
-                    <li class="current_page_item"><a href="${pageContext.request.contextPath}/index.jsp" title="">Homepage</a></li>
+                    <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
                     <li><a href="">Services</a></li>
-                    <li><a href="${pageContext.request.contextPath}/registration.jsp">Registration</a></li>
-                    <li><a href="${pageContext.request.contextPath}/login.jsp">Log in</a></li>
+                    <li><a href="${pageContext.request.contextPath}/registration">Registration</a></li>
+                    <li><a href="${pageContext.request.contextPath}/login">Log in</a></li>
                 </ul>
             </div>
         </div>
@@ -28,10 +28,13 @@
             <div>
                 <form>
                     <span>Choose language: </span>
-                    <select id="language" name="language" onchange="submit()" class="byline">
-                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-                        <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>
-                    </select>
+                    <a href="${pageContext.request.contextPath}/language/en">EN</a>
+                    <a href="${pageContext.request.contextPath}/language/ua">UA</a>
+
+<%--                    <select id="language" name="language" onchange="submit()" class="byline">--%>
+<%--                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
+<%--                        <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
+<%--                    </select>--%>
                 </form>
             </div>
             <div id="featured" class="margin-btm container">
@@ -63,8 +66,8 @@
 <%--            </select>--%>
 <%--        </form>--%>
 
-<%--        <a href="${pageContext.request.contextPath}/login.jsp">Log in</a>--%>
-<%--        <a href="${pageContext.request.contextPath}/registration.jsp">Registration</a>--%>
+<%--        <a href="${pageContext.request.contextPath}/login.pages">Log in</a>--%>
+<%--        <a href="${pageContext.request.contextPath}/registration.pages">Registration</a>--%>
 
 <%--    </body>--%>
 </html>
