@@ -12,6 +12,6 @@ public class LogoutCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         session.removeAttribute(AttributesBinder.getProperty("parameter.user"));
-        return URIBinder.getProperty("redirect") + URIBinder.getProperty("jsp.index");
+        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.index");
     }
 }

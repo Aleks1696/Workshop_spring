@@ -1,8 +1,11 @@
 package ua.training.controller.commands;
 
-import ua.training.controller.commands.customer.CustomerAccountPageCommand;
-import ua.training.controller.commands.manager.ManagerAccountPageCommand;
-import ua.training.controller.commands.master.MasterAccountPageCommand;
+import ua.training.controller.commands.customer.CreateRequestCommand;
+import ua.training.controller.commands.customer.ActiveRequestsCommand;
+import ua.training.controller.commands.manager.AcceptRequestCommand;
+import ua.training.controller.commands.manager.DeclineRequestCommand;
+import ua.training.controller.commands.pages.*;
+import ua.training.controller.commands.manager.NewRequestsCommand;
 import ua.training.model.utils.URIBinder;
 
 import java.util.HashMap;
@@ -13,18 +16,27 @@ public class CommandsInitializer {
     private static Map<String, Command> commands = new HashMap<>();
 
     private CommandsInitializer() {
-        commands.put(URIBinder.getProperty("jsp.index"), new EmptyCommand());
-        commands.put(URIBinder.getProperty("jsp.login"), new EmptyCommand());
-        commands.put(URIBinder.getProperty("jsp.registration"), new EmptyCommand());
+        commands.put(URIBinder.getProperty("path.index"), new IndexPageCommand());
+        commands.put(URIBinder.getProperty("path.login"), new LoginPageCommand());
+        commands.put(URIBinder.getProperty("path.registration"), new RegistrationPageCommand());
 
-        commands.put(URIBinder.getProperty("path.login"), new LoginCommand());
+        commands.put("/language/en", new EmptyCommand());
+        commands.put("/language/ua", new EmptyCommand());
+
+        commands.put(URIBinder.getProperty("path.login.submit"), new LoginCommand());
         commands.put(URIBinder.getProperty("path.logout"), new LogoutCommand());
-        commands.put(URIBinder.getProperty("path.registration"), new RegistrationCommand());
+        commands.put(URIBinder.getProperty("path.registration.submit"), new RegistrationCommand());
         commands.put(URIBinder.getProperty("path.customer.account"), new CustomerAccountPageCommand());
+        commands.put(URIBinder.getProperty("path.customer.active.requests"), new ActiveRequestsCommand());
+        commands.put(URIBinder.getProperty("path.customer.request"), new NewCustomerRequestPageCommand());
+        commands.put(URIBinder.getProperty("path.customer.request.submit"), new CreateRequestCommand());
         commands.put(URIBinder.getProperty("path.manager.account"), new ManagerAccountPageCommand());
+        commands.put(URIBinder.getProperty("path.manager.active.request"), new NewRequestsCommand());
+        commands.put(URIBinder.getProperty("path.manager.active.request.accept"), new AcceptRequestCommand());
+        commands.put(URIBinder.getProperty("path.manager.active.request.decline"), new DeclineRequestCommand());
         commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
 
-        commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
+//        commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
 
     }
 

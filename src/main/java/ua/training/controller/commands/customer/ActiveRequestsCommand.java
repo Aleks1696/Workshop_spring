@@ -13,21 +13,19 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class CustomerAccountPageCommand implements Command {
+public class ActiveRequestsCommand implements Command {
     private CustomerService customerService;
 
-    public CustomerAccountPageCommand() {
+    public ActiveRequestsCommand() {
         this.customerService = new CustomerServiceImpl();
     }
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-        //TODO is it necessary to check user here after login command?
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         List<Request> activeRequests = customerService.getActiveRequests(user);
         request.setAttribute(AttributesBinder.getProperty("attribute.active.requests"), activeRequests);
-        System.out.println(request.getAttribute(AttributesBinder.getProperty("attribute.active.requests")));
         return URIBinder.getProperty("jsp.customer.account");
     }
 }

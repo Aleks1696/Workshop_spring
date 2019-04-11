@@ -1,19 +1,12 @@
-package ua.training.controller.commands.master;
+package ua.training.controller.commands.pages;
 
 import ua.training.controller.commands.Command;
-import ua.training.model.service.master.MasterService;
-import ua.training.model.service.master.MasterServiceImpl;
 import ua.training.model.utils.URIBinder;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class MasterAccountPageCommand implements Command {
-    private MasterService masterService;
-
-    public MasterAccountPageCommand() {
-        this.masterService = new MasterServiceImpl();
-    }
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
