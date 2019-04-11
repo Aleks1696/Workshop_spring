@@ -30,10 +30,11 @@ public class AuthenticationFilter implements Filter {
         if (user == null) {
             request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     MessagesBinder.getProperty("login.not.logged.user.message"));
-            response.sendRedirect(request.getContextPath() + URIBinder.getProperty("jsp.login"));
+            response.sendRedirect(request.getContextPath() + URIBinder.getProperty("path.login"));
         } else if (isRoleAppropriate(user, path)) {
             filterChain.doFilter(request, response);
         } else {
+            //TODO 405 access denied
             response.sendRedirect(URIBinder.getProperty("jsp.404"));
         }
     }

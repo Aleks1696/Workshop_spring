@@ -28,11 +28,15 @@ public class LocaleFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession();
 
-        String path = request.getRequestURI();
-        String redirectPath = path.replaceAll("/language/.*", "");
-        String language = path.replaceAll(".*/language/", "");
-        session.setAttribute(AttributesBinder.getProperty("parameter.language"), languages.get(language));
-        response.sendRedirect(redirectPath);
+        String path = request.getServletPath();
+        if (path.contains("/language/")) {
+            String redirectPath = path.replaceAll("/language/.*", "");
+            String language = path.replaceAll(".*/language/", "");
+            session.setAttribute(AttributesBinder.getProperty("parameter.language"), languages.get(language));
+            response.sendRedirect(request.getContextPath() + redirectPath);
+        } else {
+            filterChain.doFilter(request, response);
+        }
     }
 
     @Override
