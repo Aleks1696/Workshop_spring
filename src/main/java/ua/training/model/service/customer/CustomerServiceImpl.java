@@ -16,8 +16,19 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Request> getActiveRequests(User user) {
-        return requestDAO.findAllByUserId(user.getId());
-
+    public Request createRequest(Request request) {
+        return requestDAO.create(request);
     }
+
+    @Override
+    public List<Request> getActiveRequests(User user) {
+        return requestDAO.findActiveByUserId(user.getId());
+    }
+
+    @Override
+    public List<Request> getAllRequests(User user) {
+        return requestDAO.findAllByUserId(user.getId());
+    }
+
+
 }
