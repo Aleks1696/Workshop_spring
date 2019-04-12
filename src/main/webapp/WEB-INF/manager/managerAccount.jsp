@@ -56,9 +56,9 @@
                     </ul>
                 </nav>
                 <div>
-                    <c:set var="newRequests" scope="request" value="${requestScope.new_requests}"/>
-                    <c:if test="${newRequests != null}">
-                        <c:forEach items="${newRequests}" var="request">
+                    <c:set var="new_requests" scope="request" value="${requestScope.new_requests}"/>
+                    <c:if test="${new_requests != null}">
+                        <c:forEach items="${new_requests}" var="request">
                             <form method="post">
                                 <fieldset>
                                     <input hidden="hidden" name="id" value="${request.getId()}">
@@ -66,6 +66,7 @@
                                     Product category: <c:out value="${request.getProductCategory()}"/> <br>
                                     Device: <c:out value="${request.getDevice()}"/> <br>
                                     Description: <c:out value="${request.getDescription()}"/> <br>
+                                    Customer id: <c:out value="${request.getCustomer_id()}"/> <br>
                                     Creation date: <c:out value="${request.getCreationDate()}"/> <br>
 
                                     <input type="button" value="Accept" onClick="showHideDiv('accept')"/>

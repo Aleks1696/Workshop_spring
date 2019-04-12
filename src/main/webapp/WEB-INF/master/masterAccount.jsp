@@ -35,16 +35,31 @@
                     </form>
                 </div>
 
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="${pageContext.request.contextPath}/master/active/request">Requests to process</a></li>
+                    </ul>
+                </nav>
                 <div>
-                    <c:set var="active_requests" scope="request" value="${requestScope.login_error_message}"/>
-                    <c:if test="${active_requests != null}">
-                        <fmt:message key="${active_requests}"/>
+                    <c:set var="requests_to_process" scope="request" value="${requestScope.requests_to_process}"/>
+                    <c:if test="${requests_to_process != null}">
+                        <c:forEach items="${requests_to_process}" var="request">
+                            <form method="post" action="${pageContext.request.contextPath}/master/active/request/process">
+                                <fieldset>
+                                    <input hidden="hidden" name="id" value="${request.getId()}">
+                                    Request id: <c:out value="${request.getId()}"/> <br>
+                                    Product category: <c:out value="${request.getProductCategory()}"/> <br>
+                                    Device: <c:out value="${request.getDevice()}"/> <br>
+                                    Description: <c:out value="${request.getDescription()}"/> <br>
+                                    Creation date: <c:out value="${request.getCreationDate()}"/> <br>
+                                    Manager: <c:out value="${request.getManager_id()}"/> <br>
+                                    <input type="submit" value="Process"/>
+                                </fieldset>
+                            </form>
+                        </c:forEach>
                     </c:if>
                 </div>
-
-
             </div>
-
         </div>
     </body>
 </html>
