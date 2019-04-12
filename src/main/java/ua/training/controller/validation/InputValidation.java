@@ -67,7 +67,7 @@ public class InputValidation {
         return isPriceValid && isDescriptionValid;
     }
 
-    public boolean isDescriptionValid(String managerComment, List<String> wrongInputMessages) {
+    public boolean isCommentaryValid(String managerComment, List<String> wrongInputMessages) {
         this.wrongInputMessages = wrongInputMessages;
         boolean isDescriptionValid = isParameterValid(managerComment, getProperty("regex.description"),
                 "input.wrong.request.description.format");
