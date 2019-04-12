@@ -67,7 +67,6 @@ public class Request {
     public void setManagerComment(String managerComment) {
         this.managerComment = managerComment;
     }
-
     public Integer getCustomer_id() {
         return customer_id;
     }

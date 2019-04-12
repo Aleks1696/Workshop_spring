@@ -3,6 +3,8 @@ package ua.training.model.service.manager;
 import ua.training.model.dao.DAOFactory;
 import ua.training.model.dao.RequestDAO;
 import ua.training.model.entity.Request;
+import ua.training.model.types.RequestStatus;
+import ua.training.model.utils.QueriesBinder;
 
 import java.util.List;
 
@@ -20,7 +22,8 @@ public class ManagerServiceImpl implements ManagerService {
 
     @Override
     public List<Request> getNewRequests() {
-        return requestDAO.findNewRequests();
+        return requestDAO.findRequestByStatus(QueriesBinder.getProperty("request.find.by.one.status"),
+                RequestStatus.NEW.toString());
     }
 
     @Override

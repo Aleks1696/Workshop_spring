@@ -9,10 +9,8 @@ import ua.training.model.types.RequestStatus;
 import ua.training.model.utils.QueriesBinder;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class JDBCRequestDao implements RequestDAO {
     private static Logger log = Logger.getLogger(JDBCRequestDao.class.getName());
@@ -100,11 +98,13 @@ public class JDBCRequestDao implements RequestDAO {
     }
 
     @Override
-    public List<Request> findNewRequests() {
+    public List<Request> findRequestByStatus(String query, String... requestStatus) {
         List<Request> activeRequests = new ArrayList<>();
         try (PreparedStatement statement =
-                     connection.prepareStatement(QueriesBinder.getProperty("request.find.new"))) {
-            statement.setString(1, RequestStatus.NEW.toString());
+                     connection.prepareStatement(query)) {
+            for (int i = 1; i <= requestStatus.length; i++) {
+                statement.setString(i, requestStatus[i - 1]);
+            }
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 activeRequests.add(mapper.extract(result));
@@ -128,6 +128,23 @@ public class JDBCRequestDao implements RequestDAO {
             statement.executeUpdate();
         } catch (SQLException e) {
             log.error("Error while executing request update", e);
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public boolean updateAcceptedByMaster(Request entity) {
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("request.update.accepted.by.master"))) {
+            statement.setString(1, entity.getStatus().toString());
+            statement.setInt(2, entity.getMaster_id());
+            statement.setInt(3, entity.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            log.error("Error while executing request update after master taking it", e);
+            e.printStackTrace();
             return false;
         }
         return true;
