@@ -28,7 +28,7 @@ public class URLFilter implements Filter {
         if (allowedURIs.contains(path)) {
             filterChain.doFilter(request, response);
         } else {
-            response.sendRedirect(URIBinder.getProperty("jsp.404"));
+            request.getRequestDispatcher(URIBinder.getProperty("jsp.404")).forward(request, response);
         }
     }
 

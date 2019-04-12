@@ -34,8 +34,7 @@ public class AuthenticationFilter implements Filter {
         } else if (isRoleAppropriate(user, path)) {
             filterChain.doFilter(request, response);
         } else {
-            //TODO 405 access denied
-            response.sendRedirect(URIBinder.getProperty("jsp.404"));
+            request.getRequestDispatcher(URIBinder.getProperty("jsp.405")).forward(request, response);
         }
     }
 
