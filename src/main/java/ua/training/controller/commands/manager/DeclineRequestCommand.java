@@ -13,7 +13,6 @@ import ua.training.model.utils.URIBinder;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,9 +21,6 @@ import static ua.training.model.utils.AttributesBinder.getProperty;
 public class DeclineRequestCommand implements Command {
     private ManagerService managerService;
     private InputValidation inputValidation;
-    private User currentManager;
-    private int requestId;
-    private String managerComment;
 
     public DeclineRequestCommand() {
         this.managerService = new ManagerServiceImpl();
@@ -32,34 +28,29 @@ public class DeclineRequestCommand implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) {
-        getManagerParameters(req);
+    public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
-        if (!inputValidation.isDescriptionValid(managerComment, wrongInputMessages)) {
+        if (!inputValidation.isCommentaryValid(managerComment, wrongInputMessages)) {
             log.info("Specified description is not valid");
-            req.setAttribute(getProperty("attribute.error.message"),
+            httpRequest.setAttribute(getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.manager.active.request");
         }
 
         Request request = new Request();
-        setManagerParameters(request);
+        request.setManagerComment(managerComment);
+        setManagerParameters(httpRequest, request);
         managerService.declineRequest(request);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.account");
     }
 
-    private void getManagerParameters(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
-        requestId = Integer.valueOf(request.getParameter(getProperty(("parameter.id"))));
-        managerComment = request.getParameter(getProperty("parameter.manager.decline.commentary"));
-    }
-
-    private void setManagerParameters(Request request) {
-        request.setId(requestId);
+    private void setManagerParameters(HttpServletRequest httpRequest, Request request) {
+        HttpSession session = httpRequest.getSession();
+        request.setId(Integer.valueOf(httpRequest.getParameter(getProperty(("parameter.id")))));
+        User currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         request.setManager_id(currentManager.getId());
-        request.setManagerComment(managerComment);
         request.setStatus(RequestStatus.DECLINED);
     }
 }

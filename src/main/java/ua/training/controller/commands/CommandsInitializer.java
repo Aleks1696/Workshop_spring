@@ -4,6 +4,8 @@ import ua.training.controller.commands.customer.CreateRequestCommand;
 import ua.training.controller.commands.customer.ActiveRequestsCommand;
 import ua.training.controller.commands.manager.AcceptRequestCommand;
 import ua.training.controller.commands.manager.DeclineRequestCommand;
+import ua.training.controller.commands.master.ProcessRequestCommand;
+import ua.training.controller.commands.master.RequestsToProcessCommand;
 import ua.training.controller.commands.pages.*;
 import ua.training.controller.commands.manager.NewRequestsCommand;
 import ua.training.model.utils.URIBinder;
@@ -26,17 +28,22 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.login.submit"), new LoginCommand());
         commands.put(URIBinder.getProperty("path.logout"), new LogoutCommand());
         commands.put(URIBinder.getProperty("path.registration.submit"), new RegistrationCommand());
+
         commands.put(URIBinder.getProperty("path.customer.account"), new CustomerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.customer.active.requests"), new ActiveRequestsCommand());
         commands.put(URIBinder.getProperty("path.customer.request"), new NewCustomerRequestPageCommand());
         commands.put(URIBinder.getProperty("path.customer.request.submit"), new CreateRequestCommand());
+
         commands.put(URIBinder.getProperty("path.manager.account"), new ManagerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request"), new NewRequestsCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request.accept"), new AcceptRequestCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request.decline"), new DeclineRequestCommand());
-        commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
 
-//        commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
+        commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
+        commands.put(URIBinder.getProperty("path.master.active.request"), new RequestsToProcessCommand());
+        commands.put(URIBinder.getProperty("path.master.active.request.process"), new ProcessRequestCommand());
+
+        commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
 
     }
 

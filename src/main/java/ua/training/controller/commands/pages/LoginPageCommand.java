@@ -3,9 +3,7 @@ package ua.training.controller.commands.pages;
 import ua.training.controller.commands.Command;
 import ua.training.model.entity.User;
 import ua.training.model.types.UserRole;
-import ua.training.model.utils.AttributesBinder;
-import ua.training.model.utils.URIBinder;
-
+import ua.training.model.utils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;

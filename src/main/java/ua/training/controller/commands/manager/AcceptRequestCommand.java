@@ -19,10 +19,6 @@ import java.util.List;
 public class AcceptRequestCommand implements Command {
     private ManagerService managerService;
     private InputValidation inputValidation;
-    private User currentManager;
-    private int requestId;
-    private String price;
-    private String managerComment;
 
     public AcceptRequestCommand() {
         this.managerService = new ManagerServiceImpl();
@@ -30,35 +26,31 @@ public class AcceptRequestCommand implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) {
-        getManagerParameters(req);
+    public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        String price = httpRequest.getParameter(getProperty("parameter.price"));
+        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.accept.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isPriceAndDescriptionValid(price, managerComment, wrongInputMessages)) {
             log.info("Specified parameters are not valid");
-            req.setAttribute(getProperty("attribute.error.message"),
+            httpRequest.setAttribute(getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.manager.active.request");
         }
+
         Request request = new Request();
-        setManagerParameters(request);
+        request.setPrice(BigDecimal.valueOf(Double.valueOf(price)));
+        request.setManagerComment(managerComment);
+        setRelatedParameters(httpRequest, request);
         managerService.acceptRequest(request);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.account");
     }
 
-    private void getManagerParameters(HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
-        requestId = Integer.valueOf(request.getParameter(getProperty(("parameter.id"))));
-        price = request.getParameter(getProperty("parameter.price"));
-        managerComment = request.getParameter(getProperty("parameter.manager.accept.commentary"));
-    }
-
-    private void setManagerParameters(Request request) {
-        request.setId(requestId);
+    private void setRelatedParameters(HttpServletRequest httpRequest, Request request) {
+        HttpSession session = httpRequest.getSession();
+        request.setId(Integer.valueOf(httpRequest.getParameter(getProperty(("parameter.id")))));
+        User currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         request.setManager_id(currentManager.getId());
-        request.setPrice(BigDecimal.valueOf(Double.valueOf(price)));
-        request.setManagerComment(managerComment);
         request.setStatus(RequestStatus.ACCEPTED);
     }
 }

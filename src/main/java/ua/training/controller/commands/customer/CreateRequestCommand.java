@@ -3,8 +3,7 @@ package ua.training.controller.commands.customer;
 import ua.training.controller.commands.Command;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.dao.mapper.*;
-import ua.training.model.entity.Request;
-import ua.training.model.entity.User;
+import ua.training.model.entity.*;
 import ua.training.model.exceptions.AlreadyExistException;
 import ua.training.model.service.customer.*;
 import ua.training.model.types.RequestStatus;
@@ -28,16 +27,14 @@ public class CreateRequestCommand implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest req, HttpServletResponse resp) {
-        Request request = mapper.extract(req);
-        request.setCreationDate(LocalDate.now());
-        request.setStatus(RequestStatus.NEW);
-        User user = (User) req.getSession().getAttribute(AttributesBinder.getProperty("parameter.user"));
-        request.setCustomer_id(user.getId());
+    public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        Request request = mapper.extract(httpRequest);
+        setRelatedParameters(httpRequest, request);
+
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isRequestValid(request, wrongInputMessages)) {
             log.info("Request has invalid data");
-            req.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
+            httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.customer.request");
         }
@@ -45,10 +42,17 @@ public class CreateRequestCommand implements Command {
             customerService.createRequest(request);
         } catch (AlreadyExistException ex) {
             log.error("Request is already created", ex);
-            req.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
+            httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     "input.request.already.exist");
             return URIBinder.getProperty("path.customer.request");
         }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
+    }
+
+    private void setRelatedParameters(HttpServletRequest httpRequest, Request request) {
+        request.setCreationDate(LocalDate.now());
+        request.setStatus(RequestStatus.NEW);
+        User user = (User) httpRequest.getSession().getAttribute(AttributesBinder.getProperty("parameter.user"));
+        request.setCustomer_id(user.getId());
     }
 }
