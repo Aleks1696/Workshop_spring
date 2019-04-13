@@ -4,6 +4,7 @@ import ua.training.model.types.ProductCategory;
 import ua.training.model.types.RequestStatus;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Request {
     private int id;
@@ -90,5 +91,28 @@ public class Request {
     }
     public void setFeedback_id(Integer feedback_id) {
         this.feedback_id = feedback_id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Request request = (Request) o;
+        return productCategory == request.productCategory &&
+                Objects.equals(device, request.device) &&
+                Objects.equals(description, request.description) &&
+                Objects.equals(creationDate, request.creationDate) &&
+                status == request.status &&
+                Objects.equals(price, request.price) &&
+                Objects.equals(managerComment, request.managerComment) &&
+                Objects.equals(customer_id, request.customer_id) &&
+                Objects.equals(manager_id, request.manager_id) &&
+                Objects.equals(master_id, request.master_id) &&
+                Objects.equals(feedback_id, request.feedback_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productCategory, device, description, creationDate, status, price, managerComment, customer_id, manager_id, master_id, feedback_id);
     }
 }

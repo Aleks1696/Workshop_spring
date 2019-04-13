@@ -2,6 +2,8 @@ package ua.training.model.entity;
 
 import ua.training.model.types.Marks;
 
+import java.util.Objects;
+
 public class Feedback {
     private int id;
     private String commentary;
@@ -24,5 +26,19 @@ public class Feedback {
     }
     public void setMark(Marks mark) {
         this.mark = mark;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Feedback feedback = (Feedback) o;
+        return Objects.equals(commentary, feedback.commentary) &&
+                mark == feedback.mark;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(commentary, mark);
     }
 }

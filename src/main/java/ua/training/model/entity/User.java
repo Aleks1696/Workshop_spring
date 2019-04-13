@@ -3,6 +3,7 @@ package ua.training.model.entity;
 import ua.training.model.types.UserRole;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class User {
     private int id;
@@ -82,5 +83,27 @@ public class User {
     }
     public void setRequests(List<Request> requests) {
         this.requests = requests;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(login, user.login) &&
+                Objects.equals(password, user.password) &&
+                role == user.role &&
+                Objects.equals(name, user.name) &&
+                Objects.equals(name_ua, user.name_ua) &&
+                Objects.equals(surname, user.surname) &&
+                Objects.equals(surname_ua, user.surname_ua) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(phoneNumber, user.phoneNumber) &&
+                Objects.equals(requests, user.requests);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, password, role, name, name_ua, surname, surname_ua, email, phoneNumber, requests);
     }
 }
