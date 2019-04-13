@@ -27,25 +27,20 @@
                         <span>Choose language: </span>
                         <a href="${pageContext.request.contextPath}/master/account/language/en">EN</a>
                         <a href="${pageContext.request.contextPath}/master/account/language/ua">UA</a>
-
-<%--                        <select id="language" name="language" onchange="submit()" class="byline">--%>
-<%--                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--                        </select>--%>
                     </form>
                 </div>
 
                 <nav class="nav">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="${pageContext.request.contextPath}/master/active/request">Requests to process</a></li>
-                        <li class="nav__item"><a href="${pageContext.request.contextPath}/master/bucket">Bucket</a></li>
+                        <%--menu--%>
                     </ul>
                 </nav>
                 <div>
-                    <c:set var="requests_to_process" scope="request" value="${requestScope.requests_to_process}"/>
-                    <c:if test="${requests_to_process != null}">
-                        <c:forEach items="${requests_to_process}" var="request">
-                            <form method="post" action="${pageContext.request.contextPath}/master/active/request/process">
+                    <c:set var="requests_in_process" scope="request" value="${requestScope.requests_in_process}"/>
+                    <c:if test="${requests_in_process != null}">
+                        <c:forEach items="${requests_in_process}" var="request">
+                            <%--Implement buttons for accepted requests--%>
+                            <form method="post" action="${pageContext.request.contextPath}/master/bucket/request/close">
                                 <fieldset>
                                     <input hidden="hidden" name="id" value="${request.getId()}">
                                     Request id: <c:out value="${request.getId()}"/> <br>
@@ -54,7 +49,7 @@
                                     Description: <c:out value="${request.getDescription()}"/> <br>
                                     Creation date: <c:out value="${request.getCreationDate()}"/> <br>
                                     Manager: <c:out value="${request.getManager_id()}"/> <br>
-                                    <input type="submit" value="Process"/>
+                                    <input type="submit" value="Fixed"/>
                                 </fieldset>
                             </form>
                         </c:forEach>

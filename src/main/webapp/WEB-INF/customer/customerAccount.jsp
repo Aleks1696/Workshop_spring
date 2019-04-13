@@ -5,6 +5,8 @@
 <html lang="${language}">
     <head>
         <%@ include file="/common/head.jsp"%>
+<%--        <style><%@include file="/resources/css/customerAccount.css"%></style>--%>
+<%--        <script><%@include file="/resources/js/customerPage.js"%></script>--%>
     </head>
     <body>
         <div id="header-wrapper">
@@ -36,12 +38,13 @@
                         <span>Choose language: </span>
                         <a href="${pageContext.request.contextPath}/customer/account/language/en">EN</a>
                         <a href="${pageContext.request.contextPath}/customer/account/language/ua">UA</a>
-
-<%--                        <select id="language" name="language" onchange="submit()" class="byline">--%>
-<%--                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--                        </select>--%>
                     </form>
+                    <%--notification bell--%>
+                    <div class="container">
+                        <div class="notification"></div>
+                        <button type="button" onclick="location.href='${pageContext.request.contextPath}/customer/notifications'">Notifications</button>
+                    </div>
+
                 </div>
 
                 <div>
