@@ -20,7 +20,7 @@ public class RequestsToProcessCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        List<Request> requestsToProcess = masterService.getAcceptedRequests();
+        List<Request> requestsToProcess = masterService.getRequestsToProcess();
         request.setAttribute(AttributesBinder.getProperty("attribute.requests.to.process"), requestsToProcess);
         return URIBinder.getProperty("path.master.account");
     }
