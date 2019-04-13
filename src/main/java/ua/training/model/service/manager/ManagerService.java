@@ -10,4 +10,5 @@ public interface ManagerService {
     List<Request> getNewRequests();
     boolean acceptRequest(Request request);
     boolean declineRequest(Request request);
+
 }
