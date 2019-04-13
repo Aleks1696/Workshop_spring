@@ -1,5 +1,6 @@
 package ua.training.controller.validation;
 
+import ua.training.model.entity.Feedback;
 import ua.training.model.entity.Request;
 import ua.training.model.entity.User;
 import ua.training.model.utils.MessagesBinder;
@@ -69,9 +70,14 @@ public class InputValidation {
 
     public boolean isCommentaryValid(String managerComment, List<String> wrongInputMessages) {
         this.wrongInputMessages = wrongInputMessages;
-        boolean isDescriptionValid = isParameterValid(managerComment, getProperty("regex.description"),
+        return isParameterValid(managerComment, getProperty("regex.description"),
                 "input.wrong.request.description.format");
-        return isDescriptionValid;
+    }
+
+    public boolean isFeedbackValid(Feedback feedback, List<String> wrongInputMessages) {
+        this.wrongInputMessages = wrongInputMessages;
+        return isParameterValid(feedback.getCommentary(), getProperty("regex.commentary"),
+                "input.wrong.feedback.commentary.format");
     }
 
 
