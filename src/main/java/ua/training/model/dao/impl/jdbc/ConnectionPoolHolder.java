@@ -22,6 +22,8 @@ public class ConnectionPoolHolder {
                     bs.setPassword(Binder.getProperty(bundle, "mysql.password"));
                     bs.setMinIdle(5);
                     bs.setMaxIdle(10);
+                    bs.setMaxWait(40);
+                    bs.setMaxActive(30);
                     bs.setMaxOpenPreparedStatements(100);
                     dataSource = bs;
                 }

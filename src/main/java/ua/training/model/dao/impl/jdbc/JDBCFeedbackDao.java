@@ -4,11 +4,11 @@ import org.apache.log4j.Logger;
 import ua.training.model.dao.FeedbackDAO;
 import ua.training.model.dao.mapper.*;
 import ua.training.model.entity.Feedback;
+import ua.training.model.entity.Request;
+import ua.training.model.exceptions.AlreadyExistException;
 import ua.training.model.utils.QueriesBinder;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.sql.*;
 import java.util.List;
 
 public class JDBCFeedbackDao implements FeedbackDAO {
@@ -60,5 +60,39 @@ public class JDBCFeedbackDao implements FeedbackDAO {
     @Override
     public void close() throws Exception {
 
+    }
+
+    @Override
+    public Feedback createAndSetToRequest(Feedback feedback, Request request) throws SQLException {
+        Feedback createdFeedback = null;
+        try {
+            connection.setAutoCommit(false);
+
+            PreparedStatement createStatement =
+                    connection.prepareStatement(QueriesBinder.getProperty("feedback.create"), Statement.RETURN_GENERATED_KEYS);
+            createStatement.setString(1, feedback.getCommentary());
+            createStatement.setString(2, feedback.getMark().toString());
+            createStatement.executeUpdate();
+            ResultSet result = createStatement.getGeneratedKeys();
+            result.next();
+            int createdFeedbackId = result.getInt(1);
+            createdFeedback = findById(createdFeedbackId);
+
+            PreparedStatement updateStatement =
+                    connection.prepareStatement(QueriesBinder.getProperty("request.update.feedback.by.request.id"));
+            updateStatement.setInt(1, createdFeedbackId);
+            updateStatement.setInt(2, request.getId());
+            updateStatement.executeUpdate();
+
+            connection.commit();
+        } catch (SQLException e) {
+            connection.rollback();
+            //TODO another exception can be thrown. Not only entitynotfound
+            log.error("Feedback already exist", e);
+            throw new AlreadyExistException(e.getMessage());
+        } finally {
+            connection.setAutoCommit(true);
+        }
+        return createdFeedback;
     }
 }
