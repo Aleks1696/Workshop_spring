@@ -29,7 +29,7 @@ public class DeclineRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
-        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.commentary"));
+        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.decline.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isCommentaryValid(managerComment, wrongInputMessages)) {

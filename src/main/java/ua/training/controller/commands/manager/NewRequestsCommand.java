@@ -24,6 +24,7 @@ public class NewRequestsCommand implements Command {
         HttpSession session = request.getSession();
         List<Request> activeRequests = managerService.getNewRequests();
         request.setAttribute(AttributesBinder.getProperty("attribute.new.requests"), activeRequests);
+        //TODO redirect or forward?
         return URIBinder.getProperty("path.manager.account");
     }
 }
