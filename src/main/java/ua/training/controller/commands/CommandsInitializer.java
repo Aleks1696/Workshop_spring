@@ -1,9 +1,10 @@
 package ua.training.controller.commands;
 
-import ua.training.controller.commands.customer.CreateRequestCommand;
-import ua.training.controller.commands.customer.ActiveRequestsCommand;
+import ua.training.controller.commands.customer.*;
 import ua.training.controller.commands.manager.AcceptRequestCommand;
 import ua.training.controller.commands.manager.DeclineRequestCommand;
+import ua.training.controller.commands.master.CloseRequestCommand;
+import ua.training.controller.commands.master.GetAcceptedCommand;
 import ua.training.controller.commands.master.ProcessRequestCommand;
 import ua.training.controller.commands.master.RequestsToProcessCommand;
 import ua.training.controller.commands.pages.*;
@@ -18,6 +19,7 @@ public class CommandsInitializer {
     private static Map<String, Command> commands = new HashMap<>();
 
     private CommandsInitializer() {
+        commands.put(URIBinder.getProperty("jsp.index"), new IndexPageCommand());
         commands.put(URIBinder.getProperty("path.index"), new IndexPageCommand());
         commands.put(URIBinder.getProperty("path.login"), new LoginPageCommand());
         commands.put(URIBinder.getProperty("path.registration"), new RegistrationPageCommand());
@@ -33,6 +35,11 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.customer.active.requests"), new ActiveRequestsCommand());
         commands.put(URIBinder.getProperty("path.customer.request"), new NewCustomerRequestPageCommand());
         commands.put(URIBinder.getProperty("path.customer.request.submit"), new CreateRequestCommand());
+        commands.put(URIBinder.getProperty("path.customer.request.delete"), new CancelRequestCommand());
+        commands.put(URIBinder.getProperty("path.customer.notifications"), new CustomerNotificationPageCommand());
+        commands.put(URIBinder.getProperty("path.customer.feedback"), new CustomerFeedbackPageCommand());
+        commands.put(URIBinder.getProperty("path.customer.feedback.leave"), new LeaveFeedbackCommand());
+        commands.put(URIBinder.getProperty("path.customer.request.archive"), new ArchiveRequestCommand());
 
         commands.put(URIBinder.getProperty("path.manager.account"), new ManagerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request"), new NewRequestsCommand());
@@ -42,6 +49,8 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
         commands.put(URIBinder.getProperty("path.master.active.request"), new RequestsToProcessCommand());
         commands.put(URIBinder.getProperty("path.master.active.request.process"), new ProcessRequestCommand());
+        commands.put(URIBinder.getProperty("path.master.bucket"), new GetAcceptedCommand());
+        commands.put(URIBinder.getProperty("path.master.bucket.request.close"), new CloseRequestCommand());
 
         commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
 
