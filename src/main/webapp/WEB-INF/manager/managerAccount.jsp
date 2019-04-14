@@ -3,89 +3,75 @@
 <%@ include file="/common/import.jsp"%>
 
 <html lang="${language}">
-    <head>
-        <%@ include file="/common/head.jsp"%>
-<%--        <script language="JavaScript" src="${pageContext.request.contextPath}/resources/js/managerPage.js"></script>--%>
-        <script>
-            function showHideDiv(element) {
-                var srcElement = document.getElementById(element);
-                if (srcElement != null) {
-                    if (srcElement.style.display == "block") {
-                        srcElement.style.display = 'none';
-                    }
-                    else {
-                        srcElement.style.display = 'block';
-                    }
-                    return false;
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <div id="header-wrapper">
-            <div id="header" class="container">
-                <div id="logo">
-                    <h1><span class="fa fa-bolt"></span><a href="#">Workshop</a></h1>
-                </div>
-                <div id="menu">
-                    <ul>
-                        <li class="current_page_item"><a href="#" title="">Homepage</a></li>
-                        <li><a href="${pageContext.request.contextPath}/logout">Log out</a></li>
-                    </ul>
-                </div>
-            </div>
+<head>
+    <%@ include file="/common/head.jsp" %>
+</head>
+<body>
+
+<%@ include file="/common/manager/mainNavigationPanel.jsp" %>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 float-sm-left sidenav text-left">
+            <p><a href="${pageContext.request.contextPath}/manager/active/request"><fmt:message key="jsp.manager.left.sidenav.new.requests.button"/></a></p>
+        </div>
+        <div class="col-sm-8 text-center">
+
         </div>
 
-        <div id="wrapper">
-            <div id="featured-wrapper">
-                <div>
-                    <form>
-                        <span>Choose language: </span>
-                        <a href="${pageContext.request.contextPath}/manager/account/language/en">EN</a>
-                        <a href="${pageContext.request.contextPath}/manager/account/language/ua">UA</a>
-
-<%--                        <select id="language" name="language" onchange="submit()" class="byline">--%>
-<%--                            <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                            <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--                        </select>--%>
-                    </form>
-                </div>
-                <nav class="nav">
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="${pageContext.request.contextPath}/manager/active/request">New requests</a></li>
-                    </ul>
-                </nav>
-                <div>
-                    <c:set var="new_requests" scope="request" value="${requestScope.new_requests}"/>
-                    <c:if test="${new_requests != null}">
-                        <c:forEach items="${new_requests}" var="request">
-                            <form method="post">
-                                <fieldset>
-                                    <input hidden="hidden" name="id" value="${request.getId()}">
-                                    Request id: <c:out value="${request.getId()}"/> <br>
-                                    Product category: <c:out value="${request.getProductCategory()}"/> <br>
-                                    Device: <c:out value="${request.getDevice()}"/> <br>
-                                    Description: <c:out value="${request.getDescription()}"/> <br>
-                                    Customer id: <c:out value="${request.getCustomer_id()}"/> <br>
-                                    Creation date: <c:out value="${request.getCreationDate()}"/> <br>
-
-                                    <input type="button" value="Accept" onClick="showHideDiv('accept')"/>
-                                    <input type="button" value="Decline" onClick="showHideDiv('decline')"/>
-                                    <div id="accept" style="display:none">
-                                        Price: <input type="text" name="price"/> <br>
-                                        Manager commentary: <input type="text" name="managerAcceptComment"/>
-                                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/active/request/accept" value="Submit"/>
+        <c:set var="new_requests" scope="request" value="${requestScope.new_requests}"/>
+        <c:if test="${new_requests != null}">
+            <c:forEach items="${new_requests}" var="request">
+                <div class="col-sm-4 text-center">
+                    <div class="card" style="width: auto; border: #2b2b2b">
+                        <div class="card-body">
+                            <form>
+                                <h5 class="card-title"><fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/></h5>
+                                <h6 class="card-subtitle mb-2 text-muted"><fmt:message key="output.request.device"/> <c:out value="${request.getDevice()}"/></h6>
+                                <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out value="${request.getProductCategory()}"/></p>
+                                <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out value="${request.getCreationDate()}"/></p>
+                                <p class="card-text"><fmt:message key="output.request.status"/> <c:out value="${request.getStatus()}"/></p>
+                                <p class="card-text"><fmt:message key="output.request.customer.name"/> CLIENT NAME should be here</p>
+                                <p>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#decline" aria-expanded="false" aria-controls="decline">
+                                        <fmt:message key="jsp.manager.decline.button"/>
+                                    </button>
+                                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#accept" aria-expanded="false" aria-controls="accept">
+                                        <a href="" class="card-link"><fmt:message key="jsp.manager.accept.button"/></a>
+                                    </button>
+                                </p>
+                                <div id="decline" class="collapse" >
+                                    <div class="card card-body">
+                                        <fmt:message key="output.request.manager.commentary"/> <input type="text" name="managerAcceptComment"/>
+                                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/active/request/decline" value="<fmt:message key="jsp.manager.submit.button"/>"/>
                                     </div>
-                                    <div id="decline" style="display:none">
-                                        Manager commentary: <input type="text" name="managerDeclineComment"/>
-                                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/active/request/decline" value="Submit"/>
+                                </div>
+                                <div id="accept" class="collapse" >
+                                    <div class="card card-body">
+                                        <fmt:message key="output.request.price"/> <input type="text" name="price"/> <br>
+                                        <fmt:message key="output.request.manager.commentary"/> <input type="text" name="managerAcceptComment"/>
+                                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/active/request/accept" value="<fmt:message key="jsp.manager.submit.button"/>"/>
                                     </div>
-                                </fieldset>
+                                </div>
                             </form>
-                        </c:forEach>
-                    </c:if>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </c:forEach>
+        </c:if>
         </div>
-    </body>
+    </div>
+
+</div>
+
+<footer class="page-footer">
+    <div class="footer-copyright text-center">
+        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
+    </div>
+    <div class="footer-copyright text-center">© 2019 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+</footer>
+
+</body>
 </html>
