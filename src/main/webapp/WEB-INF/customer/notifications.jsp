@@ -4,59 +4,97 @@
 
 <html lang="${language}">
 <head>
-    <%@ include file="/common/head.jsp"%>
-
+    <%@ include file="/common/head.jsp" %>
+    <style><%@include file="/resources/css/bootstrap/popUp.css"%></style
 </head>
 <body>
-<div id="header-wrapper">
-    <div id="header" class="container">
-        <div id="logo">
-            <h1><span class="fa fa-bolt"></span><a href="#">Workshop</a></h1>
+
+<%@ include file="/common/customer/mainNavigationPanel.jsp" %>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 float-sm-left sidenav text-left">
+            <p><a href="${pageContext.request.contextPath}/customer/request"><fmt:message key="jsp.customer.left.sidenav.create.request.button"/></a></p>
+            <p><a href="${pageContext.request.contextPath}/customer/active/requests"><fmt:message key="jsp.customer.left.sidenav.active.requests.button"/></a></p>
+            <p><a href="#"><fmt:message key="jsp.customer.left.sidenav.all.requests.button"/></a></p>
+            <button type="button"
+                    onclick="location.href='${pageContext.request.contextPath}/customer/notifications'">
+                <fmt:message key="jsp.customer.left.sidenav.notifications.button"/>
+            </button>
         </div>
-        <div id="menu">
-            <ul>
-                <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
-                <li><a href="${pageContext.request.contextPath}/logout">Log out</a></li>
-            </ul>
+        <div class="col-sm-8 text-center">
+
         </div>
+
+        <c:set var="requests_accomplished" scope="request" value="${requestScope.requests_accomplished}"/>
+        <c:choose>
+            <c:when test="${!requests_accomplished.isEmpty()}">
+                <c:forEach items="${requests_accomplished}" var="request">
+                    <div class="col-sm-8 text-center">
+                        <div class="card" style="width: auto; border: #2b2b2b">
+                            <div class="card-body">
+                                <form method="post">
+                                    <input hidden="hidden" name="id" value="${request.getId()}"/>
+                                    <h5 class="card-title"><fmt:message key="jsp.notifications.device.is.fixed.message"/></h5>
+                                    <p class="card-text"><fmt:message key="output.request.device"/> <c:out value="${request.getDevice()}"/></p>
+                                    <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out value="${request.getCreationDate()}"/></p>
+                                    <p class="card-text"><fmt:message key="output.request.status"/> <c:out value="${request.getStatus()}"/></p>
+                                    <a href="${pageContext.request.contextPath}/customer/request/archive" class="trigger-btn" data-toggle="modal"><fmt:message key="jsp.notifications.archive.button"/></a>
+                                    <a href="#feedback" class="trigger-btn" data-toggle="modal"><fmt:message key="jsp.notifications.leave.feedback.button"/></a>
+
+                                    <div id="feedback" class="modal fade">
+                                        <div class="modal-dialog modal-login">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Please leave a comment</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form method="post">
+                                                        <input hidden="hidden" name="id" value="${request.getId()}">
+                                                        <div class="form-group">
+                                                            <input type="radio" id="star5" name="rating" value="GREAT" /><label>GREAT</label>
+                                                            <input type="radio" id="star4" name="rating" value="FINE" /><label>FINE</label>
+                                                            <input type="radio" id="star3" name="rating" value="NORMAL" /><label>NORMAL</label>
+                                                            <input type="radio" id="star2" name="rating" value="BAD" /><label>BAD</label>
+                                                            <input type="radio" id="star1" name="rating" value="TERRIBLE" /><label>TERRIBLE</label>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="commentary" placeholder="<fmt:message key="jsp.placeholder.feedback"/>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <button type="submit" formaction="${pageContext.request.contextPath}/customer/feedback/leave" class="btn btn-primary btn-lg btn-block login-btn"><fmt:message key="jsp.notifications.submit.button"/></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <div class="col-sm-8 text-center">
+                    <h1><fmt:message key="jsp.notifications.no.notifications.message"/></h1>
+                </div>
+
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
-<div id="wrapper">
-    <div id="featured-wrapper">
-        <div>
-            <form>
-                <span>Choose language: </span>
-                <a href="${pageContext.request.contextPath}/customer/account/language/en">EN</a>
-                <a href="${pageContext.request.contextPath}/customer/account/language/ua">UA</a>
-            </form>
 
-        </div>
 
-        <div>
-            <c:set var="requests_accomplished" scope="request" value="${requestScope.requests_accomplished}"/>
-            <c:choose>
-                <c:when test="${requests_accomplished != null}">
-                    <c:forEach items="${requests_accomplished}" var="request">
-                        <form method="post">
-                            <fieldset>
-                                <input hidden="hidden" name="id" value="${request.getId()}"/>
-                                <p>Your device is fixed and ready for use. Please leave a comment bellow</p>
-                                Request: <c:out value="${request.getId()}"/> <br>
-                                Device: <c:out value="${request.getDevice()}"/> <br>
-                                Status: <c:out value="${request.getStatus()}"/> <br>
-                                <input type="submit" formaction="${pageContext.request.contextPath}/customer/request/archive" value="Archive"/>
-                                <input type="submit" formaction="${pageContext.request.contextPath}/customer/feedback" value="Leave a feedback"/>
-                            </fieldset>
-                        </form>
-                    </c:forEach>
-                </c:when>
-                <c:otherwise>
-                    <h1>There is no notifications for you right now</h1>
-                </c:otherwise>
-            </c:choose>
-        </div>
+
+<footer class="page-footer">
+    <div class="footer-copyright text-center">
+        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
     </div>
+    <div class="footer-copyright text-center">© 2019 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+</footer>
 
-</div>
 </body>
 </html>
