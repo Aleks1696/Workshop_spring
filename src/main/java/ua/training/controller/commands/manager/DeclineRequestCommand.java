@@ -43,7 +43,7 @@ public class DeclineRequestCommand implements Command {
         request.setManagerComment(managerComment);
         setManagerParameters(httpRequest, request);
         managerService.declineRequest(request);
-        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.account");
+        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 
     private void setManagerParameters(HttpServletRequest httpRequest, Request request) {

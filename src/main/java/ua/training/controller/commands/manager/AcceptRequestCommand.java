@@ -43,7 +43,7 @@ public class AcceptRequestCommand implements Command {
         request.setManagerComment(managerComment);
         setRelatedParameters(httpRequest, request);
         managerService.acceptRequest(request);
-        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.account");
+        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 
     private void setRelatedParameters(HttpServletRequest httpRequest, Request request) {
