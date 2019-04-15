@@ -25,21 +25,21 @@ public class InputValidation {
         this.wrongInputMessages = wrongInputMessages;
 
         boolean isLoginValid = isParameterValid(user.getLogin(), getProperty("regex.login"),
-                MessagesBinder.getProperty("input.wrong.login.format"));
+                "input.wrong.login.format");
         boolean isPasswordValid = isParameterValid(user.getPassword(), getProperty("regex.password"),
-                MessagesBinder.getProperty("input.wrong.password.format"));
+                "input.wrong.password.format");
         boolean isNameValid = isParameterValid(user.getName(), getProperty("regex.name"),
-                MessagesBinder.getProperty("input.wrong.name.format"));
+                "input.wrong.name.format");
         boolean isName_uaValid = isParameterValid(user.getName_ua(), getProperty("regex.name_ua"),
-                MessagesBinder.getProperty("input.wrong.name_ua.format"));
+               "input.wrong.name_ua.format");
         boolean isSurnameValid = isParameterValid(user.getSurname(), getProperty("regex.surname"),
-                MessagesBinder.getProperty("input.wrong.surname.format"));
+                "input.wrong.surname.format");
         boolean isSurname_uaValid = isParameterValid(user.getSurname_ua(), getProperty("regex.surname_ua"),
-                MessagesBinder.getProperty("input.wrong.surname_ua.format"));
+                "input.wrong.surname_ua.format");
         boolean isEmailValid = isParameterValid(user.getEmail(), getProperty("regex.email"),
-                MessagesBinder.getProperty("input.wrong.email.format"));
+                "input.wrong.email.format");
         boolean isPhoneNumberValid = isParameterValid(user.getPhoneNumber(), getProperty("regex.phoneNumber"),
-                MessagesBinder.getProperty("input.wrong.phoneNumber.format"));
+                "input.wrong.phoneNumber.format");
 
         return isLoginValid && isPasswordValid && isNameValid && isName_uaValid && isSurnameValid &&
                 isSurname_uaValid && isEmailValid && isPhoneNumberValid;
