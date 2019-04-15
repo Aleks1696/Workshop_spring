@@ -7,67 +7,61 @@
         <%@ include file="/common/head.jsp"%>
     </head>
     <body>
-    <div id="header-wrapper">
-        <div id="header" class="container">
-            <div id="logo">
-                <h1><span class="fa fa-bolt"></span><a href="${pageContext.request.contextPath}/">Workshop</a></h1>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/">Workshop</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="${pageContext.request.contextPath}/"><fmt:message key="jsp.header.home.button"/></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><fmt:message key="jsp.header.language.button"/> <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="${pageContext.request.contextPath}/language/en">English</a></li>
+                                <li><a href="${pageContext.request.contextPath}/language/ua">Українська</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="${pageContext.request.contextPath}/registration" class="trigger-btn" data-toggle="modal"><span class="glyphicon glyphicon-registration-mark"></span>  <fmt:message key="jsp.registration.label"/></a></li>
+                        <li><a href="${pageContext.request.contextPath}/login" class="trigger-btn" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>  <fmt:message key="jsp.login.label"/></a></li>
+                    </ul>
+                </div>
             </div>
-            <div id="menu">
-                <ul>
-                    <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="${pageContext.request.contextPath}/registration">Registration</a></li>
-                    <li><a href="${pageContext.request.contextPath}/login">Log in</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+        </nav>
 
-    <div id="wrapper">
-        <div id="featured-wrapper">
-            <div>
-                <form>
-                    <span>Choose language: </span>
-                    <a href="${pageContext.request.contextPath}/language/en">EN</a>
-                    <a href="${pageContext.request.contextPath}/language/ua">UA</a>
 
-<%--                    <select id="language" name="language" onchange="submit()" class="byline">--%>
-<%--                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                        <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--                    </select>--%>
-                </form>
-            </div>
-            <div id="featured" class="margin-btm container">
-                <div class="main-title">
-                    <h2>Welcome in our workshop</h2>
-                    <span class="byline">In order to create a new request please sign in first</span>
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                    <ul class="nav md-pills pills-unique">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Link 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Link 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#!">Link 3</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-sm-8 text-center">
+                    <h1><fmt:message key="jsp.index.welcome.message"/></h1>
+                    <p><fmt:message key="jsp.index.info.message"/></p>
                 </div>
             </div>
         </div>
 
-    </div>
+        <footer class="page-footer">
+            <div class="footer-copyright text-center">
+                <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
+            </div>
+            <div class="footer-copyright text-center">© 2019 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            </div>
+        </footer>
 
-    <div id="copyright" class="container">
-        <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-    </div>
     </body>
-
-
-<%--    <head>--%>
-<%--       <title>Workshop</title>--%>
-<%--    </head>--%>
-
-<%--    <body>--%>
-<%--        <form>--%>
-<%--            Choose language:--%>
-<%--            <select id="language" name="language" onchange="submit()">--%>
-<%--                <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--            </select>--%>
-<%--        </form>--%>
-
-<%--        <a href="${pageContext.request.contextPath}/login.pages">Log in</a>--%>
-<%--        <a href="${pageContext.request.contextPath}/registration.pages">Registration</a>--%>
-
-<%--    </body>--%>
 </html>
