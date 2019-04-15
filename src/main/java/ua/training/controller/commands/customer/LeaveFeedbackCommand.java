@@ -38,6 +38,7 @@ public class LeaveFeedbackCommand implements Command {
 
         try {
             customerService.leaveFeedback(feedback, request);
+            customerService.archiveRequest(request);
         } catch (SQLException e) {
             log.error("Failed creating feedback and updating foreign key in request table during transaction");
             e.printStackTrace();
