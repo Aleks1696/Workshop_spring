@@ -5,85 +5,65 @@
 <html lang="${language}">
     <head>
         <%@ include file="/common/head.jsp"%>
+        <style><%@include file="/resources/css/bootstrap/login.css"%></style
     </head>
     <body>
-        <div id="header-wrapper">
-            <div id="header" class="container">
-                <div id="logo">
-                    <h1><span class="fa fa-bolt"></span><a href="${pageContext.request.contextPath}/">Workshop</a></h1>
+
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="${pageContext.request.contextPath}/">Workshop</a>
                 </div>
-                <div id="menu">
-                    <ul>
-                        <li class="current_page_item"><a href="${pageContext.request.contextPath}/" title="">Homepage</a></li>
-                        <li><a href="${pageContext.request.contextPath}/registration">Registration</a></li>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="${pageContext.request.contextPath}/"><fmt:message key="jsp.header.home.button"/></a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><fmt:message key="jsp.header.language.button"/><span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="${pageContext.request.contextPath}/login/language/en">English</a></li>
+                                <li><a href="${pageContext.request.contextPath}/login/language/ua">Українська</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="${pageContext.request.contextPath}/registration"><span class="glyphicon glyphicon-log-in"></span>  <fmt:message key="jsp.registration.label"/></a></li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div id="wrapper">
-            <div id="featured-wrapper">
-                <div>
-<%--                    <select id="language" name="language" onchange="submit()" class="byline">--%>
-<%--                        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                        <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--                    </select>--%>
-                    <span>Choose language: </span>
-                    <a href="${pageContext.request.contextPath}/login/language/en">EN</a>
-                    <a href="${pageContext.request.contextPath}/login/language/ua">UA</a>
-
-                </div>
-                <div>
-                    <h2>Enter login and password:</h2>
-                    <form action="${pageContext.request.contextPath}/login/submit" method="post">
-                        Login: <input type="text" name="login" required="required"/>
-                        Password: <input type="text" name="password" required="required"/>
-                        <input type="submit" value="Log in"/>
-                    </form>
-                </div>
-                <div>
+        <div class="signin-form">
+            <form action="${pageContext.request.contextPath}/login/submit" method="post">
+                <h2><fmt:message key="jsp.login.label"/></h2>
+                <p class="hint-text">
                     <c:set var="error_message" scope="request" value="${requestScope.error_message}"/>
                     <c:if test="${error_message != null}">
                         <c:forEach items="${error_message}" var="message">
                             <fmt:message key="${message}"/>
                         </c:forEach>
                     </c:if>
+                </p>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="login" placeholder="<fmt:message key="jsp.placeholder.login"/>" required="required">
                 </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="password" placeholder="<fmt:message key="jsp.placeholder.password"/>" required="required">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-lg btn-block"><fmt:message key="jsp.placeholder.login"/></button>
+                </div>
+            </form>
+        </div>
 
 
+        <footer class="page-footer">
+            <div class="footer-copyright text-center">
+                <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
             </div>
+            <div class="footer-copyright text-center">© 2019 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+            </div>
+        </footer>
 
-        </div>
-
-        <div id="copyright" class="container">
-            <p>&copy; Untitled. All rights reserved. | Photos by <a href="http://fotogrph.com/">Fotogrph</a> | Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.</p>
-        </div>
     </body>
-
-<%--    <body>--%>
-<%--        <form>--%>
-<%--            Choose language:--%>
-<%--            <select id="language" name="language" onchange="submit()">--%>
-<%--                <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>--%>
-<%--                <option value="ua" ${language == 'ua' ? 'selected' : ''}>Українська</option>--%>
-<%--            </select>--%>
-<%--        </form>--%>
-
-<%--        <h2>Enter login and password:</h2>--%>
-<%--        <form action="${pageContext.request.contextPath}/login" method="post">--%>
-<%--            Login: <input type="text" name="login" required="required"/>--%>
-<%--            Password: <input type="text" name="password" required="required"/>--%>
-<%--            <input type="submit" value="Log in"/>--%>
-<%--        </form>--%>
-<%--        <div>--%>
-<%--&lt;%&ndash;            <jstl:if test="${not empty requestScope.login_error_message}">&ndash;%&gt;--%>
-<%--&lt;%&ndash;                <p><fmt:message key=""/></p>&ndash;%&gt;--%>
-<%--&lt;%&ndash;            </jstl:if>&ndash;%&gt;--%>
-<%--            <c:set var="response" scope="request" value="${requestScope.login_error_message}"/>--%>
-<%--            <c:if test="${response != null}">--%>
-<%--                <fmt:message key="${response}"/>--%>
-<%--            </c:if>--%>
-<%--        </div>--%>
-
-<%--    </body>--%>
 </html>
