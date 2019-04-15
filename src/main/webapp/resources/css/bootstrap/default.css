@@ -1,0 +1,85 @@
+
+html, body {
+    height: 100%;
+}
+
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    font-weight: 800;
+    font-size: 26px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+
+
+.navbar-inverse {
+    background: #3B444C;
+    border-color: black;
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+    background-color: #e6ac00;
+    border-radius: 20px;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #44cc00;
+    font-family: Raleway;
+    margin-right: 90px;
+    font-weight: bolder;
+    font-size: 32px;
+    letter-spacing: 3px;
+}
+
+.card {
+    background-color: lightgray;
+    width: content-box;
+    border-radius: 40px;
+    margin: 10px 40px;
+}
+
+.card-text {
+    display: inline-block;
+
+}
+
+.row.content {height: 650px}
+
+.sidenav {
+    padding-top: 20px;
+    text-align: center;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+.accountInfo {
+    font-family: Raleway;
+    padding-bottom: 20px;
+    margin-top: 100px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(197, 250, 82, 0.59);
+}
+
+.pagination {
+    display: inline-block;
+}
+
+footer {
+    background-color: #555;
+    color: white;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 300px) {
+    .sidenav {
+        height: 100%;
+        padding: 15px;
+    }
+    .row.content {height:100%;}
+}
