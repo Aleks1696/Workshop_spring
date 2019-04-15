@@ -26,11 +26,11 @@ public class MasterServiceImpl implements MasterService {
 
     @Override
     public List<Request> getAcceptedRequests(User user) {
-        return requestDAO.findByUserIdAndStatus(
-                QueriesBinder.getProperty("request.find.by.master.and.status"),
-                user.getId(),
-                RequestStatus.IN_PROCESS.toString());
-
+//        return requestDAO.findByUserIdAndStatus(
+//                QueriesBinder.getProperty("request.find.by.master.and.status"),
+//                user.getId(),
+//                RequestStatus.IN_PROCESS.toString());
+        return null;
     }
 
     @Override

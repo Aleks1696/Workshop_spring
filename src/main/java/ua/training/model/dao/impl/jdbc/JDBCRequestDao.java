@@ -62,14 +62,32 @@ public class JDBCRequestDao implements RequestDAO {
     }
 
     @Override
-    public List<Request> findByUserIdAndStatus(String query, int userId, String ... requestStatus) {
+    public int getNumberOfRows(String query, int id){
+        int numberOfRows = 0;
+        try (PreparedStatement statement =
+                     connection.prepareStatement(query)) {
+            statement.setInt(1, id);
+            ResultSet result = statement.executeQuery();
+            result.next();
+            numberOfRows = result.getInt("numberOfRows");
+        } catch (SQLException e) {
+            log.error("Failed to find user active requests");
+        }
+        return numberOfRows;
+    }
+
+    @Override
+    public List<Request> findByUserIdAndStatus(String query, int userId, int start, int end, String ... requestStatus) {
         List<Request> activeRequests = new ArrayList<>();
         try (PreparedStatement statement =
                      connection.prepareStatement(query)) {
             statement.setInt(1, userId);
-            for (int i = 2, j = 0; j < requestStatus.length; j++, i++) {
+            int i = 2;
+            for (int j = 0; j < requestStatus.length; j++, i++) {
                 statement.setString(i, requestStatus[j]);
             }
+            statement.setInt(i++, start);
+            statement.setInt(i, end);
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 activeRequests.add(mapper.extract(result));

@@ -9,7 +9,8 @@ import java.util.List;
 
 public interface CustomerService {
     Request createRequest(Request request);
-    List<Request> getActiveRequests(User user);
+    int getNumberOfActiveRequests(User user);
+    List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage);
     List<Request> getAllRequests(User user);
     List<Request> getAccomplishedRequests(User user);
     Feedback leaveFeedback(Feedback feedback, Request request) throws SQLException;

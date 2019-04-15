@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface RequestDAO extends GenericDAO<Request> {
-    List<Request> findByUserIdAndStatus(String query, int userId, String ... requestStatus);
+    int getNumberOfRows(String query, int id);
+    List<Request> findByUserIdAndStatus(String query, int userId, int currentPage, int recordsPerPage,  String ... requestStatus);
     List<Request> findAllByUserId(int userId);
     List<Request> findRequestByStatus(String query, String ... requestStatus);
     boolean updateStatusById(int requestId, RequestStatus requestStatus);

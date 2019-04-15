@@ -28,10 +28,20 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<Request> getActiveRequests(User user) {
+    public int getNumberOfActiveRequests(User user) {
+        return requestDAO.getNumberOfRows(QueriesBinder.getProperty("request.get.count.of.customer.active.requests"),
+                user.getId());
+    }
+
+    @Override
+    public List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        int end = start + recordsPerPage;
         return requestDAO.findByUserIdAndStatus(
                 QueriesBinder.getProperty("request.find.active.by.customer"),
                 user.getId(),
+                start,
+                end,
                 RequestStatus.NEW.toString(), RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString());
     }
 
@@ -42,11 +52,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<Request> getAccomplishedRequests(User user) {
-        return requestDAO.findByUserIdAndStatus(
-                QueriesBinder.getProperty("request.find.by.customer.and.status"),
-                user.getId(),
-                RequestStatus.FIXED.toString()
-        );
+//        return requestDAO.findByUserIdAndStatus(
+//                QueriesBinder.getProperty("request.find.by.customer.and.status"),
+//                user.getId(),
+//                RequestStatus.FIXED.toString()
+//        );
+        return null;
     }
 
     @Override
