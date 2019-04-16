@@ -6,8 +6,10 @@ import ua.training.model.entity.User;
 import java.util.List;
 
 public interface MasterService {
-    List<Request> getRequestsToProcess();
+    int getNumberOfAcceptedRequests(User user);
+    int getNumberOfRequestsToProcess();
+    List<Request> getRequestsToProcess(int currentPage, int recordsPerPage);
     boolean processRequest(Request request);
-    List<Request> getAcceptedRequests(User user);
+    List<Request> getAcceptedRequests(User user, int currentPage, int recordsPerPage);
     boolean closeRequest(Request request);
 }

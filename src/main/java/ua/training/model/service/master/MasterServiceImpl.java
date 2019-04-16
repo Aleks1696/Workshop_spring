@@ -14,8 +14,23 @@ public class MasterServiceImpl implements MasterService {
     }
 
     @Override
-    public List<Request> getRequestsToProcess() {
-        return requestDAO.findRequestByStatus(QueriesBinder.getProperty("request.find.by.one.status"),
+    public int getNumberOfAcceptedRequests(User user) {
+        String query = QueriesBinder.getProperty("request.get.count.of.master.accepted");
+        return requestDAO.getNumberOfRows(String.format(query, user.getId()));
+    }
+
+    @Override
+    public int getNumberOfRequestsToProcess() {
+        String query = QueriesBinder.getProperty("request.get.count.of.master.requests.to.process");
+        return requestDAO.getNumberOfRows(query);
+    }
+
+    @Override
+    public List<Request> getRequestsToProcess(int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        int end = start + recordsPerPage;
+        String query = QueriesBinder.getProperty("request.find.by.one.status");
+        return requestDAO.findRequestByStatus(String.format(query, start, end),
                 RequestStatus.ACCEPTED.toString());
     }
 
@@ -25,12 +40,13 @@ public class MasterServiceImpl implements MasterService {
     }
 
     @Override
-    public List<Request> getAcceptedRequests(User user) {
-//        return requestDAO.findByUserIdAndStatus(
-//                QueriesBinder.getProperty("request.find.by.master.and.status"),
-//                user.getId(),
-//                RequestStatus.IN_PROCESS.toString());
-        return null;
+    public List<Request> getAcceptedRequests(User user, int currentPage, int recordsPerPage) {
+        int start = currentPage * recordsPerPage - recordsPerPage;
+        int end = start + recordsPerPage;
+        String query = QueriesBinder.getProperty("request.find.by.master.and.status");
+        return requestDAO.findByUserIdAndStatus(String.format(query, start, end),
+                user.getId(),
+                RequestStatus.IN_PROCESS.toString());
     }
 
     @Override
