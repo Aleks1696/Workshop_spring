@@ -33,16 +33,32 @@ html, body {
     letter-spacing: 3px;
 }
 
+#welcome {
+    font-family: Raleway;
+    padding: 50px 10px 20px 10px;
+    font-size: 45px;
+}
+
+#info {
+    font-family: Raleway;
+    padding: 10px;
+    font-size: 30px;
+}
+
 .card {
     background-color: lightgray;
     width: content-box;
     border-radius: 40px;
-    margin: 10px 40px;
+    margin: 10px 20px;
+    padding: 5px;
 }
 
 .card-text {
     display: inline-block;
+}
 
+.nav-link {
+    font-size: 20px;
 }
 
 .row.content {height: 650px}
@@ -52,6 +68,16 @@ html, body {
     text-align: center;
     background-color: #f1f1f1;
     height: 100%;
+}
+
+.buttonLikeLink {
+    background:none!important;
+    color:inherit;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    border-bottom:1px solid #444;
+    cursor: pointer;
 }
 
 .accountInfo {
@@ -65,6 +91,15 @@ html, body {
 
 .pagination {
     display: inline-block;
+}
+
+.link {
+    padding: 20px;
+}
+
+.errorMessage {
+    color: firebrick;
+    text-align: center;
 }
 
 footer {

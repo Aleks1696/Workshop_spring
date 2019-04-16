@@ -37,19 +37,16 @@
                 <div class="col-sm-2 sidenav">
                     <ul class="nav md-pills pills-unique">
                         <li class="nav-item">
-                            <a class="nav-link" href="#!">Link 1</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Link 2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#!">Link 3</a>
+                            <a class="nav-link" href="${pageContext.request.contextPath}/services">Our services</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-sm-8 text-center">
-                    <h1><fmt:message key="jsp.index.welcome.message"/></h1>
-                    <p><fmt:message key="jsp.index.info.message"/></p>
+                <div class="col-sm-10 text-center">
+                    <div class="welcome-text">
+                        <h1 id="welcome"><fmt:message key="jsp.index.welcome.message"/></h1>
+                        <p id="info"><fmt:message key="jsp.index.info.message"/></p>
+                    </div>
+
                 </div>
             </div>
         </div>

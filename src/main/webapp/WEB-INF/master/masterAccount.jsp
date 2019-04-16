@@ -24,28 +24,6 @@
 
         </div>
 
-        <c:set var="requests_to_process" scope="request" value="${requestScope.requests_to_process}"/>
-        <c:if test="${requests_to_process != null}">
-            <c:forEach items="${requests_to_process}" var="request">
-                <div class="col-sm-4 text-center">
-                    <div class="card" style="width: auto">
-                        <div class="card-body">
-                            <form method="post" action="${pageContext.request.contextPath}/master/active/request/process">
-                                <fieldset>
-                                    <input hidden="hidden" name="id" value="${request.getId()}">
-                                    <h5 class="card-title"><fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/></h5>
-                                    <h6 class="card-subtitle mb-2 text-muted"><fmt:message key="output.request.device"/> <c:out value="${request.getDevice()}"/></h6>
-                                    <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out value="${request.getProductCategory()}"/></p>
-                                    <p class="card-text"><fmt:message key="output.request.description"/> <c:out value="${request.getDescription()}"/>"/></p>
-                                    <p class="card-text"><fmt:message key="output.request.status"/> <c:out value="${request.getStatus()}"/></p>
-                                    <input type="submit" value="<fmt:message key="jsp.master.process.button"/>">
-                                </fieldset>
-                            </form>
-                            </div>
-                        </div>
-                </div>
-            </c:forEach>
-        </c:if>
     </div>
 
 </div>

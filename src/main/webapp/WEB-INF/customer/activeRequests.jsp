@@ -33,34 +33,40 @@
         <%@ include file="/common/pagination.jsp" %>
 
         <c:set var="active_requests" scope="request" value="${requestScope.active_requests}"/>
-        <c:if test="${active_requests != null}">
-            <c:forEach items="${active_requests}" var="request">
-                <div class="card">
-                    <div class="card-header">
-                        <fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/>
+        <c:choose>
+            <c:when test="${!active_requests.isEmpty()}">
+                <c:forEach items="${active_requests}" var="request">
+                    <div class="card">
+                        <div class="card-header">
+                            <fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><fmt:message key="output.request.device"/> <c:out
+                                    value="${request.getDevice()}"/></h5>
+                            <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
+                                    value="${request.getProductCategory()}"/>;</p>
+                            <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
+                                    value="${request.getCreationDate()}"/>;</p>
+                            <p class="card-text"><fmt:message key="output.request.status"/> <c:out
+                                    value="${request.getStatus()}"/>;</p>
+                            <c:if test="${request.getPrice() != null}">
+                                <p class="card-text"><fmt:message key="output.request.price"/> <c:out
+                                        value="${request.getPrice()}"/></p>
+                            </c:if>
+                            <c:if test="${!request.getManagerComment().isEmpty()}">
+                                <p class="card-text"><fmt:message key="output.request.manager.commentary"/> <c:out
+                                        value="${request.getManagerComment()}"/></p>
+                            </c:if>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><fmt:message key="output.request.device"/> <c:out
-                                value="${request.getDevice()}"/></h5>
-                        <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
-                                value="${request.getProductCategory()}"/>;</p>
-                        <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
-                                value="${request.getCreationDate()}"/>;</p>
-                        <p class="card-text"><fmt:message key="output.request.status"/> <c:out
-                                value="${request.getStatus()}"/>;</p>
-                        <c:if test="${request.getPrice() != null}">
-                            <p class="card-text"><fmt:message key="output.request.price"/> <c:out
-                                    value="${request.getPrice()}"/>"/>;</p>
-                        </c:if>
-                        <c:if test="${request.getManagerComment() != null}">
-                            <p class="card-text"><fmt:message key="output.request.manager.commentary"/> <c:out
-                                    value="${request.getManagerComment()}"/></p>
-                        </c:if>
-                    </div>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <div class="col-sm-8 text-center">
+                    <h3><fmt:message key="jsp.no.active.requests.message"/></h3>
                 </div>
-            </c:forEach>
-        </c:if>
-
+            </c:otherwise>
+        </c:choose>
     </div>
 
 </div>

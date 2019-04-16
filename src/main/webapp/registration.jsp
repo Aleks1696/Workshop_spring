@@ -26,7 +26,7 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="${pageContext.request.contextPath}/login" class="trigger-btn" data-toggle="modal"><span class="glyphicon glyphicon-registration-mark"></span>  <fmt:message key="jsp.login.label"/></a></li>
+                        <li><a href="${pageContext.request.contextPath}/login" class="trigger-btn" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>  <fmt:message key="jsp.login.label"/></a></li>
                     </ul>
                 </div>
             </div>

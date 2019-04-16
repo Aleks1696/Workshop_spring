@@ -25,7 +25,7 @@
             </c:if>
         </p>
         <div class="form-group">
-            <p><fmt:message key="output.request.product.category"/></p>
+            <p style="display: inline"><fmt:message key="output.request.product.category"/></p>
             <select name="product_category">
                 <option value="APPLIANCE"><fmt:message key="input.request.product.category.appliance"/></option>
                 <option value="CAMERA"><fmt:message key="input.request.product.category.camera"/></option>
