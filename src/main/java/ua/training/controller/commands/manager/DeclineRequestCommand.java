@@ -36,7 +36,7 @@ public class DeclineRequestCommand implements Command {
             log.info("Specified description is not valid");
             httpRequest.setAttribute(getProperty("attribute.error.message"),
                     wrongInputMessages);
-            return URIBinder.getProperty("path.manager.active.request");
+            return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
         }
 
         Request request = new Request();

@@ -23,6 +23,7 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.index"), new IndexPageCommand());
         commands.put(URIBinder.getProperty("path.login"), new LoginPageCommand());
         commands.put(URIBinder.getProperty("path.registration"), new RegistrationPageCommand());
+        commands.put(URIBinder.getProperty("path.services"), new ServicesPageCommand());
 
         commands.put("/language/en", new EmptyCommand());
         commands.put("/language/ua", new EmptyCommand());
@@ -37,7 +38,6 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.customer.request.submit"), new CreateRequestCommand());
         commands.put(URIBinder.getProperty("path.customer.request.delete"), new CancelRequestCommand());
         commands.put(URIBinder.getProperty("path.customer.notifications"), new CustomerNotificationPageCommand());
-        commands.put(URIBinder.getProperty("path.customer.feedback"), new CustomerFeedbackPageCommand());
         commands.put(URIBinder.getProperty("path.customer.feedback.leave"), new LeaveFeedbackCommand());
         commands.put(URIBinder.getProperty("path.customer.request.archive"), new ArchiveRequestCommand());
 

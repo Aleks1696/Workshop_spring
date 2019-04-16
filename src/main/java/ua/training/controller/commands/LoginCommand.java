@@ -73,6 +73,5 @@ public class LoginCommand implements Command {
     private void setUserAttributes(HttpServletRequest request, User user) {
         request.getSession().setAttribute(getProperty("parameter.user"), user);
         AccessUtil.setAttributesToContext(request.getSession(), user);
-        request.getServletContext().setAttribute(AttributesBinder.getProperty("parameter.login"), user.getLogin());
     }
 }

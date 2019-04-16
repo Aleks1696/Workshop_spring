@@ -11,9 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
+
+import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class NewRequestsCommand implements Command {
     private ManagerService managerService;
+    //TODO hardcode
+    private int recordsPerPage = 4;
+    private int currentPage = 1;
+    private int numberOfPages;
 
     public NewRequestsCommand() {
         this.managerService = new ManagerServiceImpl();
@@ -22,9 +29,28 @@ public class NewRequestsCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        List<Request> activeRequests = managerService.getNewRequests();
-        request.setAttribute(AttributesBinder.getProperty("attribute.new.requests"), activeRequests);
+
+        getCurrentPage(request);
+        int numberOfRows = managerService.getNumberOfNewRequests();
+        List<Request> newRequests = managerService.getNewRequests(currentPage, recordsPerPage);
+        getNumberOfPages(numberOfRows);
+
+        request.setAttribute(AttributesBinder.getProperty("attribute.new.requests"), newRequests);
+        request.setAttribute(getProperty("parameter.request.current.page"), currentPage);
+        request.setAttribute(getProperty("parameter.request.number.of.pages"), numberOfPages);
         //TODO redirect or forward?
-        return URIBinder.getProperty("path.manager.account");
+        return URIBinder.getProperty("jsp.manager.new.requests");
+    }
+
+    private void getCurrentPage(HttpServletRequest request) {
+        Optional<String> page = Optional.ofNullable(request.getParameter(getProperty("parameter.request.current.page")));
+        currentPage = page.map(Integer::valueOf).orElse(1);
+    }
+
+    private void getNumberOfPages(int numberOfRows) {
+        numberOfPages = numberOfRows / recordsPerPage;
+        if (numberOfRows % recordsPerPage > 0) {
+            numberOfPages++;
+        }
     }
 }

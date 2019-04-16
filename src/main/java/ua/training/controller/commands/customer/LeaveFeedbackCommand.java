@@ -33,7 +33,7 @@ public class LeaveFeedbackCommand implements Command {
             log.info("Request has invalid data");
             httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
-            return URIBinder.getProperty("path.customer.feedback");
+            return URIBinder.getProperty("path.customer.notifications");
         }
 
         try {

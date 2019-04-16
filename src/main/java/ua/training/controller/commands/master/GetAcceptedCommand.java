@@ -10,9 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.Optional;
+
+import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class GetAcceptedCommand implements Command {
     private MasterService masterService;
+    private int recordsPerPage = 4;
+    private int currentPage = 1;
+    private int numberOfPages;
 
     public GetAcceptedCommand() {
         this.masterService = new MasterServiceImpl();
@@ -22,8 +28,27 @@ public class GetAcceptedCommand implements Command {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         User currentMaster = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
-        List<Request> acceptedRequests = masterService.getAcceptedRequests(currentMaster);
+
+        getCurrentPage(request);
+        int numberOfRows = masterService.getNumberOfAcceptedRequests(currentMaster);
+        List<Request> acceptedRequests = masterService.getAcceptedRequests(currentMaster, currentPage, recordsPerPage);
+        getNumberOfPages(numberOfRows);
+
         request.setAttribute(AttributesBinder.getProperty("attribute.requests.in.process"), acceptedRequests);
+        request.setAttribute(getProperty("parameter.request.current.page"), currentPage);
+        request.setAttribute(getProperty("parameter.request.number.of.pages"), numberOfPages);
         return URIBinder.getProperty("jsp.master.bucket");
+    }
+
+    private void getCurrentPage(HttpServletRequest request) {
+        Optional<String> page = Optional.ofNullable(request.getParameter(getProperty("parameter.request.current.page")));
+        currentPage = page.map(Integer::valueOf).orElse(1);
+    }
+
+    private void getNumberOfPages(int numberOfRows) {
+        numberOfPages = numberOfRows / recordsPerPage;
+        if (numberOfRows % recordsPerPage > 0) {
+            numberOfPages++;
+        }
     }
 }

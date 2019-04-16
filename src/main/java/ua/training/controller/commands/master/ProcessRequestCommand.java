@@ -27,7 +27,7 @@ public class ProcessRequestCommand implements Command {
         Request request = new Request();
         setRelatedParameters(httpRequest, request);
         masterService.processRequest(request);
-        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.master.account");
+        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.master.active.request");
     }
 
     private void setRelatedParameters(HttpServletRequest httpRequest, Request request) {
