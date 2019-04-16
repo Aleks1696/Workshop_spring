@@ -10,6 +10,7 @@ import ua.training.model.utils.QueriesBinder;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class JDBCRequestDao implements RequestDAO {
@@ -62,32 +63,28 @@ public class JDBCRequestDao implements RequestDAO {
     }
 
     @Override
-    public int getNumberOfRows(String query, int id){
+    public int getNumberOfRows(String query){
         int numberOfRows = 0;
         try (PreparedStatement statement =
                      connection.prepareStatement(query)) {
-            statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             result.next();
             numberOfRows = result.getInt("numberOfRows");
         } catch (SQLException e) {
-            log.error("Failed to find user active requests");
+            log.error("Failed get number of rows");
         }
         return numberOfRows;
     }
 
     @Override
-    public List<Request> findByUserIdAndStatus(String query, int userId, int start, int end, String ... requestStatus) {
+    public List<Request> findByUserIdAndStatus(String query, int userId, String ... requestStatus) {
         List<Request> activeRequests = new ArrayList<>();
         try (PreparedStatement statement =
                      connection.prepareStatement(query)) {
             statement.setInt(1, userId);
-            int i = 2;
-            for (int j = 0; j < requestStatus.length; j++, i++) {
-                statement.setString(i, requestStatus[j]);
+            for (int j = 2, i = 0; i < requestStatus.length; j++, i++) {
+                statement.setString(j, requestStatus[i]);
             }
-            statement.setInt(i++, start);
-            statement.setInt(i, end);
             ResultSet result = statement.executeQuery();
             while (result.next()) {
                 activeRequests.add(mapper.extract(result));
