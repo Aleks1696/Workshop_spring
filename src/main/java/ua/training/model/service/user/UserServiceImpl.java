@@ -1,5 +1,6 @@
 package ua.training.model.service.user;
 
+import ua.training.controller.utils.ScriptMD5;
 import ua.training.model.dao.DAOFactory;
 import ua.training.model.dao.UserDAO;
 import ua.training.model.entity.User;
@@ -15,13 +16,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User logInUser(String login, String password) {
-        User user = userDAO.findByLoginAndPassword(login, password);
-        return user;
+        String passwordHash = new ScriptMD5().getPwdHash(password);
+        return userDAO.findByLoginAndPassword(login, passwordHash);
     }
 
     @Override
     public User createUser(User user) {
         user.setRole(UserRole.CUSTOMER);
+        user.setPassword(new ScriptMD5().getPwdHash(user.getPassword()));
         return userDAO.create(user);
     }
 }
