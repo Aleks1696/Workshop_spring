@@ -15,6 +15,8 @@
         <div class="col-sm-2 float-sm-left sidenav text-left">
             <p><a href="${pageContext.request.contextPath}/manager/active/request"><fmt:message
                     key="jsp.manager.left.sidenav.new.requests.button"/></a></p>
+            <p><a href="${pageContext.request.contextPath}/manager/find/customer"><fmt:message
+                    key="jsp.manager.left.sidenav.customer.by.id.button"/></a></p>
 
             <%@ include file="/common/accountInfo.jsp" %>
 
