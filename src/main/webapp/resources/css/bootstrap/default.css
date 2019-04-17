@@ -57,6 +57,21 @@ html, body {
     display: inline-block;
 }
 
+.input-group {
+    display: inline-block;
+    margin: 30px;
+    width: auto;
+    font-size: 40px;
+}
+
+.btn-default {
+    height: 40px;
+}
+
+.form-control {
+    height: 40px;
+}
+
 .nav-link {
     font-size: 20px;
 }
