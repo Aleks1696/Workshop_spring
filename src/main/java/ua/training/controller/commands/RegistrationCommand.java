@@ -1,5 +1,6 @@
 package ua.training.controller.commands;
 
+import ua.training.controller.utils.ContextUtil;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.dao.mapper.*;
 import ua.training.model.entity.User;
@@ -9,6 +10,7 @@ import ua.training.model.utils.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +28,10 @@ public class RegistrationCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        HttpSession session = request.getSession();
         User user = mapper.extract(request);
         List<String> wrongInputMessages = new ArrayList<>();
+
         if (!inputValidation.isUserValid(user, wrongInputMessages)) {
             request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
@@ -40,7 +44,8 @@ public class RegistrationCommand implements Command {
                     "input.user.already.exist");
             return URIBinder.getProperty("jsp.registration");
         }
-        request.getSession().setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+        session.setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+        ContextUtil.setAttributesToContext(session, user);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
     }
 

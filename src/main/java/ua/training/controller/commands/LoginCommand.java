@@ -1,11 +1,10 @@
 package ua.training.controller.commands;
 
-import ua.training.controller.utils.AccessUtil;
+import static ua.training.controller.utils.ContextUtil.*;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.User;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.service.user.*;
-import ua.training.model.utils.AttributesBinder;
 import ua.training.model.utils.URIBinder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -41,12 +40,11 @@ public class LoginCommand implements Command {
         Optional<User> user = Optional.ofNullable(getUserFromDB(request, login, password));
         if (!user.isPresent()) {
             return URIBinder.getProperty("jsp.login");
-        } else if (AccessUtil.isUserInContext(session, user.get())) {
-            AccessUtil.logoutUser(user.get());
+        } else if (isUserInContext(session, user.get())) {
+            logoutUser(user.get());
         }
         return redirectNewUser(request, user.get());
     }
-
 
     private User getUserFromDB(HttpServletRequest request, String login, String password) {
         User user = null;
@@ -72,6 +70,6 @@ public class LoginCommand implements Command {
 
     private void setUserAttributes(HttpServletRequest request, User user) {
         request.getSession().setAttribute(getProperty("parameter.user"), user);
-        AccessUtil.setAttributesToContext(request.getSession(), user);
+        setAttributesToContext(request.getSession(), user);
     }
 }
