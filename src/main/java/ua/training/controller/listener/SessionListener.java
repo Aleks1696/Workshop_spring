@@ -14,6 +14,7 @@ public class SessionListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
         httpSessionEvent.getSession().setAttribute("language", "en");
+
     }
 
     @Override
@@ -23,7 +24,8 @@ public class SessionListener implements HttpSessionListener {
         User user = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         ServletContext servletContext = session.getServletContext();
         Map<User, HttpSession> loggedUsers =
-                (HashMap<User, HttpSession>) servletContext.getAttribute(AttributesBinder.getProperty("parameter.user"));
+                (HashMap<User, HttpSession>) servletContext.getAttribute(
+                        AttributesBinder.getProperty("attribute.servlet.context.logged.users"));
         loggedUsers.remove(user);
     }
 }
