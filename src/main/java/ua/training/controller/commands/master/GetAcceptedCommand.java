@@ -26,14 +26,20 @@ public class GetAcceptedCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        log.info("Try to get accepted requests");
         HttpSession session = request.getSession();
         User currentMaster = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
 
         getCurrentPage(request);
-        int numberOfRows = masterService.getNumberOfAcceptedRequests(currentMaster);
-        List<Request> acceptedRequests = masterService.getAcceptedRequests(currentMaster, currentPage, recordsPerPage);
+        int numberOfRows = 0;
+        List<Request> acceptedRequests = null;
+        try {
+            numberOfRows = masterService.getNumberOfAcceptedRequests(currentMaster);
+            acceptedRequests = masterService.getAcceptedRequests(currentMaster, currentPage, recordsPerPage);
+        } catch (Exception e) {
+            log.error("Error getting accepted requests", e);
+        }
         getNumberOfPages(numberOfRows);
-
         request.setAttribute(AttributesBinder.getProperty("attribute.requests.in.process"), acceptedRequests);
         request.setAttribute(getProperty("parameter.request.current.page"), currentPage);
         request.setAttribute(getProperty("parameter.request.number.of.pages"), numberOfPages);

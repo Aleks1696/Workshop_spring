@@ -18,10 +18,15 @@ public class CloseRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to close request");
         HttpSession session = httpRequest.getSession();
         Request request = new Request();
         request.setId(Integer.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.id"))));
-        masterService.closeRequest(request);
+        try {
+            masterService.closeRequest(request);
+        } catch (Exception e) {
+            log.error("Error closing request", e);
+        }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.master.bucket");
     }
 }

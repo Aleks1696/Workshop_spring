@@ -24,9 +24,14 @@ public class ProcessRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to accept requests by master");
         Request request = new Request();
         setRelatedParameters(httpRequest, request);
-        masterService.processRequest(request);
+        try {
+            masterService.processRequest(request);
+        } catch (Exception e) {
+            log.error("Error accepting request by master");
+        }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.master.active.request");
     }
 

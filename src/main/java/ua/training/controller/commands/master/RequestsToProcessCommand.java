@@ -15,7 +15,6 @@ import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class RequestsToProcessCommand implements Command {
     private MasterService masterService;
-    //TODO hardcode
     private int recordsPerPage = 4;
     private int currentPage = 1;
     private int numberOfPages;
@@ -26,14 +25,20 @@ public class RequestsToProcessCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        log.info("Try to get requests to precess");
         HttpSession session = request.getSession();
 
         getCurrentPage(request);
-        int numberOfRows = masterService.getNumberOfRequestsToProcess();
-        List<Request> requestsToProcess = masterService.getRequestsToProcess(currentPage, recordsPerPage);
+        int numberOfRows = 0;
+        List<Request> requestsToProcess = null;
+        try {
+            numberOfRows = masterService.getNumberOfRequestsToProcess();
+            requestsToProcess = masterService.getRequestsToProcess(currentPage, recordsPerPage);
+        } catch (Exception e) {
+            log.error("Error getting requests to precess", e);
+        }
         getNumberOfPages(numberOfRows);
-
-        request.setAttribute(AttributesBinder.getProperty("attribute.requests.to.process"), requestsToProcess);
+        request.setAttribute(getProperty("attribute.requests.to.process"), requestsToProcess);
         request.setAttribute(getProperty("parameter.request.current.page"), currentPage);
         request.setAttribute(getProperty("parameter.request.number.of.pages"), numberOfPages);
         return URIBinder.getProperty("jsp.master.requestsToProcess");
