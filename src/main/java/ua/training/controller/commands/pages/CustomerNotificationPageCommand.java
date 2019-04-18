@@ -22,9 +22,15 @@ public class CustomerNotificationPageCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        log.info("Try to get customer notification page");
         HttpSession session = request.getSession();
         User currentCustomer = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
-        List<Request> accomplishedRequests = customerService.getAccomplishedRequests(currentCustomer);
+        List<Request> accomplishedRequests = null;
+        try {
+            accomplishedRequests = customerService.getAccomplishedRequests(currentCustomer);
+        } catch (Exception e) {
+            log.error("Error getting customer notification page");
+        }
         request.setAttribute(AttributesBinder.getProperty("attribute.requests.accomplished"), accomplishedRequests);
         return URIBinder.getProperty("jsp.customer.notifications");
     }
