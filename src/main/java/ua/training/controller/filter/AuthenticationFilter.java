@@ -28,8 +28,6 @@ public class AuthenticationFilter implements Filter {
         String path = request.getServletPath();
         User user = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         if (user == null) {
-            request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
-                    MessagesBinder.getProperty("login.not.logged.user.message"));
             response.sendRedirect(request.getContextPath() + URIBinder.getProperty("path.login"));
         } else if (isRoleAppropriate(user, path)) {
             filterChain.doFilter(request, response);
