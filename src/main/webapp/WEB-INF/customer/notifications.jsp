@@ -73,15 +73,15 @@
                                                 <form method="post">
                                                     <input hidden="hidden" name="id" value="${request.getId()}">
                                                     <div class="form-group">
-                                                        <input type="radio" id="star5" name="rating"
-                                                               value="GREAT"/><label>GREAT</label>
-                                                        <input type="radio" id="star4" name="rating"
+                                                        <input type="radio" id="star5" name="mark"
+                                                               value="GREAT" required="required"/><label>GREAT</label>
+                                                        <input type="radio" id="star4" name="mark"
                                                                value="FINE"/><label>FINE</label>
-                                                        <input type="radio" id="star3" name="rating"
+                                                        <input type="radio" id="star3" name="mark"
                                                                value="NORMAL"/><label>NORMAL</label>
-                                                        <input type="radio" id="star2" name="rating"
+                                                        <input type="radio" id="star2" name="mark"
                                                                value="BAD"/><label>BAD</label>
-                                                        <input type="radio" id="star1" name="rating"
+                                                        <input type="radio" id="star1" name="mark"
                                                                value="TERRIBLE"/><label>TERRIBLE</label>
                                                     </div>
                                                     <div class="form-group">

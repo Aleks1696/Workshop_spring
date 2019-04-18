@@ -49,8 +49,7 @@ html, body {
     background-color: lightgray;
     width: content-box;
     border-radius: 40px;
-    margin: 10px 20px;
-    padding: 5px;
+    margin: 5px 20px;
 }
 
 .card-text {
@@ -120,7 +119,7 @@ html, body {
 footer {
     background-color: #555;
     color: white;
-    padding: 30px;
+    padding: 15px;
     position: absolute;
     bottom: 0;
     width: 100%;

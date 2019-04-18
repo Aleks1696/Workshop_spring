@@ -46,7 +46,7 @@
                             <p class="card-text"><fmt:message key="output.request.description"/> <c:out
                                     value="${request.getDescription()}"/>";</p>
                             <p class="card-text"><fmt:message key="output.request.status"/> <c:out
-                                    value="${request.getStatus()}"/></p>
+                                    value="${request.getStatus()}"/></p> <br>
                             <input type="submit" value="<fmt:message key="jsp.master.process.button"/>">
                         </form>
                     </div>

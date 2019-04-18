@@ -26,10 +26,10 @@
         <%@ include file="/common/pagination.jsp" %>
 
         <div class="row content">
-            <c:set var="feedback" scope="request" value="${requestScope.feedback}"/>
+            <c:set var="customer_feedbacks" scope="request" value="${requestScope.customer_feedbacks}"/>
             <c:choose>
-                <c:when test="${feedback != null && !feedback.isEmpty()}">
-                    <c:forEach items="${feedback}" var="feedback">
+                <c:when test="${customer_feedbacks != null && !customer_feedbacks.isEmpty()}">
+                    <c:forEach items="${customer_feedbacks}" var="feedback">
                         <div class="card">
                             <div class="card-header">
                                 <fmt:message key="output.feedback.id"/> <c:out value="${feedback.getId()}"/>
@@ -44,7 +44,7 @@
                     </c:forEach>
                 </c:when>
                 <c:otherwise>
-                    <h3><fmt:message key="jsp.no.new.requests.message"/></h3>
+                    <h3><fmt:message key="jsp.no.customer.feedbacks"/></h3>
                 </c:otherwise>
             </c:choose>
         </div>
