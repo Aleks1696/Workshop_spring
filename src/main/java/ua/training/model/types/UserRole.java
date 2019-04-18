@@ -16,7 +16,6 @@ public enum UserRole {
     }
 
     public static UserRole getRole(String role) {
-        //TODO it might throw exception
         return UserRole.valueOf(role);
     }
 
