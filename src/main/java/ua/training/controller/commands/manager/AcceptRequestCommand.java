@@ -27,12 +27,13 @@ public class AcceptRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to accept request");
         String price = httpRequest.getParameter(getProperty("parameter.price"));
         String managerComment = httpRequest.getParameter(getProperty("parameter.manager.accept.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isPriceAndDescriptionValid(price, managerComment, wrongInputMessages)) {
-            log.info("Specified parameters are not valid");
+            log.warn("Specified parameters are not valid");
             httpRequest.setAttribute(getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.manager.active.request");
@@ -42,7 +43,11 @@ public class AcceptRequestCommand implements Command {
         request.setPrice(BigDecimal.valueOf(Double.valueOf(price)));
         request.setManagerComment(managerComment);
         setRelatedParameters(httpRequest, request);
-        managerService.acceptRequest(request);
+        try {
+            managerService.acceptRequest(request);
+        } catch (Exception e) {
+            log.error("Error accepting request", e);
+        }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 

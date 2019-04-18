@@ -29,20 +29,24 @@ public class DeclineRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to decline request");
         String managerComment = httpRequest.getParameter(getProperty("parameter.manager.decline.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isCommentaryValid(managerComment, wrongInputMessages)) {
-            log.info("Specified description is not valid");
+            log.warn("Specified description is not valid");
             httpRequest.setAttribute(getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
         }
-
         Request request = new Request();
         request.setManagerComment(managerComment);
         setManagerParameters(httpRequest, request);
-        managerService.declineRequest(request);
+        try {
+            managerService.declineRequest(request);
+        } catch (Exception e) {
+            log.error("Error declining request", e);
+        }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 

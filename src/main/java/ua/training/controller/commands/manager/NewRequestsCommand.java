@@ -17,7 +17,6 @@ import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class NewRequestsCommand implements Command {
     private ManagerService managerService;
-    //TODO hardcode
     private int recordsPerPage = 4;
     private int currentPage = 1;
     private int numberOfPages;
@@ -28,17 +27,24 @@ public class NewRequestsCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
+        log.info("Try to get new requests");
         HttpSession session = request.getSession();
 
         getCurrentPage(request);
-        int numberOfRows = managerService.getNumberOfNewRequests();
-        List<Request> newRequests = managerService.getNewRequests(currentPage, recordsPerPage);
+        int numberOfRows = 0;
+        List<Request> newRequests = null;
+        try {
+            numberOfRows = managerService.getNumberOfNewRequests();
+            newRequests = managerService.getNewRequests(currentPage, recordsPerPage);
+        } catch (Exception e) {
+            log.error("Error getting new requests", e);
+            return URIBinder.getProperty("jsp.manager.new.requests");
+        }
         getNumberOfPages(numberOfRows);
 
         request.setAttribute(AttributesBinder.getProperty("attribute.new.requests"), newRequests);
         request.setAttribute(getProperty("parameter.request.current.page"), currentPage);
         request.setAttribute(getProperty("parameter.request.number.of.pages"), numberOfPages);
-        //TODO redirect or forward?
         return URIBinder.getProperty("jsp.manager.new.requests");
     }
 
