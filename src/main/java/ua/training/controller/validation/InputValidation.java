@@ -11,7 +11,6 @@ import java.util.List;
 public class InputValidation {
     private List<String> wrongInputMessages;
 
-    //TODO it would be better to check and return login, password validation mistake separately
     public boolean isLoginAndPasswordValid(String login, String password, List<String> wrongInputMessages) {
         this.wrongInputMessages = wrongInputMessages;
         boolean isLoginValid = isParameterValid(login, getProperty("regex.login"),
@@ -54,9 +53,15 @@ public class InputValidation {
         }
     }
 
-    public boolean isRequestValid(Request request, List<String> wrongInputMessages) {
-        //TODO needs implementation
-        return true;
+    public boolean isCustomerRequestValid(Request request, List<String> wrongInputMessages) {
+        this.wrongInputMessages = wrongInputMessages;
+        boolean isDeviceCategoryValid = isParameterValid(request.getProductCategory().toString(),
+                getProperty("regex.device.category"), "input.wrong.device.category");
+        boolean isDeviceValid = isParameterValid(request.getDevice(), getProperty("regex.device"),
+                "input.wrong.device.model");
+        boolean isDeviceDescriptionValid = isParameterValid(request.getDescription(),
+                getProperty("regex.description"), "input.wrong.request.description.format");
+        return isDeviceCategoryValid && isDeviceValid && isDeviceDescriptionValid;
     }
 
     public boolean isPriceAndDescriptionValid(String price, String managerComment, List<String> wrongInputMessages) {
@@ -76,8 +81,16 @@ public class InputValidation {
 
     public boolean isFeedbackValid(Feedback feedback, List<String> wrongInputMessages) {
         this.wrongInputMessages = wrongInputMessages;
-        return isParameterValid(feedback.getCommentary(), getProperty("regex.commentary"),
+        boolean isRateValid = isParameterValid(feedback.getMark().toString(), getProperty("regex.mark"),
+                "input.wrong.feedback.rate");
+        boolean isCommentaryValid = isParameterValid(feedback.getCommentary(), getProperty("regex.commentary"),
                 "input.wrong.feedback.commentary.format");
+        return isRateValid && isCommentaryValid;
+    }
+
+    public boolean isIdValid(String id, List<String> wrongInputMessages) {
+        this.wrongInputMessages = wrongInputMessages;
+        return isParameterValid(id, getProperty("regex.id"), "input.wrong.id.format");
     }
 
 
