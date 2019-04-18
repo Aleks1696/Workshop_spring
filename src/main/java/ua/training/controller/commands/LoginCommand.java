@@ -6,12 +6,10 @@ import ua.training.model.entity.User;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.service.user.*;
 import ua.training.model.utils.URIBinder;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.*;
-
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class LoginCommand implements Command {
@@ -33,7 +31,7 @@ public class LoginCommand implements Command {
         if (!validation.isLoginAndPasswordValid(login, password, wrongInputMessages)) {
             request.setAttribute(getProperty("attribute.error.message"),
                                  wrongInputMessages);
-            log.info("Entering system with invalid data");
+            log.warn("Entering system with invalid data");
             return URIBinder.getProperty("jsp.login");
         }
 
@@ -53,7 +51,7 @@ public class LoginCommand implements Command {
         } catch (UserNotFoundException ex) {
             request.setAttribute(getProperty("attribute.error.message"),
                                 "login.user.not.found");
-            log.info("User is not found");
+            log.warn("User is not found");
         }
         return user;
     }

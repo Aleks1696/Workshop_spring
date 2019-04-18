@@ -1,14 +1,12 @@
 package ua.training.controller.commands;
 
 import ua.training.controller.commands.customer.*;
-import ua.training.controller.commands.manager.AcceptRequestCommand;
-import ua.training.controller.commands.manager.DeclineRequestCommand;
+import ua.training.controller.commands.manager.*;
 import ua.training.controller.commands.master.CloseRequestCommand;
 import ua.training.controller.commands.master.GetAcceptedCommand;
 import ua.training.controller.commands.master.ProcessRequestCommand;
 import ua.training.controller.commands.master.RequestsToProcessCommand;
 import ua.training.controller.commands.pages.*;
-import ua.training.controller.commands.manager.NewRequestsCommand;
 import ua.training.model.utils.URIBinder;
 
 import java.util.HashMap;
@@ -45,6 +43,9 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.manager.active.request"), new NewRequestsCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request.accept"), new AcceptRequestCommand());
         commands.put(URIBinder.getProperty("path.manager.active.request.decline"), new DeclineRequestCommand());
+        commands.put(URIBinder.getProperty("path.manager.find.customer"), new FindCustomerPageCommand());
+        commands.put(URIBinder.getProperty("path.manager.find.customer.submit"), new FindCustomerCommand());
+        commands.put(URIBinder.getProperty("path.manager.feedback.from.customer"), new FindCustomerFeedbacksCommand());
 
         commands.put(URIBinder.getProperty("path.master.account"), new MasterAccountPageCommand());
         commands.put(URIBinder.getProperty("path.master.active.request"), new RequestsToProcessCommand());
