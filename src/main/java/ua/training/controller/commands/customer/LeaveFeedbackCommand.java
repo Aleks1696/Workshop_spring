@@ -24,13 +24,14 @@ public class LeaveFeedbackCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to leave feedback");
         Feedback feedback = new Feedback();
         Request request = new Request();
         setRelatedParameters(httpRequest, feedback, request);
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isFeedbackValid(feedback, wrongInputMessages)) {
-            log.info("Request has invalid data");
+            log.warn("Request has invalid data");
             httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.customer.notifications");
@@ -40,14 +41,15 @@ public class LeaveFeedbackCommand implements Command {
             customerService.leaveFeedback(feedback, request);
             customerService.archiveRequest(request);
         } catch (SQLException e) {
-            log.error("Failed creating feedback and updating foreign key in request table during transaction");
-            e.printStackTrace();
+            log.error("Failed creating feedback and updating foreign key in request table during transaction", e);
+        } catch (Exception e) {
+            log.error("Error leaving feedback", e);
         }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.notifications");
     }
 
     private void setRelatedParameters(HttpServletRequest httpRequest, Feedback feedback, Request request) {
-        feedback.setMark(Marks.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.rating"))));
+        feedback.setMark(Marks.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.mark"))));
         feedback.setCommentary(httpRequest.getParameter(AttributesBinder.getProperty("parameter.commentary")));
         request.setId(Integer.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.id"))));
     }

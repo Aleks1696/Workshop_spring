@@ -20,13 +20,15 @@ public class ArchiveRequestCommand implements Command {
 
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
+        log.info("Try to archive request");
         Request request = new Request();
         request.setId(Integer.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.id"))));
         try {
             customerService.archiveRequest(request);
         } catch (SQLException e) {
             log.error("Failed moving from request table to archive during transaction");
-            e.printStackTrace();
+        } catch (Exception e) {
+            log.error("Error archiving request");
         }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.notifications");
     }

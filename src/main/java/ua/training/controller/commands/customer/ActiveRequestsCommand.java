@@ -13,7 +13,6 @@ import java.util.Optional;
 
 public class ActiveRequestsCommand implements Command {
     private CustomerService customerService;
-    //TODO hardcode
     private int recordsPerPage = 4;
     private int currentPage = 1;
     private int numberOfPages;
@@ -28,8 +27,14 @@ public class ActiveRequestsCommand implements Command {
         User user = (User) session.getAttribute(getProperty("parameter.user"));
 
         getCurrentPage(request);
-        int numberOfRows = customerService.getNumberOfActiveRequests(user);
-        List<Request> activeRequests = customerService.getActiveRequests(user, currentPage, recordsPerPage);
+        int numberOfRows = 0;
+        List<Request> activeRequests = null;
+        try {
+            numberOfRows = customerService.getNumberOfActiveRequests(user);
+            activeRequests = customerService.getActiveRequests(user, currentPage, recordsPerPage);
+        } catch (Exception e) {
+            log.error("Error getting active requests", e);
+        }
         getNumberOfPages(numberOfRows);
 
         request.setAttribute(getProperty("attribute.active.requests"), activeRequests);

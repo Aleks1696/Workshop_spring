@@ -32,8 +32,8 @@ public class CreateRequestCommand implements Command {
         setRelatedParameters(httpRequest, request);
 
         List<String> wrongInputMessages = new ArrayList<>();
-        if (!inputValidation.isRequestValid(request, wrongInputMessages)) {
-            log.info("Request has invalid data");
+        if (!inputValidation.isCustomerRequestValid(request, wrongInputMessages)) {
+            log.warn("Request has invalid data");
             httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("path.customer.request");
@@ -41,9 +41,14 @@ public class CreateRequestCommand implements Command {
         try {
             customerService.createRequest(request);
         } catch (AlreadyExistException ex) {
-            log.error("Request is already created", ex);
+            log.warn("Request is already exist");
             httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     "input.request.already.exist");
+            return URIBinder.getProperty("path.customer.request");
+        } catch (Exception e) {
+            log.error("Error creating request", e);
+            httpRequest.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
+                    "input.request.can.not.create.request");
             return URIBinder.getProperty("path.customer.request");
         }
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
