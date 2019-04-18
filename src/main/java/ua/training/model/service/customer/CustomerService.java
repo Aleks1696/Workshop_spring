@@ -8,11 +8,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface CustomerService {
-    Request createRequest(Request request);
-    int getNumberOfActiveRequests(User user);
-    List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage);
-    List<Request> getAllRequests(User user);
-    List<Request> getAccomplishedRequests(User user);
-    Feedback leaveFeedback(Feedback feedback, Request request) throws SQLException;
-    boolean archiveRequest(Request request) throws SQLException;
+    Request createRequest(Request request) throws Exception;
+    int getNumberOfActiveRequests(User user) throws Exception;
+    List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage) throws Exception;
+    List<Request> getAccomplishedRequests(User user) throws Exception;
+    Feedback leaveFeedback(Feedback feedback, Request request) throws Exception;
+    boolean archiveRequest(Request request) throws Exception;
 }

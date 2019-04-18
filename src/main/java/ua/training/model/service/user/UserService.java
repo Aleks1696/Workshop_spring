@@ -5,5 +5,5 @@ import ua.training.model.exceptions.AlreadyExistException;
 
 public interface UserService {
     User logInUser(String login, String password);
-    User createUser(User user) throws AlreadyExistException;
+    User createUser(User user) throws Exception;
 }

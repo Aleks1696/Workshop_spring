@@ -13,57 +13,55 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerServiceImpl implements CustomerService {
-    private RequestDAO requestDAO;
-    private FeedbackDAO feedbackDAO;
+    private DAOFactory daoFactory = DAOFactory.getInstance();
 
-    public CustomerServiceImpl() {
-        this.requestDAO = DAOFactory.getInstance().createRequestDAO();
-        this.feedbackDAO = DAOFactory.getInstance().createFeedbackDAO();
-        System.out.println("User dao object from userService: " + requestDAO);
+    @Override
+    public Request createRequest(Request request) throws Exception {
+        try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
+            return requestDAO.create(request);
+        }
     }
 
     @Override
-    public Request createRequest(Request request) {
-        return requestDAO.create(request);
-    }
-
-    @Override
-    public int getNumberOfActiveRequests(User user) {
+    public int getNumberOfActiveRequests(User user) throws Exception {
         String query = QueriesBinder.getProperty("request.get.count.of.customer.active");
-        return requestDAO.getNumberOfRows(String.format(query, user.getId()));
+        try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
+            return requestDAO.getNumberOfRows(String.format(query, user.getId(), RequestStatus.NEW.toString(),
+                    RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString()));
+        }
     }
 
     @Override
-    public List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage) {
+    public List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
         int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("request.find.active.by.customer");
-        return requestDAO.findByUserIdAndStatus(String.format(query, start, end),
-                user.getId(),
-                RequestStatus.NEW.toString(), RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString());
+        try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
+            return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.NEW.toString(),
+                    RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString(), start, end), user.getId());
+        }
     }
 
     @Override
-    public List<Request> getAllRequests(User user) {
-        return requestDAO.findAllByUserId(user.getId());
+    public List<Request> getAccomplishedRequests(User user) throws Exception {
+        String query = QueriesBinder.getProperty("request.find.by.customer.and.status");
+        try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
+            return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.FIXED.toString()),
+                    user.getId());
+        }
     }
 
     @Override
-    public List<Request> getAccomplishedRequests(User user) {
-        return requestDAO.findByUserIdAndStatus(
-                QueriesBinder.getProperty("request.find.by.customer.and.status"),
-                user.getId(),
-                RequestStatus.FIXED.toString()
-        );
+    public Feedback leaveFeedback(Feedback feedback, Request request) throws Exception {
+        try (FeedbackDAO feedbackDAO = daoFactory.createFeedbackDAO()) {
+            return feedbackDAO.createAndSetToRequest(feedback, request);
+        }
     }
 
     @Override
-    public Feedback leaveFeedback(Feedback feedback, Request request) throws SQLException {
-        return feedbackDAO.createAndSetToRequest(feedback, request);
-    }
-
-    @Override
-    public boolean archiveRequest(Request request) throws SQLException {
-        return requestDAO.moveRequestToArchive(request);
+    public boolean archiveRequest(Request request) throws Exception {
+        try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
+            return requestDAO.moveRequestToArchive(request);
+        }
     }
 }
