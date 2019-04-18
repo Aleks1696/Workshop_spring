@@ -4,29 +4,27 @@ import org.apache.log4j.Logger;
 import ua.training.model.dao.UserDAO;
 import ua.training.model.dao.mapper.*;
 import ua.training.model.entity.User;
-import ua.training.model.exceptions.AlreadyExistException;
-import ua.training.model.exceptions.UserNotFoundException;
+import ua.training.model.exceptions.*;
 import ua.training.model.utils.QueriesBinder;
-
 import java.sql.*;
 import java.util.List;
 
-public class JDBCUserDao implements UserDAO {
+public class JDBCUserDao extends AbstractDAO<User> implements UserDAO {
     private static Logger log = Logger.getLogger(JDBCUserDao.class.getName());
-    private Connection connection;
     private Mapper<User> mapper;
 
     public JDBCUserDao(Connection connection) {
-        this.connection = connection;
+        super(connection);
         this.mapper = new UserMapper();
-        System.out.println("Connection rom JDBCUserDAO: " + connection);
     }
 
     @Override
-    public User create(User entity) throws AlreadyExistException {
+    public User create(User entity) throws AlreadyExistException, SQLException {
+        log.info("Try to create new user with");
         User registeredUser = null;
-        try(PreparedStatement statement =
-                    connection.prepareStatement(QueriesBinder.getProperty("user.create"), Statement.RETURN_GENERATED_KEYS)) {
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("user.create"), Statement.RETURN_GENERATED_KEYS)) {
+            connection.setAutoCommit(false);
             statement.setString(1, entity.getLogin());
             statement.setString(2, entity.getPassword());
             statement.setString(3, entity.getRole().toString());
@@ -41,26 +39,32 @@ public class JDBCUserDao implements UserDAO {
             result.next();
             int registeredUserId = result.getInt(1);
             registeredUser = findById(registeredUserId);
+            connection.commit();
+        } catch (SQLIntegrityConstraintViolationException e) {
+            connection.rollback();
+            log.warn("User already exist");
+            throw new AlreadyExistException("User already exist", e);
         } catch (SQLException e) {
-            //TODO another exception can be thrown. Not only usernotfound
-            log.error("User already exist", e);
-            throw new AlreadyExistException(e.getMessage());
+            connection.rollback();
+            log.error("Error while creating new user", e);
+            throw new RuntimeException(e);
         }
         return registeredUser;
     }
 
     @Override
     public User findById(int id) {
+        log.info(String.format("Try to find user by id: %d", id));
         User user = null;
-        try {
-            PreparedStatement statement =
-                    connection.prepareStatement(QueriesBinder.getProperty("user.find.by.id"));
+        try (PreparedStatement statement =
+                     connection.prepareStatement(QueriesBinder.getProperty("user.find.by.id"))) {
             statement.setInt(1, id);
             ResultSet result = statement.executeQuery();
             result.next();
             user = mapper.extract(result);
         } catch (SQLException e) {
-            log.error("User with such id is not found");
+            log.warn(String.format("Error while finding user with id: %d", id), e);
+            throw new UserNotFoundException("User is not found", e);
         }
         return user;
     }
@@ -81,13 +85,8 @@ public class JDBCUserDao implements UserDAO {
     }
 
     @Override
-    public void close() throws Exception {
-
-    }
-
-    @Override
     public User findByLoginAndPassword(String login, String password) {
-        //TODO get user from mapper
+        log.info(String.format("Try to find user with login: %s and password: %s", login, password));
         User user = null;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("user.find.by.loginAndPassword"))) {
@@ -97,7 +96,8 @@ public class JDBCUserDao implements UserDAO {
             result.next();
             user = mapper.extract(result);
         } catch (SQLException e) {
-            throw new UserNotFoundException("User is not found");
+            log.warn(String.format("Error while finding user with login: %s and password: %s", login, password));
+            throw new RuntimeException(e);
         }
         return user;
     }

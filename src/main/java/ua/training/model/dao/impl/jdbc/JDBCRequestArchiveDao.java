@@ -4,14 +4,13 @@ import ua.training.model.dao.RequestArchiveDAO;
 import ua.training.model.entity.Request;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
-public class JDBCRequestArchiveDao implements RequestArchiveDAO {
-    private Connection connection;
+public class JDBCRequestArchiveDao extends AbstractDAO<Request> implements RequestArchiveDAO {
 
     public JDBCRequestArchiveDao(Connection connection) {
-        this.connection = connection;
-        System.out.println("Connection rom JDBCRequestArchiveDAO: " + connection);
+        super(connection);
     }
 
     @Override
@@ -37,10 +36,5 @@ public class JDBCRequestArchiveDao implements RequestArchiveDAO {
     @Override
     public boolean delete(int id) {
         return false;
-    }
-
-    @Override
-    public void close() throws Exception {
-
     }
 }
