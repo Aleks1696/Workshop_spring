@@ -17,7 +17,6 @@
                     key="jsp.customer.left.sidenav.create.request.button"/></a></p>
             <p><a href="${pageContext.request.contextPath}/customer/active/requests"><fmt:message
                     key="jsp.customer.left.sidenav.active.requests.button"/></a></p>
-            <p><a href="#"><fmt:message key="jsp.customer.left.sidenav.all.requests.button"/></a></p>
             <button type="button"
                     onclick="location.href='${pageContext.request.contextPath}/customer/notifications'">
                 <fmt:message key="jsp.customer.left.sidenav.notifications.button"/>
