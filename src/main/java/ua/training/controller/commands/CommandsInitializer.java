@@ -34,7 +34,6 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.customer.active.requests"), new ActiveRequestsCommand());
         commands.put(URIBinder.getProperty("path.customer.request"), new NewCustomerRequestPageCommand());
         commands.put(URIBinder.getProperty("path.customer.request.submit"), new CreateRequestCommand());
-        commands.put(URIBinder.getProperty("path.customer.request.delete"), new CancelRequestCommand());
         commands.put(URIBinder.getProperty("path.customer.notifications"), new CustomerNotificationPageCommand());
         commands.put(URIBinder.getProperty("path.customer.feedback.leave"), new LeaveFeedbackCommand());
         commands.put(URIBinder.getProperty("path.customer.request.archive"), new ArchiveRequestCommand());
