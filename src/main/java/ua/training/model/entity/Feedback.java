@@ -1,7 +1,6 @@
 package ua.training.model.entity;
 
 import ua.training.model.types.Marks;
-
 import java.util.Objects;
 
 public class Feedback {
