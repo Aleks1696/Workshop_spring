@@ -2,10 +2,6 @@ package ua.training.controller.utils;
 
 import ua.training.model.entity.User;
 import ua.training.model.utils.AttributesBinder;
-
-import static ua.training.model.utils.AttributesBinder.*;
-
-import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
