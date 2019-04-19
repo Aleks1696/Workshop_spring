@@ -3,7 +3,6 @@ package ua.training.controller.filter;
 import ua.training.model.entity.User;
 import ua.training.model.types.UserRole;
 import ua.training.model.utils.*;
-
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
