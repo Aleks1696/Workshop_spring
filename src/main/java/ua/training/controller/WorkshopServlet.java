@@ -3,7 +3,6 @@ package ua.training.controller;
 import ua.training.controller.commands.Command;
 import ua.training.controller.commands.CommandsInitializer;
 import ua.training.model.utils.URIBinder;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
