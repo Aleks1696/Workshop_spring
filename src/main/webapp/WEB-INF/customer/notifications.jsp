@@ -26,7 +26,6 @@
             </button>
         </div>
         <div class="col-sm-8 text-center">
-
         </div>
 
         <c:set var="error_message" scope="request" value="${requestScope.error_message}"/>
@@ -56,7 +55,8 @@
                                         value="${request.getCreationDate()}"/>;</p>
                                 <p class="card-text"><fmt:message key="output.request.status"/> <c:out
                                         value="${request.getStatus()}"/>;</p> <br>
-                                <input class="buttonLikeLink" type="submit" formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
+                                <input class="buttonLikeLink" type="submit"
+                                       formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
                                         key="jsp.notifications.archive.button"/>"/>
                                 <a class="link" href="#feedback" class="trigger-btn" data-toggle="modal"><fmt:message
                                         key="jsp.notifications.leave.feedback.button"/></a>
@@ -112,16 +112,6 @@
         </c:choose>
     </div>
 </div>
-
-
-<footer class="page-footer">
-    <div class="footer-copyright text-center">
-        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
-    </div>
-    <div class="footer-copyright text-center">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-</footer>
-
+<%@ include file="/common/footer.jsp" %>
 </body>
 </html>

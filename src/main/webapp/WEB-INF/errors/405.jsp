@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +7,19 @@
 
     <title>405</title>
 
-    <style><%@include file="/resources/css/errors.css"%></style>
-
+    <style>
+        <%@include file="/resources/css/errors.css" %>
+    </style>
 </head>
-
 <body>
-
-<div class="overlay"></div>
-<div class="terminal">
-    <h1>Error <span class="errorcode">405</span></h1>
-    <p class="output">Method Not Allowed</p>
-    <p class="output"><a href="#1">GO BACK</a></p>
-    <p class="output">Good luck</p>
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h3>Oops!</h3>
+            <h1><span>4</span><span>0</span><span>5</span></h1>
+        </div>
+        <h2>Access denied</h2>
+    </div>
 </div>
-
 </body>
-
 </html>
-

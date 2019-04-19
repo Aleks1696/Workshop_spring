@@ -38,8 +38,6 @@
         </div>
     </div>
 </nav>
-
-
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 sidenav">
@@ -49,7 +47,6 @@
                 </li>
             </ul>
         </div>
-
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 col-sm-6">
@@ -106,15 +103,7 @@
                 </div>
             </div>
         </div>
-
-        <footer class="page-footer">
-            <div class="footer-copyright text-center">
-                <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
-            </div>
-            <div class="footer-copyright text-center">© 2019 Copyright:
-                <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-            </div>
-        </footer>
+        <%@ include file="/common/footer.jsp" %>
     </div>
 </div>
 </body>

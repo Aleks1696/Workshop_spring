@@ -19,7 +19,6 @@
                     key="jsp.manager.left.sidenav.customer.by.id.button"/></a></p>
 
             <%@ include file="/common/accountInfo.jsp" %>
-
         </div>
 
         <%--Pagination --%>
@@ -48,21 +47,8 @@
                 </c:otherwise>
             </c:choose>
         </div>
-
     </div>
-
-
 </div>
-
-
-<footer class="page-footer">
-    <div class="footer-copyright text-center">
-        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
-    </div>
-    <div class="footer-copyright text-center">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-</footer>
-
+<%@ include file="/common/footer.jsp" %>
 </body>
 </html>

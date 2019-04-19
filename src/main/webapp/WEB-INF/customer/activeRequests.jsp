@@ -7,9 +7,7 @@
     <%@ include file="/common/head.jsp" %>
 </head>
 <body>
-
 <%@ include file="/common/customer/mainNavigationPanel.jsp" %>
-
 <div class="container-fluid text-center">
     <div class="row content">
         <div class="col-sm-2 float-sm-left sidenav text-left">
@@ -26,8 +24,8 @@
 
         </div>
         <div class="col-sm-8 text-center">
-
         </div
+
         <%--Pagination --%>
         <%@ include file="/common/pagination.jsp" %>
 
@@ -69,15 +67,6 @@
     </div>
 
 </div>
-
-<footer class="page-footer">
-    <div class="footer-copyright text-center">
-        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
-    </div>
-    <div class="footer-copyright text-center">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-</footer>
-
+<%@ include file="/common/footer.jsp" %>
 </body>
 </html>

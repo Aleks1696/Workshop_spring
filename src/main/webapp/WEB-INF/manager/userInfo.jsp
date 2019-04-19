@@ -19,9 +19,7 @@
                     key="jsp.manager.left.sidenav.customer.by.id.button"/></a></p>
 
             <%@ include file="/common/accountInfo.jsp" %>
-
         </div>
-
         <div class="col-sm-8 text-center">
             <div style="margin: 15px 40px 10px 40px" class="col-sm-4 text-center">
                 <form method="post" action="${pageContext.request.contextPath}/manager/find/customer/result">
@@ -30,7 +28,6 @@
                 </form>
             </div>
         </div>
-
         <div class="col-sm-10 text-center">
             <c:set var="error_message" scope="request" value="${requestScope.error_message}"/>
             <c:if test="${error_message != null}">
@@ -39,7 +36,6 @@
                 </c:forEach>
             </c:if>
         </div>
-
         <div style="margin: 100px 10px 10px 10px" class="row content">
             <c:set var="customer" scope="request" value="${requestScope.customer}"/>
             <c:if test="${customer != null}">
@@ -68,8 +64,12 @@
                             value="${customer.getPhoneNumber()}"/>;</p>
                     <form method="post">
                         <input type="hidden" name="id" value="${customer.getId()}"/>
-                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/requests/from/customer" value="Requests"/>
-                        <input type="submit" formaction="${pageContext.request.contextPath}/manager/feedback/from/customer" value="Feedbacks"/>
+                        <input type="submit"
+                               formaction="${pageContext.request.contextPath}/manager/requests/from/customer"
+                               value="Requests"/>
+                        <input type="submit"
+                               formaction="${pageContext.request.contextPath}/manager/feedback/from/customer"
+                               value="Feedbacks"/>
                     </form>
                 </div>
             </div>
@@ -77,21 +77,9 @@
         </div>
         </c:if>
     </div>
-
-
 </div>
 </div>
-
 </div>
-
-<footer class="page-footer">
-    <div class="footer-copyright text-center">
-        <a href="https://github.com/Aleks1696/Workshop">Git repository</a>
-    </div>
-    <div class="footer-copyright text-center">© 2019 Copyright:
-        <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-    </div>
-</footer>
-
+<%@ include file="/common/footer.jsp" %>
 </body>
 </html>
