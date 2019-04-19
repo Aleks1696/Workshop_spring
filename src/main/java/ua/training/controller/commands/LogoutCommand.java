@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 public class LogoutCommand implements Command {
 
     @Override
-    @SuppressWarnings("unchecked")
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         session.invalidate();

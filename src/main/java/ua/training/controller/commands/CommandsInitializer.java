@@ -2,15 +2,20 @@ package ua.training.controller.commands;
 
 import ua.training.controller.commands.customer.*;
 import ua.training.controller.commands.manager.*;
-import ua.training.controller.commands.master.CloseRequestCommand;
-import ua.training.controller.commands.master.GetAcceptedCommand;
-import ua.training.controller.commands.master.ProcessRequestCommand;
-import ua.training.controller.commands.master.RequestsToProcessCommand;
+import ua.training.controller.commands.master.*;
 import ua.training.controller.commands.pages.*;
 import ua.training.model.utils.URIBinder;
 
 import java.util.HashMap;
 import java.util.Map;
+
+/**
+ * Initialization class to bind all allowed operations in web application.
+ * It contains map with allowed uri and corresponding command
+ * implementation.
+ *
+ * @see   Command
+ * */
 
 public class CommandsInitializer {
     private static volatile CommandsInitializer commandsInitializer;
@@ -22,13 +27,12 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.login"), new LoginPageCommand());
         commands.put(URIBinder.getProperty("path.registration"), new RegistrationPageCommand());
         commands.put(URIBinder.getProperty("path.services"), new ServicesPageCommand());
-
-        commands.put("/language/en", new EmptyCommand());
-        commands.put("/language/ua", new EmptyCommand());
-
         commands.put(URIBinder.getProperty("path.login.submit"), new LoginCommand());
         commands.put(URIBinder.getProperty("path.logout"), new LogoutCommand());
         commands.put(URIBinder.getProperty("path.registration.submit"), new RegistrationCommand());
+
+        commands.put("/language/en", new EmptyCommand());
+        commands.put("/language/ua", new EmptyCommand());
 
         commands.put(URIBinder.getProperty("path.customer.account"), new CustomerAccountPageCommand());
         commands.put(URIBinder.getProperty("path.customer.active.requests"), new ActiveRequestsCommand());
@@ -53,7 +57,6 @@ public class CommandsInitializer {
         commands.put(URIBinder.getProperty("path.master.bucket.request.close"), new CloseRequestCommand());
 
         commands.put(URIBinder.getProperty("redirect"), new EmptyCommand());
-
     }
 
     public static CommandsInitializer getInstance() {

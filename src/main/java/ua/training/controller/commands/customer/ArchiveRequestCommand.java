@@ -2,11 +2,9 @@ package ua.training.controller.commands.customer;
 
 import ua.training.controller.commands.Command;
 import ua.training.model.entity.Request;
-import ua.training.model.service.customer.CustomerService;
-import ua.training.model.service.customer.CustomerServiceImpl;
+import ua.training.model.service.customer.*;
 import ua.training.model.utils.AttributesBinder;
 import ua.training.model.utils.URIBinder;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;

@@ -4,6 +4,7 @@ import ua.training.controller.commands.Command;
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.*;
 import ua.training.model.service.manager.*;
+
 import static ua.training.model.utils.AttributesBinder.*;
 
 import ua.training.model.types.RequestStatus;
@@ -42,20 +43,24 @@ public class AcceptRequestCommand implements Command {
         Request request = new Request();
         request.setPrice(BigDecimal.valueOf(Double.valueOf(price)));
         request.setManagerComment(managerComment);
-        setRelatedParameters(httpRequest, request);
-        try {
-            managerService.acceptRequest(request);
-        } catch (Exception e) {
-            log.error("Error accepting request", e);
-        }
+        setParameters(httpRequest, request);
+        acceptRequest(request);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 
-    private void setRelatedParameters(HttpServletRequest httpRequest, Request request) {
+    private void setParameters(HttpServletRequest httpRequest, Request request) {
         HttpSession session = httpRequest.getSession();
         request.setId(Integer.valueOf(httpRequest.getParameter(getProperty(("parameter.id")))));
         User currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         request.setManager_id(currentManager.getId());
         request.setStatus(RequestStatus.ACCEPTED);
+    }
+
+    private void acceptRequest(Request request) {
+        try {
+            managerService.acceptRequest(request);
+        } catch (Exception e) {
+            log.error("Error accepting request", e);
+        }
     }
 }

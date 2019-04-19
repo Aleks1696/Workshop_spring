@@ -2,20 +2,15 @@ package ua.training.controller.commands.manager;
 
 import ua.training.controller.commands.Command;
 import ua.training.controller.validation.InputValidation;
-import ua.training.model.entity.Request;
-import ua.training.model.entity.User;
-import ua.training.model.service.manager.ManagerService;
-import ua.training.model.service.manager.ManagerServiceImpl;
+import ua.training.model.entity.*;
+import ua.training.model.service.manager.*;
 import ua.training.model.types.RequestStatus;
-import ua.training.model.utils.AttributesBinder;
-import ua.training.model.utils.URIBinder;
-
+import ua.training.model.utils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
-
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class DeclineRequestCommand implements Command {
@@ -42,11 +37,7 @@ public class DeclineRequestCommand implements Command {
         Request request = new Request();
         request.setManagerComment(managerComment);
         setManagerParameters(httpRequest, request);
-        try {
-            managerService.declineRequest(request);
-        } catch (Exception e) {
-            log.error("Error declining request", e);
-        }
+        declineRequest(request);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.manager.active.request");
     }
 
@@ -56,5 +47,13 @@ public class DeclineRequestCommand implements Command {
         User currentManager = (User) session.getAttribute(AttributesBinder.getProperty("parameter.user"));
         request.setManager_id(currentManager.getId());
         request.setStatus(RequestStatus.DECLINED);
+    }
+
+    private void declineRequest(Request request) {
+        try {
+            managerService.declineRequest(request);
+        } catch (Exception e) {
+            log.error("Error declining request", e);
+        }
     }
 }

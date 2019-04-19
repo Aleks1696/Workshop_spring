@@ -36,15 +36,7 @@ public class LeaveFeedbackCommand implements Command {
                     wrongInputMessages);
             return URIBinder.getProperty("path.customer.notifications");
         }
-
-        try {
-            customerService.leaveFeedback(feedback, request);
-            customerService.archiveRequest(request);
-        } catch (SQLException e) {
-            log.error("Failed creating feedback and updating foreign key in request table during transaction", e);
-        } catch (Exception e) {
-            log.error("Error leaving feedback", e);
-        }
+        createFeedback(request, feedback);
         return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.notifications");
     }
 
@@ -52,5 +44,18 @@ public class LeaveFeedbackCommand implements Command {
         feedback.setMark(Marks.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.mark"))));
         feedback.setCommentary(httpRequest.getParameter(AttributesBinder.getProperty("parameter.commentary")));
         request.setId(Integer.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.id"))));
+    }
+
+    private Feedback createFeedback(Request request, Feedback feedback) {
+        Feedback createdFeedback = null;
+        try {
+            createdFeedback = customerService.leaveFeedback(feedback, request);
+            customerService.archiveRequest(request);
+        } catch (SQLException e) {
+            log.error("Failed creating feedback and updating foreign key in request table during transaction", e);
+        } catch (Exception e) {
+            log.error("Error leaving feedback", e);
+        }
+        return createdFeedback;
     }
 }

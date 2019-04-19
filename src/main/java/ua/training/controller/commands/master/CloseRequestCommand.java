@@ -2,12 +2,10 @@ package ua.training.controller.commands.master;
 
 import ua.training.controller.commands.Command;
 import ua.training.model.entity.Request;
-import ua.training.model.service.master.MasterService;
-import ua.training.model.service.master.MasterServiceImpl;
+import ua.training.model.service.master.*;
 import ua.training.model.utils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 public class CloseRequestCommand implements Command {
     private MasterService masterService;
@@ -19,7 +17,6 @@ public class CloseRequestCommand implements Command {
     @Override
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
         log.info("Try to close request");
-        HttpSession session = httpRequest.getSession();
         Request request = new Request();
         request.setId(Integer.valueOf(httpRequest.getParameter(AttributesBinder.getProperty("parameter.id"))));
         try {

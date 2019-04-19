@@ -5,8 +5,7 @@ import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.User;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.service.manager.*;
-import ua.training.model.utils.AttributesBinder;
-import ua.training.model.utils.URIBinder;
+import ua.training.model.utils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
@@ -36,7 +35,6 @@ public class FindCustomerCommand implements Command {
             log.warn("Wrong customer id format");
             return URIBinder.getProperty("jsp.manager.userInfo");
         }
-
         Optional<User> user = Optional.ofNullable(getCustomerFromDb(request, customerId));
         user.ifPresent(u -> request.setAttribute(AttributesBinder.getProperty("parameter.customer"), user.get()));
         return URIBinder.getProperty("jsp.manager.userInfo");

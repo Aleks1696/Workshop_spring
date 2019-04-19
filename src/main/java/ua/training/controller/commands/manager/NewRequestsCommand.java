@@ -2,14 +2,10 @@ package ua.training.controller.commands.manager;
 
 import ua.training.controller.commands.Command;
 import ua.training.model.entity.Request;
-import ua.training.model.service.manager.ManagerService;
-import ua.training.model.service.manager.ManagerServiceImpl;
-import ua.training.model.utils.AttributesBinder;
-import ua.training.model.utils.URIBinder;
-
+import ua.training.model.service.manager.*;
+import ua.training.model.utils.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,11 +24,10 @@ public class NewRequestsCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         log.info("Try to get new requests");
-        HttpSession session = request.getSession();
 
         getCurrentPage(request);
-        int numberOfRows = 0;
-        List<Request> newRequests = null;
+        int numberOfRows;
+        List<Request> newRequests;
         try {
             numberOfRows = managerService.getNumberOfNewRequests();
             newRequests = managerService.getNewRequests(currentPage, recordsPerPage);

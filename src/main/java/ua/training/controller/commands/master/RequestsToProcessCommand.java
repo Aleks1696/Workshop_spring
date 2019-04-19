@@ -4,10 +4,8 @@ import ua.training.controller.commands.Command;
 import ua.training.model.entity.Request;
 import ua.training.model.service.master.*;
 import ua.training.model.utils.*;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,7 +24,6 @@ public class RequestsToProcessCommand implements Command {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         log.info("Try to get requests to precess");
-        HttpSession session = request.getSession();
 
         getCurrentPage(request);
         int numberOfRows = 0;

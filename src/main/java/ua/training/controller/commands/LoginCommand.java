@@ -1,22 +1,25 @@
 package ua.training.controller.commands;
 
 import static ua.training.controller.utils.ContextUtil.*;
+
 import ua.training.controller.validation.InputValidation;
 import ua.training.model.entity.User;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.service.user.*;
 import ua.training.model.utils.URIBinder;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.*;
+
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class LoginCommand implements Command {
     private InputValidation validation;
     private UserService userService;
 
-    public LoginCommand() {
+    LoginCommand() {
         this.validation = new InputValidation();
         userService = new UserServiceImpl();
     }
@@ -30,7 +33,7 @@ public class LoginCommand implements Command {
         List<String> wrongInputMessages = new ArrayList<>();
         if (!validation.isLoginAndPasswordValid(login, password, wrongInputMessages)) {
             request.setAttribute(getProperty("attribute.error.message"),
-                                 wrongInputMessages);
+                    wrongInputMessages);
             log.warn("Entering system with invalid data");
             return URIBinder.getProperty("jsp.login");
         }
@@ -50,7 +53,7 @@ public class LoginCommand implements Command {
             user = userService.logInUser(login, password);
         } catch (UserNotFoundException ex) {
             request.setAttribute(getProperty("attribute.error.message"),
-                                "login.user.not.found");
+                    "login.user.not.found");
             log.warn("User is not found");
         }
         return user;

@@ -13,13 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class RegistrationCommand implements Command {
     private Mapper<User> mapper;
     private InputValidation inputValidation;
     private UserService userService;
 
-    public RegistrationCommand() {
+    RegistrationCommand() {
         this.mapper = new UserMapper();
         this.inputValidation = new InputValidation();
         this.userService = new UserServiceImpl();
@@ -37,19 +38,27 @@ public class RegistrationCommand implements Command {
                     wrongInputMessages);
             return URIBinder.getProperty("jsp.registration");
         }
+        Optional<User> registeredUser = Optional.ofNullable(registerUser(request, user));
+        if (registeredUser.isPresent()) {
+            session.setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+            ContextUtil.setAttributesToContext(session, user);
+            return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
+        } else {
+            return URIBinder.getProperty("jsp.registration");
+        }
+    }
+
+    private User registerUser(HttpServletRequest request, User user) {
+        User registeredUser = null;
         try {
-            user = userService.createUser(user);
+            registeredUser = userService.createUser(user);
         } catch (AlreadyExistException ex) {
             log.warn("Error registering new user");
             request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     "input.user.already.exist");
-            return URIBinder.getProperty("jsp.registration");
         } catch (Exception e) {
             log.error("Error registering new user", e);
-            return URIBinder.getProperty("jsp.registration");
         }
-        session.setAttribute(AttributesBinder.getProperty("parameter.user"), user);
-        ContextUtil.setAttributesToContext(session, user);
-        return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
+        return registeredUser;
     }
 }
