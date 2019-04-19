@@ -8,8 +8,6 @@ import ua.training.model.entity.Request;
 import ua.training.model.entity.User;
 import ua.training.model.types.RequestStatus;
 import ua.training.model.utils.QueriesBinder;
-
-import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerServiceImpl implements CustomerService {

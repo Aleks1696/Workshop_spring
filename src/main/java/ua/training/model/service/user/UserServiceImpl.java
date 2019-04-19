@@ -4,7 +4,6 @@ import ua.training.controller.utils.ScriptMD5;
 import ua.training.model.dao.DAOFactory;
 import ua.training.model.dao.UserDAO;
 import ua.training.model.entity.User;
-import ua.training.model.exceptions.AlreadyExistException;
 import ua.training.model.exceptions.UserNotFoundException;
 import ua.training.model.types.UserRole;
 
