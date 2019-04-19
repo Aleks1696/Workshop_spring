@@ -27,7 +27,7 @@ public class JDBCFeedbackDao extends AbstractDAO<Feedback> implements FeedbackDA
     @Override
     public Feedback findById(int id) {
         log.info(String.format("Try to find feedback by id: %d", id));
-        Feedback feedback = null;
+        Feedback feedback;
         try (PreparedStatement statement =
                     connection.prepareStatement(QueriesBinder.getProperty("feedback.find.by.id"))) {
             statement.setInt(1, id);
@@ -59,7 +59,7 @@ public class JDBCFeedbackDao extends AbstractDAO<Feedback> implements FeedbackDA
     @Override
     public Feedback createAndSetToRequest(Feedback feedback, Request request) throws SQLException {
         log.info("Trying to create new feedback and bind it with relative request");
-        Feedback createdFeedback = null;
+        Feedback createdFeedback;
         try (PreparedStatement createStatement =
                      connection.prepareStatement(QueriesBinder.getProperty("feedback.create"), Statement.RETURN_GENERATED_KEYS);
              PreparedStatement updateStatement =

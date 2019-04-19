@@ -7,7 +7,6 @@ import ua.training.model.entity.*;
 import ua.training.model.exceptions.AlreadyExistException;
 import ua.training.model.types.RequestStatus;
 import ua.training.model.utils.QueriesBinder;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +23,7 @@ public class JDBCRequestDao extends AbstractDAO<Request> implements RequestDAO {
     @Override
     public Request create(Request entity) throws SQLException {
         log.info("Try to create new request");
-        Request createdRequest = null;
+        Request createdRequest;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("request.create"), Statement.RETURN_GENERATED_KEYS)) {
             connection.setAutoCommit(false);
@@ -56,7 +55,7 @@ public class JDBCRequestDao extends AbstractDAO<Request> implements RequestDAO {
     @Override
     public Request findById(int id) {
         log.info(String.format("Try to find request by id: %d", id));
-        Request request = null;
+        Request request;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("request.find.by.id"))) {
             statement.setInt(1, id);
@@ -83,24 +82,6 @@ public class JDBCRequestDao extends AbstractDAO<Request> implements RequestDAO {
             }
         } catch (SQLException e) {
             log.error(String.format("Error finding request by user id: %d and statuses", userId), e);
-            throw new RuntimeException(e);
-        }
-        return activeRequests;
-    }
-
-    @Override
-    public List<Request> findAllByUserId(int userId) {
-        log.info(String.format("Try to find all requests by user id: %d", userId));
-        List<Request> activeRequests = new ArrayList<>();
-        try (PreparedStatement statement =
-                     connection.prepareStatement(QueriesBinder.getProperty("request.find.all.by.customer"))) {
-            statement.setInt(1, userId);
-            ResultSet result = statement.executeQuery();
-            while (result.next()) {
-                activeRequests.add(mapper.extract(result));
-            }
-        } catch (SQLException e) {
-            log.error(String.format("Error finding all requests by user id: %d", userId), e);
             throw new RuntimeException(e);
         }
         return activeRequests;

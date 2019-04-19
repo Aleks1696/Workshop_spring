@@ -21,7 +21,7 @@ public class JDBCUserDao extends AbstractDAO<User> implements UserDAO {
     @Override
     public User create(User entity) throws AlreadyExistException, SQLException {
         log.info("Try to create new user with");
-        User registeredUser = null;
+        User registeredUser;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("user.create"), Statement.RETURN_GENERATED_KEYS)) {
             connection.setAutoCommit(false);
@@ -55,7 +55,7 @@ public class JDBCUserDao extends AbstractDAO<User> implements UserDAO {
     @Override
     public User findById(int id) {
         log.info(String.format("Try to find user by id: %d", id));
-        User user = null;
+        User user;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("user.find.by.id"))) {
             statement.setInt(1, id);
@@ -87,7 +87,7 @@ public class JDBCUserDao extends AbstractDAO<User> implements UserDAO {
     @Override
     public User findByLoginAndPassword(String login, String password) {
         log.info(String.format("Try to find user with login: %s and password: %s", login, password));
-        User user = null;
+        User user;
         try (PreparedStatement statement =
                      connection.prepareStatement(QueriesBinder.getProperty("user.find.by.loginAndPassword"))) {
             statement.setString(1, login);

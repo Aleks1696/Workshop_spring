@@ -10,7 +10,7 @@ import java.sql.SQLException;
 
 public abstract class AbstractDAO<T> implements GenericDAO<T> {
     private static Logger log = Logger.getLogger(AbstractDAO.class.getName());
-    protected Connection connection;
+    Connection connection;
 
     public AbstractDAO(Connection connection) {
         this.connection = connection;

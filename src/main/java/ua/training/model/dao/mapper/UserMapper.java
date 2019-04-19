@@ -2,11 +2,9 @@ package ua.training.model.dao.mapper;
 
 import ua.training.model.entity.User;
 import ua.training.model.types.UserRole;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class UserMapper implements Mapper<User> {

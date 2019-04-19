@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface RequestDAO extends GenericDAO<Request> {
     List<Request> findByUserIdAndStatus(String query, int userId);
-    List<Request> findAllByUserId(int userId);
     List<Request> findRequestByStatus(String query);
     boolean updateStatusById(int requestId, RequestStatus requestStatus);
     boolean updateAcceptedOrDeclined(Request entity);

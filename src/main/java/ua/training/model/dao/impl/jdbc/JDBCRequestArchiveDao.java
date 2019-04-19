@@ -2,9 +2,7 @@ package ua.training.model.dao.impl.jdbc;
 
 import ua.training.model.dao.RequestArchiveDAO;
 import ua.training.model.entity.Request;
-
 import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
 public class JDBCRequestArchiveDao extends AbstractDAO<Request> implements RequestArchiveDAO {

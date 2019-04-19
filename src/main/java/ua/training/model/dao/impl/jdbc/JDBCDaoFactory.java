@@ -1,7 +1,6 @@
 package ua.training.model.dao.impl.jdbc;
 
 import ua.training.model.dao.*;
-
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -29,7 +28,7 @@ public class JDBCDaoFactory extends DAOFactory {
         return new JDBCRequestArchiveDao(getConnection());
     }
 
-    public Connection getConnection() {
+    private Connection getConnection() {
         try {
             return dataSource.getConnection();
         } catch (SQLException ex) {

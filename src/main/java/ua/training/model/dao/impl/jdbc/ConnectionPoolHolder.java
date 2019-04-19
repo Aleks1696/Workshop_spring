@@ -2,16 +2,14 @@ package ua.training.model.dao.impl.jdbc;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import ua.training.model.utils.Binder;
-
 import javax.sql.DataSource;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class ConnectionPoolHolder {
     private static volatile DataSource dataSource;
     private static ResourceBundle bundle = ResourceBundle.getBundle("database/connection");
 
-    public static DataSource getDataSource() {
+    static DataSource getDataSource() {
         if (dataSource == null) {
             synchronized (ConnectionPoolHolder.class) {
                 if (dataSource == null) {

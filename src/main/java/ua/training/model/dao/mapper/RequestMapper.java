@@ -1,17 +1,11 @@
 package ua.training.model.dao.mapper;
 
-import ua.training.model.dao.FeedbackDAO;
-import ua.training.model.dao.UserDAO;
 import ua.training.model.entity.*;
 import ua.training.model.types.*;
 import ua.training.model.utils.AttributesBinder;
-
 import javax.servlet.http.HttpServletRequest;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Optional;
-
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class RequestMapper implements Mapper<Request> {

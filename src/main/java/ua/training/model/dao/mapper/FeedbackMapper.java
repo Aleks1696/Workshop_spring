@@ -2,9 +2,7 @@ package ua.training.model.dao.mapper;
 
 import ua.training.model.entity.Feedback;
 import ua.training.model.types.Marks;
-
 import static ua.training.model.utils.AttributesBinder.getProperty;
-
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
