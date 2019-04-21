@@ -14,6 +14,7 @@ public class LoginPageCommand implements Command {
         HttpSession session = request.getSession();
         Optional<User> user =
                 Optional.ofNullable((User) session.getAttribute(AttributesBinder.getProperty("parameter.user")));
-        return user.map(u -> u.getRole().getBasePath()).orElse(URIBinder.getProperty("jsp.login"));
+        return user.map(u -> URIBinder.getProperty("redirect") + u.getRole().getBasePath()).orElse(
+                URIBinder.getProperty("jsp.login"));
     }
 }

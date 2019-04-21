@@ -34,6 +34,7 @@ public class RegistrationCommand implements Command {
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isUserValid(user, wrongInputMessages)) {
+            log.warn("Entering system with invalid data");
             request.setAttribute(AttributesBinder.getProperty("attribute.error.message"),
                     wrongInputMessages);
             return URIBinder.getProperty("jsp.registration");

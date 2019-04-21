@@ -63,7 +63,7 @@ public class JDBCUserDao extends AbstractDAO<User> implements UserDAO {
             result.next();
             user = mapper.extract(result);
         } catch (SQLException e) {
-            log.warn(String.format("Error while finding user with id: %d", id), e);
+            log.warn(String.format("Error while finding user with id: %d", id));
             throw new UserNotFoundException("User is not found", e);
         }
         return user;
