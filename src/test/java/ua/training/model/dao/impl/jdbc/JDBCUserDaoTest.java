@@ -46,7 +46,6 @@ public class JDBCUserDaoTest {
         user.setName_ua("Анна");
         user.setSurname("Mulina");
         user.setSurname_ua("Mulina");
-        user.setName_ua("Муліна");
         user.setEmail("anna@gmail.com");
         user.setPhoneNumber("2453632");
 
