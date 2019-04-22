@@ -9,12 +9,11 @@ import ua.training.model.dao.UserDAO;
 import ua.training.model.entity.User;
 import ua.training.model.types.UserRole;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+
 import static org.junit.Assert.*;
-import static org.mockito.Matchers.any;
+import static org.mockito.Matchers.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -33,9 +32,9 @@ public class JDBCUserDaoTest {
     @Before
     public void initialize() throws SQLException {
         when(dataSource.getConnection()).thenReturn(connection);
-        when(connection.prepareStatement(any(String.class))).thenReturn(statement);
         when(statement.executeQuery()).thenReturn(resultSet);
         when(resultSet.next()).thenReturn(true);
+        when(connection.prepareStatement(any(String.class))).thenReturn(statement);
 
         user = new User();
         user.setId(2);
@@ -62,31 +61,25 @@ public class JDBCUserDaoTest {
     }
 
     @Test
-    public void createUser() {
+    public void create() throws SQLException {
+        UserDAO userDAO = new JDBCUserDao(connection);
+        when(connection.prepareStatement(anyString(), anyInt())).thenReturn(statement);
+        when(statement.getGeneratedKeys()).thenReturn(resultSet);
+        when(resultSet.getInt(anyInt())).thenReturn(1);
+        User createdUser = userDAO.create(user);
+        assertEquals(user, createdUser);
     }
 
     @Test
-    public void create() {
+    public void findById() throws SQLException {
+        UserDAO userDAO = new JDBCUserDao(connection);
+        when(connection.prepareStatement(anyString())).thenReturn(statement);
+        User foundUser = userDAO.findById(user.getId());
+        assertEquals(user, foundUser);
     }
 
     @Test
-    public void findById() {
-    }
-
-    @Test
-    public void findAll() {
-    }
-
-    @Test
-    public void update() {
-    }
-
-    @Test
-    public void delete() {
-    }
-
-    @Test
-    public void findByLoginAndPasswordPositive() {
+    public void findByLoginAndPasswordPositive() throws SQLException {
         UserDAO userDAO = new JDBCUserDao(connection);
         User userFromDB = userDAO.findByLoginAndPassword("anna", "12anna");
         assertEquals(user.getLogin(), userFromDB.getLogin());
