@@ -48,11 +48,15 @@
         </p>
         <div class="form-group">
             <input type="text" class="form-control" name="login"
-                   placeholder="<fmt:message key="jsp.placeholder.login"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.login"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/> <br/>
         </div>
         <div class="form-group">
-            <input type="text" class="form-control" name="password"
-                   placeholder="<fmt:message key="jsp.placeholder.password"/>" required="required">
+            <input type="password" class="form-control" name="password"
+                   placeholder="<fmt:message key="jsp.placeholder.password"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success btn-lg btn-block"><fmt:message

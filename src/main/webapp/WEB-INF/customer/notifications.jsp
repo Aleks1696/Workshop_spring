@@ -85,7 +85,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" name="commentary"
-                                                               placeholder="<fmt:message key="jsp.placeholder.feedback"/>">
+                                                               placeholder="<fmt:message key="jsp.placeholder.feedback"/>"
+                                                               oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                                                               oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit"

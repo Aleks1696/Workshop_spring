@@ -27,34 +27,39 @@
         <%@ include file="/common/pagination.jsp" %>
 
         <c:set var="requests_in_process" scope="request" value="${requestScope.requests_in_process}"/>
-        <c:if test="${requests_in_process != null}">
-            <c:forEach items="${requests_in_process}" var="request">
-                <div class="card">
-                    <div class="card-body">
-                        <form method="post" action="${pageContext.request.contextPath}/master/bucket/request/close">
-                            <fieldset>
-                                <input hidden="hidden" name="id" value="${request.getId()}">
-                                <h5 class="card-title"><fmt:message key="output.request.request"/> <c:out
-                                        value="${request.getId()}"/></h5>
-                                <h6 class="card-subtitle mb-2 text-muted"><fmt:message key="output.request.device"/>
-                                    <c:out value="${request.getDevice()}"/></h6>
-                                <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
-                                        value="${request.getProductCategory()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.description"/> <c:out
-                                        value="${request.getDescription()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
-                                        value="${request.getCreationDate()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.status"/> <c:out
-                                        value="${request.getStatus()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.manager"/> <c:out
-                                        value="${request.getManager_id()}"/></p> <br>
-                                <input type="submit" value="<fmt:message key="jsp.bucket.fixed.button"/>">
-                            </fieldset>
-                        </form>
+        <c:choose>
+            <c:when test="${!requests_in_process.isEmpty()}">
+                <c:forEach items="${requests_in_process}" var="request">
+                    <div class="card">
+                        <div class="card-body">
+                            <form method="post" action="${pageContext.request.contextPath}/master/bucket/request/close">
+                                <fieldset>
+                                    <input hidden="hidden" name="id" value="${request.getId()}">
+                                    <h5 class="card-title"><fmt:message key="output.request.request"/> <c:out
+                                            value="${request.getId()}"/></h5>
+                                    <h6 class="card-subtitle mb-2 text-muted"><fmt:message key="output.request.device"/>
+                                        <c:out value="${request.getDevice()}"/></h6>
+                                    <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
+                                            value="${request.getProductCategory()}"/>;</p>
+                                    <p class="card-text"><fmt:message key="output.request.description"/> <c:out
+                                            value="${request.getDescription()}"/>;</p>
+                                    <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
+                                            value="${request.getCreationDate()}"/>;</p>
+                                    <p class="card-text"><fmt:message key="output.request.status"/> <c:out
+                                            value="${request.getStatus()}"/>;</p>
+                                    <p class="card-text"><fmt:message key="output.request.manager"/> <c:out
+                                            value="${request.getManager_id()}"/></p> <br>
+                                    <input type="submit" value="<fmt:message key="jsp.bucket.fixed.button"/>">
+                                </fieldset>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
-        </c:if>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <h3><fmt:message key="jsp.no.requsts.in.process"/></h3>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 <%@ include file="/common/footer.jsp" %>

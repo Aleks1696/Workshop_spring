@@ -48,15 +48,21 @@
         </p>
         <div class="form-group">
             <input type="text" class="form-control" name="login"
-                   placeholder="<fmt:message key="jsp.placeholder.login"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.login"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" name="password"
-                   placeholder="<fmt:message key="jsp.placeholder.password"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.password"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="name" placeholder="<fmt:message key="jsp.placeholder.name"/>"
-                   required="required">
+                   required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="name_ua"
@@ -64,19 +70,27 @@
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="surname"
-                   placeholder="<fmt:message key="jsp.placeholder.surname"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.surname"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="surname_ua"
-                   placeholder="<fmt:message key="jsp.placeholder.surname_ua"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.surname_ua"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="email" class="form-control" name="email"
-                   placeholder="<fmt:message key="jsp.placeholder.email"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.email"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" name="phone_number"
-                   placeholder="<fmt:message key="jsp.placeholder.phoneNumber"/>" required="required">
+                   placeholder="<fmt:message key="jsp.placeholder.phoneNumber"/>" required="required"
+                   oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                   oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-success btn-lg btn-block"><fmt:message
