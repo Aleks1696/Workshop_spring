@@ -32,11 +32,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<Request> getActiveRequests(User user, int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
-        int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("request.find.active.by.customer");
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
             return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.NEW.toString(),
-                    RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString(), start, end), user.getId());
+                    RequestStatus.ACCEPTED.toString(), RequestStatus.IN_PROCESS.toString(), start, recordsPerPage), user.getId());
         }
     }
 
