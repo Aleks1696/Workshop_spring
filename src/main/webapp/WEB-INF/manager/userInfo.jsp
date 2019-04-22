@@ -65,9 +65,6 @@
                     <form method="post">
                         <input type="hidden" name="id" value="${customer.getId()}"/>
                         <input type="submit"
-                               formaction="${pageContext.request.contextPath}/manager/requests/from/customer"
-                               value="Requests"/>
-                        <input type="submit"
                                formaction="${pageContext.request.contextPath}/manager/feedback/from/customer"
                                value="Feedbacks"/>
                     </form>

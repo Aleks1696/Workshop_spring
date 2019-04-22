@@ -28,11 +28,10 @@ public class MasterServiceImpl implements MasterService {
     @Override
     public List<Request> getRequestsToProcess(int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
-        int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("request.find.by.one.status");
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
             return requestDAO.findRequestByStatus(String.format(query, RequestStatus.ACCEPTED.toString(),
-                    start, end));
+                    start, recordsPerPage));
         }
     }
 
@@ -46,11 +45,10 @@ public class MasterServiceImpl implements MasterService {
     @Override
     public List<Request> getAcceptedRequests(User user, int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
-        int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("request.find.by.master.and.status");
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
             return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.IN_PROCESS.toString(),
-                    start, end), user.getId());
+                    start, recordsPerPage), user.getId());
         }
     }
 

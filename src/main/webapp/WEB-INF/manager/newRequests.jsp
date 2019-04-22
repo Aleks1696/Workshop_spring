@@ -34,7 +34,7 @@
 
         <c:set var="new_requests" scope="request" value="${requestScope.new_requests}"/>
         <c:choose>
-            <c:when test="${new_requests != null}">
+            <c:when test="${!new_requests.isEmpty()}">
                 <c:forEach items="${new_requests}" var="request">
                     <div class="card">
                         <div class="card-header">
@@ -69,12 +69,16 @@
                                                     <input hidden="hidden" name="id" value="${request.getId()}">
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" name="price"
-                                                               placeholder="<fmt:message key="output.request.price"/>">
+                                                               placeholder="<fmt:message key="output.request.price"/>"
+                                                               oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                                                               oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <input type="text" class="form-control"
                                                                name="managerAcceptComment"
-                                                               placeholder="<fmt:message key="output.request.manager.commentary"/>">
+                                                               placeholder="<fmt:message key="output.request.manager.commentary"/>"
+                                                               oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                                                               oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit"
@@ -99,7 +103,9 @@
                                                     <div class="form-group">
                                                         <input type="text" class="form-control"
                                                                name="managerDeclineComment"
-                                                               placeholder="<fmt:message key="output.request.manager.commentary"/>">
+                                                               placeholder="<fmt:message key="output.request.manager.commentary"/>"
+                                                               oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
+                                                               oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit"

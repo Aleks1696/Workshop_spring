@@ -32,10 +32,9 @@ public class ManagerServiceImpl implements ManagerService {
     @Override
     public List<Request> getNewRequests(int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
-        int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("request.find.by.one.status");
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
-            return requestDAO.findRequestByStatus(String.format(query, RequestStatus.NEW.toString(), start, end));
+            return requestDAO.findRequestByStatus(String.format(query, RequestStatus.NEW.toString(), start, recordsPerPage));
         }
     }
 
@@ -63,10 +62,9 @@ public class ManagerServiceImpl implements ManagerService {
     @Override
     public List<Feedback> getCustomerFeedbacks(int customerId, int currentPage, int recordsPerPage) throws Exception {
         int start = currentPage * recordsPerPage - recordsPerPage;
-        int end = start + recordsPerPage;
         String query = QueriesBinder.getProperty("feedback.find.by.customer");
         try (FeedbackDAO feedbackDAO = daoFactory.createFeedbackDAO()) {
-            return feedbackDAO.findBy(String.format(query, customerId, start, end));
+            return feedbackDAO.findBy(String.format(query, customerId, start, recordsPerPage));
         }
     }
 }
