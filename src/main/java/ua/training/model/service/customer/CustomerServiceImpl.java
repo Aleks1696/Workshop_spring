@@ -43,7 +43,8 @@ public class CustomerServiceImpl implements CustomerService {
     public List<Request> getAccomplishedRequests(User user) throws Exception {
         String query = QueriesBinder.getProperty("request.find.by.customer.and.status");
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
-            return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.FIXED.toString()),
+            return requestDAO.findByUserIdAndStatus(String.format(query, RequestStatus.FIXED.toString(),
+                    RequestStatus.DECLINED.toString()),
                     user.getId());
         }
     }

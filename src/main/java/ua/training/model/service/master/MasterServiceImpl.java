@@ -37,6 +37,7 @@ public class MasterServiceImpl implements MasterService {
 
     @Override
     public boolean processRequest(Request request) throws Exception {
+        request.setStatus(RequestStatus.IN_PROCESS);
         try (RequestDAO requestDAO = daoFactory.createRequestDAO()) {
             return requestDAO.updateAcceptedByMaster(request);
         }

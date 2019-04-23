@@ -6,6 +6,7 @@ import ua.training.model.utils.AttributesBinder;
 import javax.servlet.http.HttpServletRequest;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import static ua.training.model.utils.AttributesBinder.getProperty;
 
 public class RequestMapper implements Mapper<Request> {
@@ -33,9 +34,12 @@ public class RequestMapper implements Mapper<Request> {
     public Request extract(HttpServletRequest req) {
         Request request = new Request();
         request.setProductCategory(ProductCategory.valueOf(
-                req.getParameter(AttributesBinder.getProperty("parameter.product.category"))));
-        request.setDevice(req.getParameter(AttributesBinder.getProperty("parameter.device")));
-        request.setDescription(req.getParameter(AttributesBinder.getProperty("parameter.description")));
+                Optional.ofNullable(req.getParameter(AttributesBinder.getProperty("parameter.product.category")))
+                        .orElse("UNKNOWN")));
+        request.setDevice(Optional.ofNullable(req.getParameter(AttributesBinder.getProperty("parameter.device")))
+                .orElse(Optional.empty().toString()));
+        request.setDescription(Optional.ofNullable(req.getParameter(AttributesBinder.getProperty("parameter.description")))
+                .orElse(Optional.empty().toString()));
         return request;
     }
 }
