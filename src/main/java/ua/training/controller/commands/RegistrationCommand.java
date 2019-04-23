@@ -41,7 +41,7 @@ public class RegistrationCommand implements Command {
         }
         Optional<User> registeredUser = Optional.ofNullable(registerUser(request, user));
         if (registeredUser.isPresent()) {
-            session.setAttribute(AttributesBinder.getProperty("parameter.user"), user);
+            session.setAttribute(AttributesBinder.getProperty("parameter.user"), registeredUser.get());
             ContextUtil.setAttributesToContext(session, user);
             return URIBinder.getProperty("redirect") + URIBinder.getProperty("path.customer.account");
         } else {
