@@ -412,3 +412,1111 @@ java.lang.Exception
 	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:70)
 2019-04-21, 03:13:04,134 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
 2019-04-21, 03:13:04,134 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 15:56:16,5616 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-22, 15:56:16,5616 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 15:58:28,5828 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-22, 15:58:28,5828 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 15:59:14,5914 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-22, 15:59:14,5914 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-22, 15:59:14,5914 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 72
+2019-04-22, 16:03:16,316 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:03:19,319 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:05:27,527 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:05:40,540 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:05:40,540 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:05:50,550 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:05:50,550 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:11:22,1122 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:28:18,2818 [ WARN]  : LoginCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 16:28:31,2831 [ WARN]  : LoginCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 16:28:38,2838 [ WARN]  : LoginCommand.java, execute, 37 : Entering system with invalid data
+2019-04-22, 16:28:46,2846 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:29:05,295 [ WARN]  : CreateRequestCommand.java, execute, 36 : Request has invalid data
+2019-04-22, 16:31:18,3118 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-22, 16:31:18,3118 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 91
+2019-04-22, 16:31:23,3123 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:29,3129 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:31:29,3129 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:31,3131 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:31:31,3131 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:32,3132 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:31:32,3132 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:33,3133 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:34,3134 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:34,3134 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:34,3134 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:31:40,3140 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:32:10,3210 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:32:10,3210 [ WARN]  : JDBCUserDao.java, findByLoginAndPassword, 99 : Error while finding user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:32:10,3210 [ WARN]  : LoginCommand.java, getUserFromDB, 57 : User is not found
+2019-04-22, 16:32:18,3218 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:32:18,3218 [ WARN]  : JDBCUserDao.java, findByLoginAndPassword, 99 : Error while finding user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:32:18,3218 [ WARN]  : LoginCommand.java, getUserFromDB, 57 : User is not found
+2019-04-22, 16:33:36,3336 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:33:55,3355 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:33:55,3355 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:34:04,344 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:34:04,344 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:37:23,3723 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:37:26,3726 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:37:26,3726 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:38:03,383 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:38:03,383 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:38:46,3846 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:38:46,3846 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:39:21,3921 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:39:24,3924 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:39:24,3924 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:41:32,4132 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:41:34,4134 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:41:34,4134 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:42:46,4246 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:42:48,4248 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:42:48,4248 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:43:56,4356 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:43:58,4358 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:43:58,4358 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:44:45,4445 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:44:47,4447 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:44:47,4447 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:45:50,4550 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-22, 16:45:50,4550 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-22, 16:45:50,4550 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:45:50,4550 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:46:00,460 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:46:00,460 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:46:05,465 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:46:05,465 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:46:20,4620 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:46:20,4620 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:46:22,4622 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:46:22,4622 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:46:32,4632 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:46:40,4640 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:47:00,470 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:47:04,474 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:47:04,474 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:48:15,4815 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-22, 16:48:15,4815 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 92
+2019-04-22, 16:48:17,4817 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 16:48:33,4833 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 16:48:40,4840 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:48:40,4840 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:50:00,500 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-22, 16:50:00,500 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-22, 16:50:00,500 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 16:50:00,500 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 16:53:27,5327 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 16:53:29,5329 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 16:53:29,5329 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:02:30,230 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 17:02:32,232 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:02:32,232 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:02:48,248 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-22, 17:02:48,248 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-22, 17:02:48,248 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 92
+2019-04-22, 17:02:48,248 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:02:48,248 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:02:51,251 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:02:52,252 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:02:52,252 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:03:28,328 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mana and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 17:03:28,328 [ WARN]  : JDBCUserDao.java, findByLoginAndPassword, 99 : Error while finding user with login: mana and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 17:03:28,328 [ WARN]  : LoginCommand.java, getUserFromDB, 57 : User is not found
+2019-04-22, 17:03:35,335 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 17:03:38,338 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 17:03:38,338 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:03:49,349 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-22, 17:03:52,352 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:03:52,352 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:03:54,354 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:03:54,354 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:04:06,46 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:04:06,46 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:04:17,417 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:04:17,417 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:04:50,450 [ INFO]  : ProcessRequestCommand.java, execute, 23 : Try to accept requests by master
+2019-04-22, 17:05:03,53 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:05:03,53 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:05:35,535 [ INFO]  : ProcessRequestCommand.java, execute, 23 : Try to accept requests by master
+2019-04-22, 17:05:35,535 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-22, 17:05:35,535 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:05:35,535 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:08:31,831 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-22, 17:08:34,834 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:08:34,834 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:08:40,840 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:08:40,840 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-22, 17:08:40,840 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:08:40,840 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:09:33,933 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:09:33,933 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-22, 17:09:34,934 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:09:34,934 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:09:45,945 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:09:45,945 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-22, 17:09:45,945 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:09:45,945 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:11:22,1122 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-22, 17:11:30,1130 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:11:30,1130 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:11:32,1132 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:11:32,1132 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:11:38,1138 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:11:38,1138 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:11:39,1139 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:11:39,1139 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:13:39,1339 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:13:39,1339 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:13:45,1345 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:14:13,1413 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-22, 17:14:38,1438 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:14:38,1438 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:15:18,1518 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-22, 17:15:35,1535 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:15:35,1535 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:15:39,1539 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:15:39,1539 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:15:47,1547 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:15:47,1547 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:16:05,165 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:16:05,165 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:16:31,1631 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:16:31,1631 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:16:43,1643 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:16:43,1643 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:16:53,1653 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:22:26,2226 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-22, 17:22:28,2228 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:22:28,2228 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:22:34,2234 [ INFO]  : ProcessRequestCommand.java, execute, 25 : Try to accept requests by master
+2019-04-22, 17:29:46,2946 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:29:46,2946 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:29:48,2948 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:29:48,2948 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:29:50,2950 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:29:50,2950 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:29:52,2952 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-22, 17:29:52,2952 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 91
+2019-04-22, 17:29:52,2952 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-22, 17:29:52,2952 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-22, 17:29:54,2954 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-22, 17:29:54,2954 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:30:02,302 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 17:30:07,307 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:30:10,3010 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:30:10,3010 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:31:21,3121 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 17:31:24,3124 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:31:24,3124 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:31:37,3137 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-22, 17:31:37,3137 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 93
+2019-04-22, 17:31:46,3146 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-22, 17:31:49,3149 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 17:31:49,3149 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:31:57,3157 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-22, 17:31:57,3157 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-22, 17:31:57,3157 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-22, 17:31:57,3157 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-22, 17:32:05,325 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-22, 17:32:13,3213 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:32:15,3215 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:32:15,3215 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:32:28,3228 [ INFO]  : LeaveFeedbackCommand.java, execute, 27 : Try to leave feedback
+2019-04-22, 17:32:28,3228 [ INFO]  : JDBCFeedbackDao.java, createAndSetToRequest, 61 : Trying to create new feedback and bind it with relative request
+2019-04-22, 17:32:28,3228 [ INFO]  : JDBCFeedbackDao.java, findById, 29 : Try to find feedback by id: 15
+2019-04-22, 17:32:28,3228 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-22, 17:32:28,3228 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 91
+2019-04-22, 17:32:28,3228 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:32:28,3228 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:32:54,3254 [ INFO]  : LeaveFeedbackCommand.java, execute, 27 : Try to leave feedback
+2019-04-22, 17:32:54,3254 [ INFO]  : JDBCFeedbackDao.java, createAndSetToRequest, 61 : Trying to create new feedback and bind it with relative request
+2019-04-22, 17:32:54,3254 [ INFO]  : JDBCFeedbackDao.java, findById, 29 : Try to find feedback by id: 16
+2019-04-22, 17:32:54,3254 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-22, 17:32:54,3254 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 93
+2019-04-22, 17:32:54,3254 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:32:54,3254 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-22, 17:32:57,3257 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-22, 17:32:57,3257 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:27:19,2719 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 10:27:23,2723 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:27:26,2726 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 10:27:26,2726 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:27:45,2745 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 10:27:45,2745 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:27:47,2747 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:27:53,2753 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:28:13,2813 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: Mike and password: 0f01d6d047792811cb3e06367e71a2f0
+2019-04-23, 10:28:13,2813 [ WARN]  : JDBCUserDao.java, findByLoginAndPassword, 99 : Error while finding user with login: Mike and password: 0f01d6d047792811cb3e06367e71a2f0
+2019-04-23, 10:28:13,2813 [ WARN]  : LoginCommand.java, getUserFromDB, 57 : User is not found
+2019-04-23, 10:29:53,2953 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:29:53,2953 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 10:29:53,2953 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 73
+2019-04-23, 10:37:36,3736 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 10:37:36,3736 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 0 and statuses
+2019-04-23, 10:39:35,3935 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:39:35,3935 [ERROR]  : JDBCRequestDao.java, create, 44 : Error while creating new request(Request already exist)
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`workshop`.`request`, CONSTRAINT `customer_id` FOREIGN KEY (`customer`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:36)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:14)
+	at ua.training.model.service.customer.CustomerServiceImpl.createRequest(CustomerServiceImpl.java:19)
+	at ua.training.controller.commands.customer.CreateRequestCommand.createRequest(CreateRequestCommand.java:59)
+	at ua.training.controller.commands.customer.CreateRequestCommand.execute(CreateRequestCommand.java:41)
+	at ua.training.controller.WorkshopServlet.processUser(WorkshopServlet.java:36)
+	at ua.training.controller.WorkshopServlet.doPost(WorkshopServlet.java:30)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.URLFilter.doFilter(URLFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.LocaleFilter.doFilter(LocaleFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-04-23, 10:39:35,3935 [ WARN]  : CreateRequestCommand.java, createRequest, 61 : Request is already exist
+2019-04-23, 10:41:20,4120 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:41:20,4120 [ERROR]  : JDBCRequestDao.java, create, 44 : Error while creating new request(Request already exist)
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`workshop`.`request`, CONSTRAINT `customer_id` FOREIGN KEY (`customer`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:36)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:14)
+	at ua.training.model.service.customer.CustomerServiceImpl.createRequest(CustomerServiceImpl.java:19)
+	at ua.training.controller.commands.customer.CreateRequestCommand.createRequest(CreateRequestCommand.java:59)
+	at ua.training.controller.commands.customer.CreateRequestCommand.execute(CreateRequestCommand.java:41)
+	at ua.training.controller.WorkshopServlet.processUser(WorkshopServlet.java:36)
+	at ua.training.controller.WorkshopServlet.doPost(WorkshopServlet.java:30)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.URLFilter.doFilter(URLFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.LocaleFilter.doFilter(LocaleFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-04-23, 10:41:20,4120 [ WARN]  : CreateRequestCommand.java, createRequest, 61 : Request is already exist
+2019-04-23, 10:42:52,4252 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 10:42:56,4256 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:42:56,4256 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 3
+2019-04-23, 10:42:58,4258 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 10:43:27,4327 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 10:43:32,4332 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:43:32,4332 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 4
+2019-04-23, 10:43:34,4334 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 10:43:53,4353 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:43:53,4353 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 5
+2019-04-23, 10:43:55,4355 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 10:44:01,441 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 10:44:01,441 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 10:44:03,443 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 10:45:51,4551 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:45:51,4551 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 10:45:51,4551 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 74
+2019-04-23, 10:47:17,4717 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:47:17,4717 [ERROR]  : JDBCRequestDao.java, create, 44 : Error while creating new request(Request already exist)
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`workshop`.`request`, CONSTRAINT `customer_id` FOREIGN KEY (`customer`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:36)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:14)
+	at ua.training.model.service.customer.CustomerServiceImpl.createRequest(CustomerServiceImpl.java:19)
+	at ua.training.controller.commands.customer.CreateRequestCommand.createRequest(CreateRequestCommand.java:59)
+	at ua.training.controller.commands.customer.CreateRequestCommand.execute(CreateRequestCommand.java:41)
+	at ua.training.controller.WorkshopServlet.processUser(WorkshopServlet.java:36)
+	at ua.training.controller.WorkshopServlet.doPost(WorkshopServlet.java:30)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.URLFilter.doFilter(URLFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.LocaleFilter.doFilter(LocaleFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-04-23, 10:47:17,4717 [ WARN]  : CreateRequestCommand.java, createRequest, 61 : Request is already exist
+2019-04-23, 10:52:28,5228 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:52:28,5228 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-23, 10:53:43,5343 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:53:45,5345 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 10:53:45,5345 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 75
+2019-04-23, 10:55:47,5547 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 10:56:40,5640 [ERROR]  : JDBCRequestDao.java, create, 44 : Error while creating new request(Request already exist)
+com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails (`workshop`.`request`, CONSTRAINT `customer_id` FOREIGN KEY (`customer`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:936)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3976)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3912)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2530)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2683)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2486)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1858)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2079)
+	at com.mysql.jdbc.PreparedStatement.executeUpdateInternal(PreparedStatement.java:2013)
+	at com.mysql.jdbc.PreparedStatement.executeLargeUpdate(PreparedStatement.java:5104)
+	at com.mysql.jdbc.PreparedStatement.executeUpdate(PreparedStatement.java:1998)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at org.apache.commons.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:36)
+	at ua.training.model.dao.impl.jdbc.JDBCRequestDao.create(JDBCRequestDao.java:14)
+	at ua.training.model.service.customer.CustomerServiceImpl.createRequest(CustomerServiceImpl.java:19)
+	at ua.training.controller.commands.customer.CreateRequestCommand.createRequest(CreateRequestCommand.java:59)
+	at ua.training.controller.commands.customer.CreateRequestCommand.execute(CreateRequestCommand.java:41)
+	at ua.training.controller.WorkshopServlet.processUser(WorkshopServlet.java:36)
+	at ua.training.controller.WorkshopServlet.doPost(WorkshopServlet.java:30)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.AuthenticationFilter.doFilter(AuthenticationFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.URLFilter.doFilter(URLFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.LocaleFilter.doFilter(LocaleFilter.java:38)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at ua.training.controller.filter.EncodingFilter.doFilter(EncodingFilter.java:29)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:650)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:800)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-04-23, 10:56:48,5648 [ WARN]  : CreateRequestCommand.java, createRequest, 61 : Request is already exist
+2019-04-23, 10:57:36,5736 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:57:40,5740 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-23, 10:58:25,5825 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 10:58:31,5831 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-23, 11:00:55,055 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 11:01:09,19 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 11:02:18,218 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 76
+2019-04-23, 11:05:17,517 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 11:05:19,519 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 11:05:24,524 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 77
+2019-04-23, 11:06:03,63 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 11:06:03,63 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 8
+2019-04-23, 11:06:07,67 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 11:08:40,840 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 11:08:41,841 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:08:41,841 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 11:08:53,853 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 11:09:01,91 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:09:01,91 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:09:06,96 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:09:06,96 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:09:53,953 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 11:09:53,953 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 11:09:53,953 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:09:53,953 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:09:56,956 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:09:56,956 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:10:14,1014 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 11:10:14,1014 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 11:10:14,1014 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:10:14,1014 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:10:55,1055 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 11:10:55,1055 [ WARN]  : AcceptRequestCommand.java, execute, 37 : Specified parameters are not valid
+2019-04-23, 11:10:55,1055 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:10:55,1055 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:11:54,1154 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 11:11:54,1154 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 11:11:54,1154 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 11:11:54,1154 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:16:24,1624 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 11:16:30,1630 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:16:34,1634 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:16:34,1634 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:22:46,2246 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 11:22:48,2248 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:22:48,2248 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:26:41,2641 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 11:26:43,2643 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:26:43,2643 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:28:45,2845 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:28:45,2845 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:28:51,2851 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:28:51,2851 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:29:22,2922 [ INFO]  : LeaveFeedbackCommand.java, execute, 27 : Try to leave feedback
+2019-04-23, 11:29:22,2922 [ INFO]  : JDBCFeedbackDao.java, createAndSetToRequest, 61 : Trying to create new feedback and bind it with relative request
+2019-04-23, 11:29:22,2922 [ INFO]  : JDBCFeedbackDao.java, findById, 29 : Try to find feedback by id: 1
+2019-04-23, 11:29:22,2922 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 11:29:22,2922 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 3
+2019-04-23, 11:29:22,2922 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:29:22,2922 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:29:25,2925 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:29:25,2925 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:30:00,300 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-23, 11:30:02,302 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 11:30:02,302 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:30:04,304 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 11:30:04,304 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 11:30:06,306 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 11:30:06,306 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:30:10,3010 [ INFO]  : ProcessRequestCommand.java, execute, 28 : Try to accept requests by master
+2019-04-23, 11:30:10,3010 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 11:30:10,3010 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 11:30:10,3010 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 11:30:12,3012 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 11:30:12,3012 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 11:30:16,3016 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-23, 11:30:16,3016 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 5
+2019-04-23, 11:30:16,3016 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 11:30:16,3016 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 11:30:41,3041 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:31:25,3125 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:31:25,3125 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:33:09,339 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:33:11,3311 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:33:11,3311 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:34:31,3431 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:34:31,3431 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:34:41,3441 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:34:41,3441 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:37:42,3742 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 11:39:44,3944 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:39:46,3946 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:39:46,3946 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:41:08,418 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:41:10,4110 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:41:10,4110 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:44:20,4420 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:44:21,4421 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:44:21,4421 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:48:52,4852 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:48:54,4854 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:48:54,4854 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:51:39,5139 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:51:42,5142 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:51:42,5142 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:51:46,5146 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:51:46,5146 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:54:32,5432 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 11:54:33,5433 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:54:33,5433 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:54:42,5442 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:54:42,5442 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 11:54:54,5454 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:54:55,5455 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:54:55,5455 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:55:44,5544 [ INFO]  : LeaveFeedbackCommand.java, execute, 27 : Try to leave feedback
+2019-04-23, 11:55:44,5544 [ INFO]  : JDBCFeedbackDao.java, createAndSetToRequest, 61 : Trying to create new feedback and bind it with relative request
+2019-04-23, 11:55:44,5544 [ INFO]  : JDBCFeedbackDao.java, findById, 29 : Try to find feedback by id: 2
+2019-04-23, 11:55:44,5544 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 11:55:44,5544 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 4
+2019-04-23, 11:55:44,5544 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:55:44,5544 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:55:49,5549 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:55:53,5553 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:27,5827 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:58:29,5829 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:29,5829 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:31,5831 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:31,5831 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:33,5833 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:33,5833 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:34,5834 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:34,5834 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:38,5838 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:38,5838 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:58:39,5839 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:58:39,5839 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:43,5943 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 11:59:47,5947 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:47,5947 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:50,5950 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:50,5950 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:51,5951 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:51,5951 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:52,5952 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:52,5952 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:54,5954 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:54,5954 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:58,5958 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:58,5958 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 11:59:59,5959 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 11:59:59,5959 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:09,19 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:01:13,113 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:13,113 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:15,115 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:15,115 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:16,116 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:16,116 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:17,117 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:17,117 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:18,118 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:18,118 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:19,119 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:19,119 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:20,120 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:20,120 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:20,120 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:20,120 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:23,123 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:23,123 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:23,123 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:23,123 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:24,124 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:24,124 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:25,125 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:01:25,125 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:01:48,148 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 12:03:13,313 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:03:13,313 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:03:15,315 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:03:15,315 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:03:16,316 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:03:16,316 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:04:01,41 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:04:06,46 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:04:06,46 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:04:11,411 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 12:04:54,454 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 12:04:54,454 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 5
+2019-04-23, 12:04:54,454 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:04:54,454 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:04:58,458 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:04:58,458 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:06:25,625 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 12:06:25,625 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 9
+2019-04-23, 12:06:29,629 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:06:29,629 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:06:30,630 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:06:38,638 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 12:06:43,643 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 12:06:43,643 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:04,74 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 12:07:04,74 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 12:07:04,74 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 12:07:04,74 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:11,711 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-23, 12:07:17,717 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:07:17,717 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:37,737 [ INFO]  : ProcessRequestCommand.java, execute, 28 : Try to accept requests by master
+2019-04-23, 12:07:37,737 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:07:37,737 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 12:07:37,737 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:07:37,737 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:07:37,737 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:07:37,737 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:37,737 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:37,737 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:37,737 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:07:45,745 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 12:07:54,754 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 12:07:54,754 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:08:02,82 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 12:08:02,82 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 12:08:02,82 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 12:08:02,82 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:08:15,815 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-23, 12:08:17,817 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:08:17,817 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:08:20,820 [ INFO]  : ProcessRequestCommand.java, execute, 28 : Try to accept requests by master
+2019-04-23, 12:08:20,820 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 12:08:20,820 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 12:08:20,820 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 12:08:23,823 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 12:08:26,826 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 12:08:30,830 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-23, 12:08:30,830 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 9
+2019-04-23, 12:08:30,830 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 12:08:32,832 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 12:08:40,840 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:08:41,841 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:08:41,841 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:08:52,852 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 12:08:52,852 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 12:08:52,852 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 9
+2019-04-23, 12:08:52,852 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:08:52,852 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:08:54,854 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:08:54,854 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:10:08,108 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:10:15,1015 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 12:10:15,1015 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 10
+2019-04-23, 12:10:18,1018 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:10:18,1018 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:10:33,1033 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:10:33,1033 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:41,1141 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:11:44,1144 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:44,1144 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:46,1146 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:46,1146 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:47,1147 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:47,1147 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:48,1148 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:48,1148 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:49,1149 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:49,1149 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:49,1149 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:49,1149 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:50,1150 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:50,1150 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:52,1152 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:52,1152 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:11:52,1152 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:11:52,1152 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:12:25,1225 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:12:27,1227 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:12:27,1227 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:12:30,1230 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:12:30,1230 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:12:31,1231 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:12:31,1231 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:12:32,1232 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:12:32,1232 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:12:33,1233 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:12:33,1233 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:13:44,1344 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:13:46,1346 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:13:46,1346 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:13:50,1350 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 12:13:56,1356 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 12:13:56,1356 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 10
+2019-04-23, 12:13:56,1356 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:13:56,1356 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:14:54,1454 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: mike and password: 18126e7bd3f84b3f3e4df094def5b7de
+2019-04-23, 12:14:55,1455 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:14:55,1455 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:15:06,156 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 12:15:06,156 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 11
+2019-04-23, 12:15:08,158 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:15:08,158 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:15:23,1523 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:15:23,1523 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 12:15:29,1529 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 12:15:29,1529 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 12:15:29,1529 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 11
+2019-04-23, 12:15:29,1529 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 12:15:29,1529 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 73 and statuses
+2019-04-23, 13:30:59,3059 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 13:30:59,3059 [ WARN]  : RegistrationCommand.java, execute, 37 : Entering system with invalid data
+2019-04-23, 13:31:49,3149 [ INFO]  : RegistrationCommand.java, execute, 31 : Try to register new user
+2019-04-23, 13:31:49,3149 [ INFO]  : JDBCUserDao.java, create, 23 : Try to create new user with
+2019-04-23, 13:31:49,3149 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 78
+2019-04-23, 13:32:07,327 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 13:32:07,327 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:10,3210 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:22,3222 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 13:32:22,3222 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:25,3225 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:26,3226 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:27,3227 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:27,3227 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:32:28,3228 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:33:51,3351 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 13:33:51,3351 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 12
+2019-04-23, 13:33:52,3352 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:34:14,3414 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:34:19,3419 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 13:34:19,3419 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:34:53,3453 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: tania and password: 916229a8d4ef288e7f4880ad356800aa
+2019-04-23, 13:34:59,3459 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:34:59,3459 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:35:20,3520 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:35:20,3520 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:35:28,3528 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:35:28,3528 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:35:58,3558 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 78 and statuses
+2019-04-23, 13:36:21,3621 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: monika and password: 6f3fc039bfe1efdb272111f276a0e84a
+2019-04-23, 13:36:24,3624 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 74 and statuses
+2019-04-23, 13:36:27,3627 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 13:36:27,3627 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 74 and statuses
+2019-04-23, 13:37:10,3710 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 13:37:10,3710 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 13
+2019-04-23, 13:38:08,388 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 13:38:08,388 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 14
+2019-04-23, 13:38:16,3816 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:38:16,3816 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:38:32,3832 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 13:38:32,3832 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 13:38:32,3832 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:38:32,3832 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:38:38,3838 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 74 and statuses
+2019-04-23, 13:39:00,390 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:00,390 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:39:01,391 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:01,391 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:39:03,393 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:03,393 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:39:51,3951 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:51,3951 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:39:52,3952 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:52,3952 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:39:53,3953 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:39:53,3953 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:40:10,4010 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:40:10,4010 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:40:19,4019 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 13:40:19,4019 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 13:40:19,4019 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:40:19,4019 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:41:35,4135 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:41:35,4135 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:42:23,4223 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 13:42:25,4225 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:42:25,4225 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:48:04,484 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 13:48:04,484 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 13:48:04,484 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:48:04,484 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:54:31,5431 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:54:31,5431 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:56:04,564 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 13:56:06,566 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:56:06,566 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 13:56:49,5649 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 13:58:44,5844 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 13:58:44,5844 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 13:58:44,5844 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:01:41,141 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:01:43,143 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:01:43,143 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:02:39,239 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:02:39,239 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:02:51,251 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:02:51,251 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:02:51,251 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:02:51,251 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:03:24,324 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:03:24,324 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:06:14,614 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:06:16,616 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:06:16,616 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:06:29,629 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:06:29,629 [ WARN]  : AcceptRequestCommand.java, execute, 37 : Specified parameters are not valid
+2019-04-23, 14:06:29,629 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:06:29,629 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:07:00,70 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:07:00,70 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:07:00,70 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:07:00,70 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:07:56,756 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:07:56,756 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:08:52,852 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:08:54,854 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:08:54,854 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:09:09,99 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 14:13:55,1355 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:13:55,1355 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:13:55,1355 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:14:13,1413 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:14:14,1414 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:14:15,1415 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:14:43,1443 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:14:43,1443 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:14:50,1450 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 14:16:21,1621 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:16:21,1621 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:16:21,1621 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:16:41,1641 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:16:41,1641 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:16:53,1653 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:16:53,1653 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:16:53,1653 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:16:53,1653 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:18:14,1814 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:18:14,1814 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:27:58,2758 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:28:00,280 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:28:00,280 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:28:11,2811 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 14:30:36,3036 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:30:36,3036 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:30:36,3036 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:30:41,3041 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:30:41,3041 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:30:46,3046 [ INFO]  : FindCustomerCommand.java, execute, 28 : Try to find customer
+2019-04-23, 14:30:46,3046 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 2
+2019-04-23, 14:30:49,3049 [ INFO]  : FindCustomerFeedbacksCommand.java, execute, 26 : Try to find customer feedback
+2019-04-23, 14:30:49,3049 [ INFO]  : JDBCFeedbackDao.java, findBy, 97 : Try to find feedbacks by passed parameter
+2019-04-23, 14:30:56,3056 [ INFO]  : FindCustomerCommand.java, execute, 28 : Try to find customer
+2019-04-23, 14:30:56,3056 [ INFO]  : JDBCUserDao.java, findById, 57 : Try to find user by id: 77
+2019-04-23, 14:30:58,3058 [ INFO]  : FindCustomerFeedbacksCommand.java, execute, 26 : Try to find customer feedback
+2019-04-23, 14:30:58,3058 [ INFO]  : JDBCFeedbackDao.java, findBy, 97 : Try to find feedbacks by passed parameter
+2019-04-23, 14:31:10,3110 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-23, 14:31:12,3112 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:31:12,3112 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:31:14,3114 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:31:16,3116 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 14:31:25,3125 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:31:25,3125 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:31:27,3127 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:31:27,3127 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:31:30,3130 [ INFO]  : ProcessRequestCommand.java, execute, 22 : Try to accept requests by master
+2019-04-23, 14:31:30,3130 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 14:31:30,3130 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:31:30,3130 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:32:19,3219 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:32:19,3219 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:32:27,3227 [ INFO]  : ProcessRequestCommand.java, execute, 22 : Try to accept requests by master
+2019-04-23, 14:32:27,3227 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 14:32:27,3227 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:32:27,3227 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:37:27,3727 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:37:29,3729 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:37:29,3729 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:38:03,383 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:38:03,383 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:38:12,3812 [ INFO]  : DeclineRequestCommand.java, execute, 27 : Try to decline request
+2019-04-23, 14:39:31,3931 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:39:31,3931 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:39:31,3931 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:40:29,4029 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:40:29,4029 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:41:10,4110 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:41:10,4110 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:41:10,4110 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:41:10,4110 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:42:01,421 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: kate and password: 29ddc288099264c17b07baf44d3f0adc
+2019-04-23, 14:42:04,424 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:42:04,424 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 14:42:06,426 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 14:42:19,4219 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 14:42:19,4219 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 15
+2019-04-23, 14:42:21,4221 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 14:42:23,4223 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:42:23,4223 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 72 and statuses
+2019-04-23, 14:42:46,4246 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: willie and password: 4964f8738e5935cd636e09f0ea5dc123
+2019-04-23, 14:42:48,4248 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:42:48,4248 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:42:49,4249 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:42:52,4252 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:42:54,4254 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:43:21,4321 [ INFO]  : JDBCRequestDao.java, create, 25 : Try to create new request
+2019-04-23, 14:43:21,4321 [ INFO]  : JDBCRequestDao.java, findById, 57 : Try to find request by id: 16
+2019-04-23, 14:43:22,4322 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:43:25,4325 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:43:25,4325 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:44:05,445 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: oliver and password: acae273a5a5c88b46b36d65a25f5f435
+2019-04-23, 14:44:07,447 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:44:07,447 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 5 and statuses
+2019-04-23, 14:44:08,448 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:44:08,448 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:44:10,4410 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:44:10,4410 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:44:11,4411 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:44:11,4411 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:44:38,4438 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: manager and password: 1d0258c2440a8d19e716292b231e3190
+2019-04-23, 14:44:40,4440 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:44:40,4440 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:45:31,4531 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:45:31,4531 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:45:31,4531 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:45:31,4531 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:45:49,4549 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:45:49,4549 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:46:11,4611 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:46:11,4611 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:47:41,4741 [ INFO]  : AcceptRequestCommand.java, execute, 31 : Try to accept request
+2019-04-23, 14:47:41,4741 [ INFO]  : JDBCRequestDao.java, updateAcceptedOrDeclined, 124 : Try to update accepted or declined request
+2019-04-23, 14:47:41,4741 [ INFO]  : NewRequestsCommand.java, execute, 26 : Try to get new requests
+2019-04-23, 14:47:41,4741 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:47:45,4745 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:47:45,4745 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:47:48,4748 [ INFO]  : ProcessRequestCommand.java, execute, 22 : Try to accept requests by master
+2019-04-23, 14:47:48,4748 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 14:47:48,4748 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:47:48,4748 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:47:49,4749 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:47:49,4749 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 5 and statuses
+2019-04-23, 14:48:00,480 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-23, 14:48:00,480 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 16
+2019-04-23, 14:48:00,480 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:48:00,480 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 5 and statuses
+2019-04-23, 14:48:04,484 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:48:04,484 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:48:05,485 [ INFO]  : ProcessRequestCommand.java, execute, 22 : Try to accept requests by master
+2019-04-23, 14:48:05,485 [ INFO]  : JDBCRequestDao.java, updateAcceptedByMaster, 142 : Try to update request accepted by master
+2019-04-23, 14:48:05,485 [ INFO]  : RequestsToProcessCommand.java, execute, 26 : Try to get requests to precess
+2019-04-23, 14:48:05,485 [ INFO]  : JDBCRequestDao.java, findRequestByStatus, 92 : Try to find requests by statuses
+2019-04-23, 14:48:08,488 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:48:08,488 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 5 and statuses
+2019-04-23, 14:48:09,489 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-23, 14:48:09,489 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 15
+2019-04-23, 14:48:09,489 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:48:09,489 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 5 and statuses
+2019-04-23, 14:48:34,4834 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: master and password: eb0a191797624dd3a48fa681d3061212
+2019-04-23, 14:48:36,4836 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:48:36,4836 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 14:48:38,4838 [ INFO]  : CloseRequestCommand.java, execute, 19 : Try to close request
+2019-04-23, 14:48:38,4838 [ INFO]  : JDBCRequestDao.java, updateStatusById, 109 : Try to update request status by id: 8
+2019-04-23, 14:48:38,4838 [ INFO]  : GetAcceptedCommand.java, execute, 26 : Try to get accepted requests
+2019-04-23, 14:48:38,4838 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 2 and statuses
+2019-04-23, 14:49:11,4911 [ INFO]  : JDBCUserDao.java, findByLoginAndPassword, 89 : Try to find user with login: willie and password: 4964f8738e5935cd636e09f0ea5dc123
+2019-04-23, 14:49:13,4913 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:49:13,4913 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:49:33,4933 [ INFO]  : LeaveFeedbackCommand.java, execute, 27 : Try to leave feedback
+2019-04-23, 14:49:33,4933 [ INFO]  : JDBCFeedbackDao.java, createAndSetToRequest, 61 : Trying to create new feedback and bind it with relative request
+2019-04-23, 14:49:33,4933 [ INFO]  : JDBCFeedbackDao.java, findById, 29 : Try to find feedback by id: 3
+2019-04-23, 14:49:33,4933 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 14:49:33,4933 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 8
+2019-04-23, 14:49:33,4933 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:49:33,4933 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:50:07,507 [ INFO]  : ArchiveRequestCommand.java, execute, 21 : Try to archive request
+2019-04-23, 14:50:07,507 [ INFO]  : JDBCRequestDao.java, moveRequestToArchive, 158 : Try to move request to archive
+2019-04-23, 14:50:07,507 [ INFO]  : JDBCRequestDao.java, delete, 186 : Try to delete request by id: 16
+2019-04-23, 14:50:07,507 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:50:07,507 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:50:09,509 [ INFO]  : CustomerNotificationPageCommand.java, execute, 21 : Try to get customer notification page
+2019-04-23, 14:50:09,509 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
+2019-04-23, 14:50:09,509 [ INFO]  : JDBCRequestDao.java, findByUserIdAndStatus, 74 : Try to find request by user id: 77 and statuses
