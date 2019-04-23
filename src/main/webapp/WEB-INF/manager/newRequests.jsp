@@ -54,73 +54,14 @@
                                         value="${request.getCustomer_id()}"/>;</p> <br>
                                 <p class="card-text"><fmt:message key="output.request.description"/><c:out
                                         value="${request.getDescription()}"/>;</p> <br>
-                                <a class="link" href="#decline" class="trigger-btn" data-toggle="modal"><span
-                                        class="glyphicon"></span><fmt:message key="jsp.manager.decline.button"/></a>
-                                <a class="link" href="#accept" class="trigger-btn" data-toggle="modal"><span
-                                        class="glyphicon"></span><fmt:message key="jsp.manager.accept.button"/></a>
-
-                                <div id="accept" class="modal fade">
-                                    <div class="modal-dialog modal-login">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"><fmt:message
-                                                        key="jsp.notifications.leave.comment.label"/>t</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control" name="price"
-                                                           placeholder="<fmt:message key="output.request.price"/>"
-                                                           oninvalid="setCustomValidity('<fmt:message
-                                                                   key="login.please.fill.in.field"/>')"
-                                                           oninput="setCustomValidity('')"
-                                                           title="<fmt:message key="login.please.fill.in.field"/>"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control"
-                                                           name="managerAcceptComment"
-                                                           placeholder="<fmt:message key="output.request.manager.commentary"/>"
-                                                           oninvalid="setCustomValidity('<fmt:message
-                                                                   key="login.please.fill.in.field"/>')"
-                                                           oninput="setCustomValidity('')"
-                                                           title="<fmt:message key="login.please.fill.in.field"/>"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="submit"
-                                                           formaction="${pageContext.request.contextPath}/manager/active/request/accept"
-                                                           class="btn btn-primary btn-lg btn-block login-btn"
-                                                           value="<fmt:message key="jsp.manager.submit.button"/>"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="decline" class="modal fade">
-                                    <div class="modal-dialog modal-login">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"><fmt:message
-                                                        key="jsp.notifications.leave.comment.label"/></h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-group">
-                                                    <input type="text" class="form-control"
-                                                           name="managerDeclineComment"
-                                                           placeholder="<fmt:message key="output.request.manager.commentary"/>"
-                                                           oninvalid="setCustomValidity('<fmt:message
-                                                                   key="login.please.fill.in.field"/>')"
-                                                           oninput="setCustomValidity('')"
-                                                           title="<fmt:message key="login.please.fill.in.field"/>"/>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="submit"
-                                                           formaction="${pageContext.request.contextPath}/manager/active/request/decline"
-                                                           class="btn btn-primary btn-lg btn-block login-btn"
-                                                           value="<fmt:message key="jsp.manager.submit.button"/>"/>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <input type="text" placeholder="<fmt:message key="jsp.placeholder.price"/>" name="price">
+                                <input type="text" placeholder="<fmt:message key="jsp.placeholder.commentary"/>" name="managerComment">
+                                <input type="submit"
+                                       formaction="${pageContext.request.contextPath}/manager/active/request/accept"
+                                       value="<fmt:message key="jsp.manager.accept.button"/>"/>
+                                <input type="submit"
+                                       formaction="${pageContext.request.contextPath}/manager/active/request/decline"
+                                       value="<fmt:message key="jsp.manager.decline.button"/>"/>
                             </form>
                         </div>
                     </div>

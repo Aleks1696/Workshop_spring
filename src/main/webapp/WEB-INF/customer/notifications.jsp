@@ -31,7 +31,7 @@
         <c:set var="error_message" scope="request" value="${requestScope.error_message}"/>
         <c:if test="${error_message != null}">
             <c:forEach items="${error_message}" var="message">
-                <h3 class="errorMessage"><fmt:message key="${message}"/></h3>
+                <h5 class="errorMessage"><fmt:message key="${message}"/></h5>
             </c:forEach>
         </c:if>
 
@@ -45,7 +45,7 @@
                                 <c:choose>
                                     <c:when test="${request.getStatus() == 'DECLINED'}">
                                         <p class="card-text"><fmt:message key="output.request.manager.commentary"/>
-                                            <c:out value="${request.getManagerComment()}"/> </p>
+                                            <c:out value="${request.getManagerComment()}"/></p>
                                     </c:when>
                                     <c:otherwise>
                                         <fmt:message
@@ -55,64 +55,34 @@
                             </h4>
                         </div>
                         <div class="card-body">
-                            <form method="post" action="">
+                            <p class="card-text"><fmt:message key="output.request.device"/> <c:out
+                                    value="${request.getDevice()}"/>;</p>
+                            <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
+                                    value="${request.getCreationDate()}"/>;</p>
+                            <p class="card-text"><fmt:message key="output.request.status"/> <c:out
+                                    value="${request.getStatus()}"/>;</p> <br>
+                            <form method="post">
                                 <input hidden="hidden" name="id" value="${request.getId()}"/>
-                                <p class="card-text"><fmt:message key="output.request.device"/> <c:out
-                                        value="${request.getDevice()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.creation.date"/> <c:out
-                                        value="${request.getCreationDate()}"/>;</p>
-                                <p class="card-text"><fmt:message key="output.request.status"/> <c:out
-                                        value="${request.getStatus()}"/>;</p> <br>
-                                <form method="post">
-                                    <input class="buttonLikeLink" type="submit"
-                                           formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
+                                <input class="buttonLikeLink" type="submit"
+                                       formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
                                         key="jsp.notifications.archive.button"/>"/>
-                                </form>
-                                <a class="link" href="#feedback" class="trigger-btn" data-toggle="modal"><fmt:message
-                                        key="jsp.notifications.leave.feedback.button"/></a>
-
-                                <div id="feedback" class="modal fade">
-                                    <div class="modal-dialog modal-login">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title"><fmt:message
-                                                        key="jsp.notifications.accept/decline.form.title"/></h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                <form method="post">
-                                                    <input hidden="hidden" name="id" value="${request.getId()}">
-                                                    <div class="form-group">
-                                                        <input type="radio" id="star5" name="mark"
-                                                               value="GREAT" required="required"/><label>GREAT</label>
-                                                        <input type="radio" id="star4" name="mark"
-                                                               value="FINE"/><label>FINE</label>
-                                                        <input type="radio" id="star3" name="mark"
-                                                               value="NORMAL"/><label>NORMAL</label>
-                                                        <input type="radio" id="star2" name="mark"
-                                                               value="BAD"/><label>BAD</label>
-                                                        <input type="radio" id="star1" name="mark"
-                                                               value="TERRIBLE"/><label>TERRIBLE</label>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" name="commentary"
-                                                               placeholder="<fmt:message key="jsp.placeholder.feedback"/>"
-                                                               oninvalid="setCustomValidity('<fmt:message
-                                                                       key="login.please.fill.in.field"/>')"
-                                                               oninput="setCustomValidity('')"
-                                                               title="<fmt:message key="login.please.fill.in.field"/>"/>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <button type="submit"
-                                                                formaction="${pageContext.request.contextPath}/customer/feedback/leave"
-                                                                class="btn btn-primary btn-lg btn-block login-btn">
-                                                            <fmt:message
-                                                                    key="jsp.notifications.submit.button"/></button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            </form>
+                            <form method="post">
+                                <input hidden="hidden" name="id" value="${request.getId()}"/>
+                                <input type="radio" id="star5" name="mark"
+                                       value="GREAT" required="required"/><label><fmt:message key="jsp.manager.mark.great"/> </label>
+                                <input type="radio" id="star4" name="mark"
+                                       value="FINE"/><label><fmt:message key="jsp.manager.mark.good"/></label>
+                                <input type="radio" id="star3" name="mark"
+                                       value="NORMAL"/><label><fmt:message key="jsp.manager.mark.ok"/></label>
+                                <input type="radio" id="star2" name="mark"
+                                       value="BAD"/><label><fmt:message key="jsp.manager.mark.bad"/></label>
+                                <input type="radio" id="star1" name="mark"
+                                       value="TERRIBLE"/><label><fmt:message key="jsp.manager.mark.terrible"/></label>
+                                <input type="text" name="commentary" placeholder="<fmt:message key="jsp.placeholder.feedback"/>"/>
+                                <input type="submit"
+                                       formaction="${pageContext.request.contextPath}/customer/feedback/leave"
+                                       value="<fmt:message key="jsp.notifications.leave.feedback"/>"/>
                             </form>
                         </div>
                     </div>
