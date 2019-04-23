@@ -30,7 +30,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="${pageContext.request.contextPath}/registration"><span
-                        class="glyphicon glyphicon-log-in"></span> <fmt:message key="jsp.registration.label"/></a></li>
+                        class="glyphicon glyphicon-registration-mark"></span> <fmt:message key="jsp.registration.label"/></a></li>
             </ul>
         </div>
     </div>

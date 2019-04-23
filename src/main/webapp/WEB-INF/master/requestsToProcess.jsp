@@ -28,29 +28,35 @@
         <%@ include file="/common/pagination.jsp" %>
 
         <c:set var="requests_to_process" scope="request" value="${requestScope.requests_to_process}"/>
-        <c:if test="${requests_to_process != null}">
-            <c:forEach items="${requests_to_process}" var="request">
-                <div class="card">
-                    <div class="card-header">
-                        <fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/>
+        <c:choose>
+            <c:when test="${requests_to_process != null && !requests_to_process.isEmpty()}">
+                <c:forEach items="${requests_to_process}" var="request">
+                    <div class="card">
+                        <div class="card-header">
+                            <fmt:message key="output.request.request"/> <c:out value="${request.getId()}"/>
+                        </div>
+                        <div class="card-body">
+                            <form method="post"
+                                  action="${pageContext.request.contextPath}/master/active/request/process">
+                                <input hidden="hidden" name="id" value="${request.getId()}">
+                                <h5 class="card-title"><fmt:message key="output.request.device"/> <c:out
+                                        value="${request.getDevice()}"/></h5>
+                                <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
+                                        value="${request.getProductCategory()}"/>;</p>
+                                <p class="card-text"><fmt:message key="output.request.description"/> <c:out
+                                        value="${request.getDescription()}"/>";</p>
+                                <p class="card-text"><fmt:message key="output.request.status"/> <c:out
+                                        value="${request.getStatus()}"/></p> <br>
+                                <input type="submit" value="<fmt:message key="jsp.master.process.button"/>">
+                            </form>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <form method="post" action="${pageContext.request.contextPath}/master/active/request/process">
-                            <input hidden="hidden" name="id" value="${request.getId()}">
-                            <h5 class="card-title"><fmt:message key="output.request.device"/> <c:out
-                                    value="${request.getDevice()}"/></h5>
-                            <p class="card-text"><fmt:message key="output.request.product.category"/> <c:out
-                                    value="${request.getProductCategory()}"/>;</p>
-                            <p class="card-text"><fmt:message key="output.request.description"/> <c:out
-                                    value="${request.getDescription()}"/>";</p>
-                            <p class="card-text"><fmt:message key="output.request.status"/> <c:out
-                                    value="${request.getStatus()}"/></p> <br>
-                            <input type="submit" value="<fmt:message key="jsp.master.process.button"/>">
-                        </form>
-                    </div>
-                </div>
-            </c:forEach>
-        </c:if>
+                </c:forEach>
+            </c:when>
+            <c:otherwise>
+                <h3><fmt:message key="jsp.no.new.requests.message"/></h3>
+            </c:otherwise>
+        </c:choose>
     </div>
 </div>
 </div>

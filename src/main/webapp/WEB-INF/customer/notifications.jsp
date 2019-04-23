@@ -41,13 +41,21 @@
                 <c:forEach items="${requests_accomplished}" var="request">
                     <div class="card">
                         <div class="card-header">
-                            <h3>
-                                <fmt:message
-                                        key="jsp.notifications.device.is.fixed.message"/>
-                            </h3>
+                            <h4>
+                                <c:choose>
+                                    <c:when test="${request.getStatus() == 'DECLINED'}">
+                                        <p class="card-text"><fmt:message key="output.request.manager.commentary"/>
+                                            <c:out value="${request.getManagerComment()}"/> </p>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <fmt:message
+                                                key="jsp.notifications.device.is.fixed.message"/>
+                                    </c:otherwise>
+                                </c:choose>
+                            </h4>
                         </div>
                         <div class="card-body">
-                            <form method="post">
+                            <form method="post" action="">
                                 <input hidden="hidden" name="id" value="${request.getId()}"/>
                                 <p class="card-text"><fmt:message key="output.request.device"/> <c:out
                                         value="${request.getDevice()}"/>;</p>
@@ -55,9 +63,11 @@
                                         value="${request.getCreationDate()}"/>;</p>
                                 <p class="card-text"><fmt:message key="output.request.status"/> <c:out
                                         value="${request.getStatus()}"/>;</p> <br>
-                                <input class="buttonLikeLink" type="submit"
-                                       formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
+                                <form method="post">
+                                    <input class="buttonLikeLink" type="submit"
+                                           formaction="${pageContext.request.contextPath}/customer/request/archive" value="<fmt:message
                                         key="jsp.notifications.archive.button"/>"/>
+                                </form>
                                 <a class="link" href="#feedback" class="trigger-btn" data-toggle="modal"><fmt:message
                                         key="jsp.notifications.leave.feedback.button"/></a>
 
@@ -86,8 +96,10 @@
                                                     <div class="form-group">
                                                         <input type="text" class="form-control" name="commentary"
                                                                placeholder="<fmt:message key="jsp.placeholder.feedback"/>"
-                                                               oninvalid="setCustomValidity('<fmt:message key="login.please.fill.in.field"/>')"
-                                                               oninput="setCustomValidity('')" title="<fmt:message key="login.please.fill.in.field"/>"/>
+                                                               oninvalid="setCustomValidity('<fmt:message
+                                                                       key="login.please.fill.in.field"/>')"
+                                                               oninput="setCustomValidity('')"
+                                                               title="<fmt:message key="login.please.fill.in.field"/>"/>
                                                     </div>
                                                     <div class="form-group">
                                                         <button type="submit"
