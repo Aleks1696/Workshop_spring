@@ -30,7 +30,7 @@ public class AcceptRequestCommand implements Command {
     public String execute(HttpServletRequest httpRequest, HttpServletResponse httpResponse) {
         log.info("Try to accept request");
         String price = httpRequest.getParameter(getProperty("parameter.price"));
-        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.accept.commentary"));
+        String managerComment = httpRequest.getParameter(getProperty("parameter.manager.commentary"));
 
         List<String> wrongInputMessages = new ArrayList<>();
         if (!inputValidation.isPriceAndDescriptionValid(price, managerComment, wrongInputMessages)) {
